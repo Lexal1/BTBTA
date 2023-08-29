@@ -1,0 +1,54 @@
+#blocks
+tile.btb.ironplating.name=Iron Plating
+tile.btb.ironplating.desc=A block plated with durable iron.
+tile.btb.goldplating.name=Gold Plating
+tile.btb.goldplating.desc=A block plated with soft gold.
+tile.btb.catwalk.name=Catwalk
+tile.btb.catwalk.desc=Keeps you from falling into deep pits.
+tile.btb.moonstone.name=Moonstone
+tile.btb.moonstone.desc=Not made of cheese.
+tile.btb.moonturf.name=Moonturf
+tile.btb.moonturf.desc=One small block for man.
+tile.btb.mooncobblestone.name=Moon Cobblestone
+tile.btb.mooncobblestone.desc=Non-edible.
+tile.btb.cheesewheel.name=Cheese Wheel
+tile.btb.cheesewheel.desc=It's wheely good!
+tile.btb.portal.moon.name=Moon Portal
+tile.btb.portal.moon.desc="Is that a goddamn moon portal" - Jonkadelic
+tile.btb.mooniron.name=Moonstone Iron
+tile.btb.mooniron.desc=Iron nuggets embedded in moonstone.
+tile.btb.moongold.name=Moonstone Gold
+tile.btb.moongold.desc=Gold nuggets embedded in moonstone.
+tile.btb.cheeseore.name=Cheese Ore
+tile.btb.cheeseore.desc=I knew it!
+
+#space armor
+item.btb.armor.helmet.space.name=Space Helmet
+item.btb.armor.helmet.space.desc=Keeps your head from exploding.
+item.btb.armor.chestplate.space.name=Space Suit
+item.btb.armor.chestplate.space.desc=Keeps you able to breathe.
+item.btb.armor.leggings.space.name=Space Leggings
+item.btb.armor.leggings.space.desc=Keep yourself safe!
+item.btb.armor.boots.space.name=Space Boots
+item.btb.armor.boots.space.desc=Keeps those little toeses warm!
+
+#cloth armor
+item.btb.armor.helmet.clothes.name=Cloth Hood
+item.btb.armor.helmet.clothes.desc=For all your ritual needs!
+item.btb.armor.chestplate.clothes.name=Cloth Shirt
+item.btb.armor.chestplate.clothes.desc=A normal, boring, everyday shirt.
+item.btb.armor.leggings.clothes.name=Cloth Pants
+item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants.
+item.btb.armor.boots.clothes.name=Shoes
+item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
+
+#items
+item.btb.cheese.name=Cheese
+item.btb.cheese.desc=What self-respecting moon doesn't have cheese?!
+item.btb.burger.name=Cheeseburger
+item.btb.burger.desc=Have it your way!
+
+#misc
+dimension.moon.name=Moon
+worldType.moon.default.name=Moon
+worldType.moon.default.desc=Start on the Moon, an inhospitable wasteland far away from the Overworld.
