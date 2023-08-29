@@ -25,9 +25,9 @@ public class EntityPlayerMixin extends EntityLiving {
         ItemStack bootsSlotItem = player.inventory.armorItemInSlot(0);
         if (
                 headSlotItem!=null && headSlotItem.getItem()== BTBTA.armorHelmetSpace
-                        && chestSlotItem!=null && chestSlotItem.getItem()==BTBTA.armorChestplateSpace
-                        && legsSlotItem!=null && legsSlotItem.getItem()==BTBTA.armorLeggingsSpace
-                        && bootsSlotItem!=null && bootsSlotItem.getItem()==BTBTA.armorBootsSpace
+                && chestSlotItem!=null && chestSlotItem.getItem()==BTBTA.armorChestplateSpace
+                && legsSlotItem!=null && legsSlotItem.getItem()==BTBTA.armorLeggingsSpace
+                && bootsSlotItem!=null && bootsSlotItem.getItem()==BTBTA.armorBootsSpace
         ){
             cir.setReturnValue(true); // Don't suffocate with helmet on
         }
