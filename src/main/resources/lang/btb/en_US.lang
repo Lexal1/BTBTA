@@ -52,3 +52,7 @@ item.btb.burger.desc=Have it your way!
 dimension.moon.name=Moon
 worldType.moon.default.name=Moon
 worldType.moon.default.desc=Start on the Moon, an inhospitable wasteland far away from the Overworld.
+
+#Optionals
+item.btb.spawn.egg.penguin.name=Penguin Spawn Egg
+item.btb.spawn.egg.spacezombie.name=Space Zombie Spawn Egg

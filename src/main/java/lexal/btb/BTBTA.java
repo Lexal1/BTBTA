@@ -29,6 +29,8 @@ import net.minecraft.core.world.type.WorldTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
+import useless.prismaticlibe.helper.ModCheckHelper;
+import useless.spawneggs.ItemSpawnEgg;
 
 
 public class BTBTA implements ModInitializer {
@@ -117,7 +119,10 @@ public class BTBTA implements ModInitializer {
     public static final Item cheese = ItemHelper.createItem(MODID,new ItemFood("cheese",itemIdTacker++,5,false),"cheese","cheese.png");
     public static final Item burger = ItemHelper.createItem(MODID,new ItemFood("burger",itemIdTacker++,20,true),"burger","hamburger.png");
 
+    public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
 
+    public static Item penguinSpawnEgg;
+    public static Item spaceZombieSpawnEgg;
 
 
 
@@ -142,14 +147,6 @@ public class BTBTA implements ModInitializer {
     {
         Dimension.registerDimension(3, dimensionMoon);
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -250,5 +247,10 @@ public class BTBTA implements ModInitializer {
         EntityHelper.createEntity(EntitySpaceZombie.class, new SpaceZombieRenderer(new ModelZombie(), 1), 900, "spaceZombie");
         EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 901, "Penguin");
 
+        if (spawnEggsModPresent){
+            penguinSpawnEgg = ItemHelper.createItem(MODID, new ItemSpawnEgg("spawn.egg.penguin", itemIdTacker++, "Penguin", 0x29255b, 0xDEDEDE), "spawn.egg.penguin", "spawnEggDefault.png");
+            spaceZombieSpawnEgg = ItemHelper.createItem(MODID, new ItemSpawnEgg("spawn.egg.spacezombie", itemIdTacker++, "spaceZombie", 0xffffff, 0xff9100), "spawn.egg.spacezombie", "spawnEggDefault.png");
+        }
+        LOGGER.info("btbta loaded all entities successfully!"); //put recipes before this point
     }
 }
