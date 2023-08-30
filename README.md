@@ -11,4 +11,4 @@ cheeseburger
 no there isn't, i don't know where you heard that
 ## credits
 lexal -main guy\
-useless -oxygen system, mixins, fixing my terrible code
+useless -moon features (gravity, suffocation, star rendering), penguins, mixins, fixing my terrible code
