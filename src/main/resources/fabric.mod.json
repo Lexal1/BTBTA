@@ -32,5 +32,6 @@
     "prismaticlibe": ">=2.1.0"
   },
   "suggests": {
+    "spawneggs": ">=1.1.0"
   }
 }
