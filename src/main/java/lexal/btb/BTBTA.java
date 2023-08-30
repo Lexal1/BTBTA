@@ -30,12 +30,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
 import useless.prismaticlibe.helper.ModCheckHelper;
-import useless.spawneggs.ItemSpawnEgg;
-
 
 public class BTBTA implements ModInitializer {
-    private static int blockIdTacker = 3000;
-    private static int itemIdTacker = 20000;
+    public static int blockIdTacker = 3000;
+    public static int itemIdTacker = 20000;
     public static final String MODID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 
@@ -248,8 +246,7 @@ public class BTBTA implements ModInitializer {
         EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 901, "Penguin");
 
         if (spawnEggsModPresent){
-            penguinSpawnEgg = ItemHelper.createItem(MODID, new ItemSpawnEgg("spawn.egg.penguin", itemIdTacker++, "Penguin", 0x29255b, 0xDEDEDE), "spawn.egg.penguin", "spawnEggDefault.png");
-            spaceZombieSpawnEgg = ItemHelper.createItem(MODID, new ItemSpawnEgg("spawn.egg.spacezombie", itemIdTacker++, "spaceZombie", 0xffffff, 0xff9100), "spawn.egg.spacezombie", "spawnEggDefault.png");
+            SpawnEggsModule.onInitialize();;
         }
         LOGGER.info("btbta loaded all entities successfully!"); //put recipes before this point
     }
