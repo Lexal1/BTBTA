@@ -6,8 +6,9 @@
   "name": "BTBTA",
   "description": "Better than Better than Adventure! is a mod that aims to enhance BTA.",
   "authors": [
-    "Turnip Labs"
+    "Lexal, Useless"
   ],
+  "icon": "icon.png",
   "contact": {
     "homepage": "",
     "sources": ""
@@ -18,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "turniplabs.btb.BTBTA"
+      "lexal.btb.BTBTA"
     ]
   },
   "mixins": [
