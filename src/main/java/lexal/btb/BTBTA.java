@@ -5,6 +5,7 @@ import lexal.btb.block.BlockCheeseOre;
 import lexal.btb.block.BlockCheeseWheel;
 import lexal.btb.block.BlockMoonstone;
 import lexal.btb.entity.EntityPenguin;
+import lexal.btb.entity.EntitySpaceSkeleton;
 import lexal.btb.entity.EntitySpaceZombie;
 import lexal.btb.entity.renderer.ModelPenguin;
 import lexal.btb.entity.renderer.PenguinRenderer;
@@ -12,11 +13,14 @@ import lexal.btb.entity.renderer.SpaceZombieRenderer;
 import lexal.btb.world.BiomeMoon;
 import lexal.btb.world.WorldTypeMoonDefault;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.render.entity.MobRenderer;
+import net.minecraft.client.render.model.ModelSkeleton;
 import net.minecraft.client.render.model.ModelZombie;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.monster.EntitySkeleton;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.ItemFood;
@@ -249,7 +253,8 @@ public class BTBTA implements ModInitializer {
         LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
 
         EntityHelper.createEntity(EntitySpaceZombie.class, new SpaceZombieRenderer(new ModelZombie(), 1), 900, "spaceZombie");
-        EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 901, "Penguin");
+        EntityHelper.createEntity(EntitySpaceSkeleton.class, new MobRenderer<EntitySkeleton>(new ModelSkeleton(), 1), 901, "spaceSkeleton");
+        EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 902, "Penguin");
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;

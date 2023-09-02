@@ -1,5 +1,6 @@
 package lexal.btb.world;
 
+import lexal.btb.entity.EntitySpaceSkeleton;
 import lexal.btb.entity.EntitySpaceZombie;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.entity.monster.EntitySkeleton;
@@ -10,7 +11,7 @@ public class BiomeMoon extends Biome {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.spawnableMonsterList.add(new SpawnListEntry(EntitySkeleton.class, 10));
+        this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceSkeleton.class, 10));
         this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceZombie.class, 10));
     }
     @Override
