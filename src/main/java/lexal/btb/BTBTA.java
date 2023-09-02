@@ -238,6 +238,12 @@ public class BTBTA implements ModInitializer {
                 "L L",
                 'L', Item.leather,
                 'C', Item.cloth});
+        RecipeHelper.Crafting.createRecipe(BTBTA.moonstone, 1, new Object[]{
+                "CCC",
+                "CBC",
+                "CCC",
+                'B', Block.cobbleBasalt,
+                'C', Block.cobbleStone});
 
 
         LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
