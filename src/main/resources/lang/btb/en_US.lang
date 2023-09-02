@@ -10,7 +10,7 @@ tile.btb.moonstone.desc=Not made of cheese.
 tile.btb.moonturf.name=Moonturf
 tile.btb.moonturf.desc=One small block for man.
 tile.btb.mooncobblestone.name=Moon Cobblestone
-tile.btb.mooncobblestone.desc=Non-edible.
+tile.btb.mooncobblestone.desc=Ground up moon rocks are pure poison.
 tile.btb.cheesewheel.name=Cheese Wheel
 tile.btb.cheesewheel.desc=It's wheely good!
 tile.btb.portal.moon.name=Moon Portal
@@ -26,15 +26,15 @@ tile.btb.cheeseore.desc=I knew it!
 item.btb.armor.helmet.space.name=Space Helmet
 item.btb.armor.helmet.space.desc=Keeps your head from exploding.
 item.btb.armor.chestplate.space.name=Space Suit
-item.btb.armor.chestplate.space.desc=Keeps you able to breathe.
+item.btb.armor.chestplate.space.desc=Not the best thing to wear to a party.
 item.btb.armor.leggings.space.name=Space Leggings
-item.btb.armor.leggings.space.desc=Keep yourself safe!
+item.btb.armor.leggings.space.desc=Look who's on the moon now, Mr. Fancy Pants.
 item.btb.armor.boots.space.name=Space Boots
-item.btb.armor.boots.space.desc=Keeps those little toeses warm!
+item.btb.armor.boots.space.desc=One giant leap for mankind!
 
 #cloth armor
 item.btb.armor.helmet.clothes.name=Cloth Hood
-item.btb.armor.helmet.clothes.desc=For all your ritual needs!
+item.btb.armor.helmet.clothes.desc=For all your ritualistic needs!
 item.btb.armor.chestplate.clothes.name=Cloth Shirt
 item.btb.armor.chestplate.clothes.desc=A normal, boring, everyday shirt.
 item.btb.armor.leggings.clothes.name=Cloth Pants
@@ -53,6 +53,7 @@ dimension.moon.name=Moon
 worldType.moon.default.name=Moon
 worldType.moon.default.desc=Start on the Moon, an inhospitable wasteland far away from the Overworld.
 
-#Optionals
+#optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg
 item.btb.spawn.egg.spacezombie.name=Space Zombie Spawn Egg
+item.btb.spawn.egg.spaceskeleton.name=Space Skeleton Spawn Egg

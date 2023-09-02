@@ -125,6 +125,7 @@ public class BTBTA implements ModInitializer {
 
     public static Item penguinSpawnEgg;
     public static Item spaceZombieSpawnEgg;
+    public static Item spaceSkeletonSpawnEgg;
 
 
 
