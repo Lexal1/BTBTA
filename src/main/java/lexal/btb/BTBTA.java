@@ -33,9 +33,11 @@ import net.minecraft.core.world.type.WorldTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
+import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
 
 public class BTBTA implements ModInitializer {
+
     public static int blockIdTacker = 3000;
     public static int itemIdTacker = 20000;
     public static final String MODID = "btb";
@@ -70,7 +72,7 @@ public class BTBTA implements ModInitializer {
             .setHardness(1.5f)
             .setResistance(1.5f)
             .setTopBottomTexture(7,19)
-            .setSides("catwalk_side.png")
+            .setSideTextures("catwalk_side.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockCatwalk("catwalk", blockIdTacker++,Material.metal));
     public static final Block mooncobblestone = new BlockBuilder(MODID)
@@ -260,6 +262,6 @@ public class BTBTA implements ModInitializer {
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
         }
-        LOGGER.info("btbta loaded all entities successfully!"); //put recipes before this point
+        LOGGER.info("btbta loaded all entities successfully!"); //put entities before this point
     }
 }
