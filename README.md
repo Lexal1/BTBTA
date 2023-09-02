@@ -19,6 +19,9 @@ lexal -main guy\
 useless -moon features (gravity, suffocation, star rendering), penguins, mixins, fixing my terrible code
 ## pictures
 ![image](https://github.com/Lexal1/BTBTA/assets/86933786/4804aa34-8e8c-4411-a8e2-0ae5da632954)
-![image](https://github.com/Lexal1/BTBTA/assets/86933786/2e9ddc10-9cc7-4d72-b985-4b0daeb5898a)
+![image](https://github.com/Lexal1/BTBTA/assets/86933786/b9f1d0e6-8722-4553-b2bc-3e53ad9359fa)
+![image](https://github.com/Lexal1/BTBTA/assets/86933786/272a64f5-cbfc-473e-95de-9acdbda9551b)
+![image](https://github.com/Lexal1/BTBTA/assets/86933786/2018c9fd-092c-4f8a-85eb-ec1ac4f7f553)
+![image](https://github.com/Lexal1/BTBTA/assets/86933786/57df9374-2516-4bc9-bb16-aafff93b814a)
 *if you take any cool pictures, send them at me in the BTA modding discord! i'd love to see them
 
