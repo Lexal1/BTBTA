@@ -1,8 +1,8 @@
 # got damn
 you want to get to the moon? well this is a mod for you
 # requirements
-babric
-halplibe
+babric\
+halplibe\
 prismaticlibe
 ## features
 blocks\
