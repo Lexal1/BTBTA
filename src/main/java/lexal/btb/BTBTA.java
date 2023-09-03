@@ -35,6 +35,7 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
+import useless.prismaticlibe.helper.SoundHelper;
 
 public class BTBTA implements ModInitializer {
 
@@ -102,7 +103,6 @@ public class BTBTA implements ModInitializer {
             .setTextures("moon_stone_gold.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAVES_CUT_THROUGH)
             .build(new BlockOreGold("moongold", blockIdTacker++,Material.stone));
-
 
 
 
