@@ -55,7 +55,7 @@ item.btb.moondust.desc=Turns out, ground up moon rocks are pure poison.
 #misc
 dimension.moon.name=Moon
 worldType.moon.default.name=Moon
-worldType.moon.default.desc=Start on the Moon,/n an inhospitable wasteland orbiting the Overworld.
+worldType.moon.default.desc=Start on the Moon,\n an inhospitable desert orbiting the Overworld.
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

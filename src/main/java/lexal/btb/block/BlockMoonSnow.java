@@ -1,5 +1,6 @@
 package lexal.btb.block;
 
+import lexal.btb.BTBTA;
 import net.minecraft.core.block.BlockLayerSnow;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -19,7 +20,7 @@ public class BlockMoonSnow extends BlockLayerSnow {
             case PICK_BLOCK:
                 return new ItemStack[]{new ItemStack(this)};
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(Item.ammoSnowball, meta + 1)};
+                return new ItemStack[]{new ItemStack(BTBTA.moondust, meta + 1)};
             default:
                 return null;
         }
