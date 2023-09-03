@@ -10,7 +10,7 @@ tile.btb.moonstone.desc=Not made of cheese.
 tile.btb.moonturf.name=Moonturf
 tile.btb.moonturf.desc=One small block for man.
 tile.btb.mooncobblestone.name=Moon Cobblestone
-tile.btb.mooncobblestone.desc=Ground up moon rocks are pure poison.
+tile.btb.mooncobblestone.desc=Moonstone, smashed apart and reconstituted.
 tile.btb.cheesewheel.name=Cheese Wheel
 tile.btb.cheesewheel.desc=It's wheely good!
 tile.btb.portal.moon.name=Moon Portal
@@ -21,6 +21,8 @@ tile.btb.moongold.name=Moonstone Gold
 tile.btb.moongold.desc=Gold nuggets embedded in moonstone.
 tile.btb.cheeseore.name=Cheese Ore
 tile.btb.cheeseore.desc=I knew it!
+tile.btb.moonsnow.name=Surface Moon Dust
+tile.btb.moonsnow.desc=A great portal conductor!
 
 #space armor
 item.btb.armor.helmet.space.name=Space Helmet
@@ -47,11 +49,13 @@ item.btb.cheese.name=Cheese
 item.btb.cheese.desc=What self-respecting moon doesn't have cheese?!
 item.btb.burger.name=Cheeseburger
 item.btb.burger.desc=Have it your way!
+item.btb.moondust.name=Moon Dust
+item.btb.moondust.desc=Turns out, ground up moon rocks are pure poison.
 
 #misc
 dimension.moon.name=Moon
 worldType.moon.default.name=Moon
-worldType.moon.default.desc=Start on the Moon,/n an inhospitable wasteland far away from the Overworld.
+worldType.moon.default.desc=Start on the Moon,/n an inhospitable wasteland orbiting the Overworld.
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

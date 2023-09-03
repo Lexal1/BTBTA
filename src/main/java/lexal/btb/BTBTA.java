@@ -103,7 +103,12 @@ public class BTBTA implements ModInitializer {
             .setTextures("moon_stone_gold.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAVES_CUT_THROUGH)
             .build(new BlockOreGold("moongold", blockIdTacker++,Material.stone));
-
+    public static final Block moonsnow = new BlockBuilder(MODID)
+            .setHardness(0.5f)
+            .setResistance(0.0f)
+            .setTextures("moon_turf.png")
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH)
+            .build(new BlockLayerSnow("moonsnow",blockIdTacker++,Material.stone));
 
 
 
@@ -122,6 +127,7 @@ public class BTBTA implements ModInitializer {
     //items
     public static final Item cheese = ItemHelper.createItem(MODID,new ItemFood("cheese",itemIdTacker++,5,false),"cheese","cheese.png");
     public static final Item burger = ItemHelper.createItem(MODID,new ItemFood("burger",itemIdTacker++,20,true),"burger","hamburger.png");
+    public static final Item moondust = ItemHelper.createItem(MODID,new Item(MODID,itemIdTacker++),"moondust","moondust.png");
 
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
 
@@ -144,7 +150,7 @@ public class BTBTA implements ModInitializer {
     public static final Biome biomeMoon = Biomes.register("btb:moon.moon", new BiomeMoon());
     static
     {
-        biomeMoon.topBlock = (short) moonturf.id;
+        biomeMoon.topBlock = (short) moonsnow.id;
         biomeMoon.fillerBlock = (short) moonturf.id;
     }
     public static final Dimension dimensionMoon = new Dimension("moon", Dimension.overworld, 3f, BTBTA.portalmoon.id).setDefaultWorldType(worldTypeMoon);
