@@ -51,6 +51,6 @@ public class BTBTA implements ModInitializer {
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
         }
-        LOGGER.info("btbta loaded all entities successfully!"); //put entities before this point
+        LOGGER.info("btbta loaded successfully!");
     }
 }

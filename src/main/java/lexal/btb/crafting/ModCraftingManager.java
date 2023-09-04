@@ -20,6 +20,7 @@ public class ModCraftingManager {
                 'B', Item.foodBread,
                 'S', Item.foodPorkchopCooked,
                 'C', ModItems.cheese});
+
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
 
         //block recipes

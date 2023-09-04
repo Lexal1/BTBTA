@@ -11,6 +11,7 @@ import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 
 public class ModItems {
+
     //armor
     public static final ArmorMaterial armorspacesuit = ArmorHelper.createArmorMaterial("space",256,25.0f,25.0f,30.0f,50.0f);
     public static final Item armorHelmetSpace = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Space Helmet", UtilIdRegistrar.nextIdItem(), armorspacesuit, 0), "armor.helmet.space", "space_helmet.png");
@@ -27,8 +28,9 @@ public class ModItems {
     public static final Item cheese = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("cheese",UtilIdRegistrar.nextIdItem(),5,false),"cheese","cheese.png");
     public static final Item burger = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("burger",UtilIdRegistrar.nextIdItem(),20,true),"burger","hamburger.png");
     public static final Item moondust = ItemHelper.createItem(BTBTA.MOD_ID, new Item("dust.moon", UtilIdRegistrar.nextIdItem()),"moondust","moondust.png");
-    public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false),"pancake","pancake.png");
+    public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false),"pancake","pancake.png").setMaxStackSize(16);
 
+    //spawn eggs
     public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");
     public static Item spaceZombieSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.spacezombie", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.spacezombie", "unknown.png");
     public static Item spaceSkeletonSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.spaceskeleton", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.spaceskeleton", "unknown.png");
