@@ -111,6 +111,12 @@ public class BTBTA implements ModInitializer {
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES)
             .build(new BlockLayerSnow("moonsnow",blockIdTacker++,Material.stone));
 
+    public static final Block portalmoon = new BlockBuilder(MODID)
+            .setHardness(-1.0f)
+            .setResistance(-1.0f)
+            .setTextures("moon_cobblestone.png")
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockPortal("portal.moon",blockIdTacker++,3, ironplating.id,moonstone.id));
     public static final Block layerPancake = new BlockBuilder(MODID)
             .setHardness(0.5f)
             .setResistance(0.0f)
@@ -166,12 +172,7 @@ public class BTBTA implements ModInitializer {
 
 
 
-    public static final Block portalmoon = new BlockBuilder(MODID)
-            .setHardness(-1.0f)
-            .setResistance(-1.0f)
-            .setTextures("moon_cobblestone.png")
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockPortal("portal.moon",blockIdTacker++,3, ironplating.id,moonstone.id));
+
     public static final WorldType worldTypeMoon = WorldTypes.register("btb:moon.default", new WorldTypeMoonDefault("worldType.moon.default"));
     public static final Biome biomeMoon = Biomes.register("btb:moon.moon", new BiomeMoon());
     static
