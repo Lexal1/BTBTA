@@ -2,27 +2,14 @@ package lexal.btb;
 
 import lexal.btb.block.*;
 import lexal.btb.crafting.ModCraftingManager;
-import lexal.btb.entity.EntityPenguin;
-import lexal.btb.entity.EntitySpaceSkeleton;
-import lexal.btb.entity.EntitySpaceZombie;
 import lexal.btb.entity.ModEntities;
-import lexal.btb.entity.renderer.ModelPenguin;
-import lexal.btb.entity.renderer.PenguinRenderer;
-import lexal.btb.entity.renderer.SpaceZombieRenderer;
 import lexal.btb.item.ModItems;
 import lexal.btb.world.*;
 import lexal.btb.world.biomes.ModBiomes;
 import lexal.btb.world.worldType.ModWorldType;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.client.render.entity.MobRenderer;
-import net.minecraft.client.render.model.ModelSkeleton;
-import net.minecraft.client.render.model.ModelZombie;
-import net.minecraft.core.block.*;
-import net.minecraft.core.entity.monster.EntitySkeleton;
-import net.minecraft.core.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import turniplabs.halplibe.helper.*;
 import turniplabs.halplibe.util.ConfigHandler;
 import useless.prismaticlibe.helper.ModCheckHelper;
 
@@ -49,7 +36,6 @@ public class BTBTA implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("btbta loading! watch out for bugs");
-        LOGGER.info("" + Block.blocksList.length + " | " + Item.itemsList.length);
         handleConfig();
 
         ModBlocks.register();
