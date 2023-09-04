@@ -5,11 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "BiomesMixin",
+    "BlockTorchMixin",
     "EntityItemMixin",
     "EntityLivingMixin",
     "EntityPlayerMixin",
     "EntitySkeletonMixin",
     "GuiIngameMixin",
+    "ItemFirestrikerMixin",
     "MinecraftMixin",
     "RenderGlobalMixin",
     "WorldMixin"

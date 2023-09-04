@@ -11,6 +11,7 @@ import lexal.btb.item.ItemPlacableLayer;
 import lexal.btb.world.BiomeMoon;
 import lexal.btb.world.WorldTypeMoonDefault;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.render.entity.MobRenderer;
 import net.minecraft.client.render.model.ModelSkeleton;
 import net.minecraft.client.render.model.ModelZombie;
@@ -118,6 +119,15 @@ public class BTBTA implements ModInitializer {
             .setBottomTexture("pancake_bottom.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLayerPancake("layer.pancake",blockIdTacker++, Material.cake));
+
+
+    public static final Block torchUnlit = new BlockBuilder(MODID)
+            .setHardness(0)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
+            .setTextures("torch_unlit.png")
+            .setBlockModel(new BlockModelRenderBlocks(2)) // Torch model
+            .build(new BlockTorchUnlit("torch.unlit", blockIdTacker++)).withDisabledNeighborNotifyOnMetadataChange();
+
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
