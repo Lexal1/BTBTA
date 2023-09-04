@@ -1,6 +1,6 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core;
 
-import lexal.btb.world.BiomeGlacier;
+import lexal.btb.world.biomes.BiomeGlacier;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;

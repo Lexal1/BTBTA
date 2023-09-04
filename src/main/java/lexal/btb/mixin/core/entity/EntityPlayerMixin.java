@@ -1,5 +1,7 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.entity;
 
+import lexal.btb.item.ModItems;
+import lexal.btb.world.ModDimensions;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -31,10 +33,10 @@ public class EntityPlayerMixin extends EntityLiving {
         ItemStack legsSlotItem = player.inventory.armorItemInSlot(1);
         ItemStack bootsSlotItem = player.inventory.armorItemInSlot(0);
         if (
-                headSlotItem!=null && headSlotItem.getItem()== BTBTA.armorHelmetSpace
-                && chestSlotItem!=null && chestSlotItem.getItem()==BTBTA.armorChestplateSpace
-                && legsSlotItem!=null && legsSlotItem.getItem()==BTBTA.armorLeggingsSpace
-                && bootsSlotItem!=null && bootsSlotItem.getItem()==BTBTA.armorBootsSpace
+                headSlotItem!= null && headSlotItem.getItem() == ModItems.armorHelmetSpace
+                && chestSlotItem!= null && chestSlotItem.getItem() == ModItems.armorChestplateSpace
+                && legsSlotItem!= null && legsSlotItem.getItem() == ModItems.armorLeggingsSpace
+                && bootsSlotItem!= null && bootsSlotItem.getItem() == ModItems.armorBootsSpace
         ){
             cir.setReturnValue(true); // Don't suffocate with helmet on
         }
@@ -44,7 +46,7 @@ public class EntityPlayerMixin extends EntityLiving {
     private void moonThreshold(CallbackInfo ci){
         if (this.y > this.world.getWorldType().getMaxY()+5 && !world.isDaytime()){
 
-            int targetDim = BTBTA.dimensionMoon.id;
+            int targetDim = ModDimensions.dimensionMoon.id;
             Minecraft mc = Minecraft.getMinecraft(this);
 
             if (this.dimension == targetDim) {

@@ -1,11 +1,10 @@
 package lexal.btb.block;
 
-import lexal.btb.BTBTA;
+import lexal.btb.item.ModItems;
 import net.minecraft.core.block.BlockLayerSnow;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
@@ -20,7 +19,7 @@ public class BlockMoonSnow extends BlockLayerSnow {
             case PICK_BLOCK:
                 return new ItemStack[]{new ItemStack(this)};
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(BTBTA.moondust, meta + 1)};
+                return new ItemStack[]{new ItemStack(ModItems.moondust, meta + 1)};
             default:
                 return null;
         }

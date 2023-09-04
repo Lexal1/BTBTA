@@ -1,4 +1,4 @@
-package lexal.btb.world;
+package lexal.btb.world.worldType;
 
 import net.minecraft.core.world.config.season.SeasonConfig;
 import net.minecraft.core.world.season.Seasons;

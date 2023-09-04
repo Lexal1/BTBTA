@@ -1,4 +1,4 @@
-package lexal.btb.world;
+package lexal.btb.world.biomes;
 
 import lexal.btb.entity.EntitySpaceSkeleton;
 import lexal.btb.entity.EntitySpaceZombie;

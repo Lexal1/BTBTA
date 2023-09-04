@@ -1,4 +1,4 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.entity;
 
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.entity.monster.EntitySkeleton;

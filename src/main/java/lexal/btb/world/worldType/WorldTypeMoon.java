@@ -1,5 +1,8 @@
-package lexal.btb.world;
+package lexal.btb.world.worldType;
 
+import lexal.btb.block.ModBlocks;
+import lexal.btb.world.IGravity;
+import lexal.btb.world.biomes.ModBiomes;
 import lexal.btb.world.generate.ChunkGeneratorMoon;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.util.phys.Vec3d;
@@ -12,9 +15,8 @@ import net.minecraft.core.world.season.Season;
 import net.minecraft.core.world.type.WorldType;
 import net.minecraft.core.world.weather.Weather;
 import net.minecraft.core.world.wind.WindManager;
-import lexal.btb.BTBTA;
 
-public abstract class WorldTypeMoon extends WorldType implements IGravity{
+public abstract class WorldTypeMoon extends WorldType implements IGravity {
     public WorldTypeMoon(String languageKey, Weather defaultWeather, WindManager windManager, boolean hasCeiling, float[] brightnessRamp, SeasonConfig defaultSeasonConfig) {
         super(
                 languageKey,
@@ -34,7 +36,7 @@ public abstract class WorldTypeMoon extends WorldType implements IGravity{
     }
     @Override
     public int getFillerBlock() {
-        return BTBTA.moonstone.id;
+        return ModBlocks.moonstone.id;
     }
     @Override
     public ChunkGenerator createChunkGenerator(World world) {
@@ -42,7 +44,7 @@ public abstract class WorldTypeMoon extends WorldType implements IGravity{
     }
     @Override
     public BiomeProvider createBiomeProvider(World world) {
-        return new BiomeProviderSingleBiome(BTBTA.biomeMoon, 0.5, 0.0, 0.5);
+        return new BiomeProviderSingleBiome(ModBiomes.biomeMoon, 0.5, 0.0, 0.5);
     }
     @Override
     public int getDayNightCycleLengthTicks() {

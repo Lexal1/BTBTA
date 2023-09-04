@@ -1,4 +1,4 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core;
 
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;

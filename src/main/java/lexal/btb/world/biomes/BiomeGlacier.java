@@ -1,4 +1,4 @@
-package lexal.btb.world;
+package lexal.btb.world.biomes;
 
 import lexal.btb.entity.EntityPenguin;
 import net.minecraft.core.entity.SpawnListEntry;

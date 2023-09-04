@@ -1,8 +1,8 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.entity;
 
 import com.mojang.nbt.CompoundTag;
 import lexal.btb.world.IGravity;
-import lexal.btb.world.WorldTypeMoon;
+import lexal.btb.world.worldType.WorldTypeMoon;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityLiving;

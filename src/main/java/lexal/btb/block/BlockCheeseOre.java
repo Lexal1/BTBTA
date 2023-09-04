@@ -1,5 +1,6 @@
 package lexal.btb.block;
 
+import lexal.btb.item.ModItems;
 import net.minecraft.core.block.BlockOreCoal;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
@@ -17,7 +18,7 @@ public class BlockCheeseOre extends BlockOreCoal {
             case PICK_BLOCK:
                 return new ItemStack[]{new ItemStack(this)};
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(BTBTA.cheese)};
+                return new ItemStack[]{new ItemStack(ModItems.cheese)};
             default:
                 return null;
         }
