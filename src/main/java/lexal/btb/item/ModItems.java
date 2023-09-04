@@ -24,13 +24,13 @@ public class ModItems {
     public static final Item armorLeggingsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Pants", UtilIdRegistrar.nextIdItem(), armorclothing, 2), "armor.leggings.clothes", "cloth_pants.png");
     public static final Item armorBootsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Shoes", UtilIdRegistrar.nextIdItem(), armorclothing, 3), "armor.boots.clothes", "cloth_boots.png");
     //items
-    public static final Item cheese = ItemHelper.createItem(BTBTA.MOD_ID,new ItemFood("cheese",UtilIdRegistrar.nextIdItem(),5,false),"cheese","cheese.png");
-    public static final Item burger = ItemHelper.createItem(BTBTA.MOD_ID,new ItemFood("burger",UtilIdRegistrar.nextIdItem(),20,true),"burger","hamburger.png");
-    public static final Item moondust = ItemHelper.createItem(BTBTA.MOD_ID,new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()),"moondust","moondust.png");
-    public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID,new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false),"pancake","pancake.png");
+    public static final Item cheese = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("cheese",UtilIdRegistrar.nextIdItem(),5,false),"cheese","cheese.png");
+    public static final Item burger = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("burger",UtilIdRegistrar.nextIdItem(),20,true),"burger","hamburger.png");
+    public static final Item moondust = ItemHelper.createItem(BTBTA.MOD_ID, new Item("dust.moon", UtilIdRegistrar.nextIdItem()),"moondust","moondust.png");
+    public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false),"pancake","pancake.png");
 
-    public static Item penguinSpawnEgg;
-    public static Item spaceZombieSpawnEgg;
-    public static Item spaceSkeletonSpawnEgg;
+    public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");
+    public static Item spaceZombieSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.spacezombie", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.spacezombie", "unknown.png");
+    public static Item spaceSkeletonSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.spaceskeleton", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.spaceskeleton", "unknown.png");
     public static void register() {}
 }
