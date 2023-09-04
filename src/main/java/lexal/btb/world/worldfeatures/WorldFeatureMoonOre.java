@@ -1,5 +1,6 @@
 package lexal.btb.world.worldfeatures;
 
+import lexal.btb.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
@@ -67,7 +68,7 @@ public class WorldFeatureMoonOre extends WorldFeature {
                             continue;
                         }
                         int id = world.getBlockId(x, y, z);
-                        if (id != Block.stone.id && id != Block.netherrack.id && id != Block.basalt.id && id != Block.limestone.id && id != Block.granite.id && id != BTBTA.moonstone.id) continue;
+                        if (id != Block.stone.id && id != Block.netherrack.id && id != Block.basalt.id && id != Block.limestone.id && id != Block.granite.id && id != ModBlocks.moonstone.id) continue;
                         world.setBlock(x, y, z, this.minableBlockId);
                     }
                 }

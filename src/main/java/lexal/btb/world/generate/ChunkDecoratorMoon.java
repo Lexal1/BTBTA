@@ -1,5 +1,6 @@
 package lexal.btb.world.generate;
 
+import lexal.btb.block.ModBlocks;
 import lexal.btb.world.worldfeatures.WorldFeatureMoonOre;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
@@ -33,19 +34,19 @@ public class ChunkDecoratorMoon implements ChunkDecorator {
             xf = x + rand.nextInt(16);
             yf = minY + rand.nextInt(rangeY - 8) + 2;
             zf = z + rand.nextInt(16);
-            (new WorldFeatureMoonOre(BTBTA.cheeseore.id, 4, false)).generate(this.world, rand, xf, yf, zf);
+            (new WorldFeatureMoonOre(ModBlocks.cheeseore.id, 4, false)).generate(this.world, rand, xf, yf, zf);
         }
         for(max = 0; max < 50; ++max) {
             xf = x + rand.nextInt(16);
             yf = minY + rand.nextInt(rangeY - 8) + 4;
             zf = z + rand.nextInt(16);
-            (new WorldFeatureMoonOre(BTBTA.mooniron.id, 8, false)).generate(this.world, rand, xf, yf, zf);
+            (new WorldFeatureMoonOre(ModBlocks.mooniron.id, 8, false)).generate(this.world, rand, xf, yf, zf);
         }
         for(max = 0; max < 20; ++max) {
             xf = x + rand.nextInt(16);
             yf = minY + rand.nextInt(rangeY - 8);
             zf = z + rand.nextInt(16);
-            (new WorldFeatureMoonOre(BTBTA.moongold.id, 4, false)).generate(this.world, rand, xf, yf, zf);
+            (new WorldFeatureMoonOre(ModBlocks.moongold.id, 4, false)).generate(this.world, rand, xf, yf, zf);
         }
     }
 }

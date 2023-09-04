@@ -1,6 +1,6 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.client;
 
-import lexal.btb.world.WorldTypeMoon;
+import lexal.btb.world.worldType.WorldTypeMoon;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiIngame;

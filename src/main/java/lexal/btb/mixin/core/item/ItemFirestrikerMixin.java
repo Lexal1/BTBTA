@@ -1,6 +1,7 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.item;
 
 import lexal.btb.BTBTA;
+import lexal.btb.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
@@ -24,7 +25,7 @@ public class ItemFirestrikerMixin extends Item {
             at = @At("HEAD"), cancellable = true)
     private void lightTorches(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir){
         int idUsedOn = world.getBlockId(blockX,blockY,blockZ);
-        if (idUsedOn == BTBTA.torchUnlit.id){
+        if (idUsedOn == ModBlocks.torchUnlit.id){
             if (world.setBlockWithNotify(blockX, blockY, blockZ, Block.torchCoal.id)) {
                 world.playSoundEffect(SoundType.WORLD_SOUNDS, (double)blockX + 0.5, (double)blockY + 0.5, (double)blockZ + 0.5, "fire.ignite", 1.0f, itemRand.nextFloat() * 0.4f + 0.8f);
                 itemstack.damageItem(1, entityplayer);

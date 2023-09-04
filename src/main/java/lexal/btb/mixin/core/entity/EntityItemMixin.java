@@ -1,4 +1,4 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.entity;
 
 import com.mojang.nbt.CompoundTag;
 import net.minecraft.core.entity.Entity;

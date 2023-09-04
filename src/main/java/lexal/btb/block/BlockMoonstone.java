@@ -14,7 +14,7 @@ public class BlockMoonstone extends Block {
     }
     @Override
     public void onBlockAdded(World world, int i, int j, int k) {
-        if (world.getBlockId(i, j - 1, k) == BTBTA.ironplating.id && ((BlockPortal)BTBTA.portalmoon).tryToCreatePortal(world, i, j, k)) {
+        if (world.getBlockId(i, j - 1, k) == ModBlocks.ironplating.id && ((BlockPortal)ModBlocks.portalmoon).tryToCreatePortal(world, i, j, k)) {
         }
     }
 
@@ -24,7 +24,7 @@ public class BlockMoonstone extends Block {
             case WORLD:
             case EXPLOSION:
             case PROPER_TOOL:
-                return new ItemStack[]{new ItemStack(BTBTA.mooncobblestone)};
+                return new ItemStack[]{new ItemStack(ModBlocks.mooncobblestone)};
             case PICK_BLOCK:
             case SILK_TOUCH:
                 return new ItemStack[]{new ItemStack(this)};

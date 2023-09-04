@@ -1,6 +1,7 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.item;
 
 import lexal.btb.BTBTA;
+import lexal.btb.world.ModDimensions;
 import net.minecraft.core.HitResult;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -34,7 +35,7 @@ public class ItemBucketMixin {
         int x = result.x;
         int y = result.y;
         int z = result.z;
-        if (world.dimension == BTBTA.dimensionMoon && idToPlace == Block.fluidWaterFlowing.id){
+        if (world.dimension == ModDimensions.dimensionMoon && idToPlace == Block.fluidWaterFlowing.id){
             world.playSoundEffect(SoundType.WORLD_SOUNDS, (double)z + 0.5, (double)y + 0.5, (double)x + 0.5, "random.fizz", 0.5f, 2.6f + (world.rand.nextFloat() - world.rand.nextFloat()) * 0.8f);
             for (int l = 0; l < 8; ++l) {
                 world.spawnParticle("largesmoke", (double)x + Math.random(), (double)y + Math.random(), (double)z + Math.random(), 0.0, 0.0, 0.0);

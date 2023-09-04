@@ -1,6 +1,6 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core;
 
-import lexal.btb.world.WorldTypeMoon;
+import lexal.btb.world.worldType.WorldTypeMoon;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;

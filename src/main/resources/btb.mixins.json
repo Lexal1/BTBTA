@@ -4,19 +4,19 @@
   "package": "lexal.btb.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "BiomesMixin",
-    "BlockTorchMixin",
-    "EntityItemMixin",
-    "EntityLivingMixin",
-    "EntityPlayerMixin",
-    "EntitySkeletonMixin",
-    "GuiIngameMixin",
-    "ItemFirestrikerMixin",
-    "MinecraftMixin",
-    "RenderGlobalMixin",
-    "WorldMixin"
+    "core.BiomesMixin",
+    "core.block.BlockTorchMixin",
+    "core.entity.EntityItemMixin",
+    "core.entity.EntityLivingMixin",
+    "core.entity.EntityPlayerMixin",
+    "core.entity.EntitySkeletonMixin",
+    "core.item.ItemFirestrikerMixin",
+    "core.MinecraftMixin",
+    "core.WorldMixin"
   ],
   "client": [
+    "client.GuiIngameMixin",
+    "client.RenderGlobalMixin"
   ],
   "injectors": {
     "defaultRequire": 1

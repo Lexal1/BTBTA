@@ -1,6 +1,8 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.core.block;
 
 import lexal.btb.BTBTA;
+import lexal.btb.block.ModBlocks;
+import lexal.btb.world.ModDimensions;
 import net.minecraft.core.block.BlockTorch;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,8 +19,8 @@ public class BlockTorchMixin {
 
     @Inject(method = "randomDisplayTick(Lnet/minecraft/core/world/World;IIILjava/util/Random;)V", at = @At("HEAD"), cancellable = true)
     private void burnOut(World world, int x, int y, int z, Random rand, CallbackInfo ci){
-        if (world.dimension == BTBTA.dimensionMoon && rand.nextInt(5) == 0){
-            world.setBlockWithNotify(x,y,z, BTBTA.torchUnlit.id);
+        if (world.dimension == ModDimensions.dimensionMoon && rand.nextInt(5) == 0){
+            world.setBlockWithNotify(x,y,z, ModBlocks.torchUnlit.id);
             ci.cancel();
         }
     }

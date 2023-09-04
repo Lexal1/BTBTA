@@ -1,6 +1,7 @@
 package lexal.btb.block;
 
 import lexal.btb.BTBTA;
+import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.BlockLeavesBase;
@@ -19,9 +20,9 @@ public class BlockLayerPancake extends BlockLayerBase {
     @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         if (dropCause == EnumDropCause.PICK_BLOCK ) {
-            return new ItemStack[]{new ItemStack(BTBTA.pancake)}; // Get singular pancake from pick block
+            return new ItemStack[]{new ItemStack(ModItems.pancake)}; // Get singular pancake from pick block
         }
-        return new ItemStack[]{new ItemStack(BTBTA.pancake, meta+1)}; // Return all stacked pancakes
+        return new ItemStack[]{new ItemStack(ModItems.pancake, meta+1)}; // Return all stacked pancakes
     }
     @Override
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
