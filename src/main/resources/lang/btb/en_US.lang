@@ -23,6 +23,8 @@ tile.btb.cheeseore.name=Cheese Ore
 tile.btb.cheeseore.desc=I knew it!
 tile.btb.moonsnow.name=Surface Moon Dust
 tile.btb.moonsnow.desc=A great portal conductor!
+tile.btb.pancakestack.name=Pancake Stack
+tile.btb.pancakestack.desc=I could write a song called "stack 'em to the heavens"!
 
 #space armor
 item.btb.armor.helmet.space.name=Space Helmet
@@ -51,6 +53,8 @@ item.btb.burger.name=Cheeseburger
 item.btb.burger.desc=Have it your way!
 item.btb.moondust.name=Moon Dust
 item.btb.moondust.desc=Turns out, ground up moon rocks are pure poison.
+item.btb.pancake.name=Pancake
+item.btb.pancake.desc=Tastes great with syrup!
 
 #misc
 dimension.moon.name=Moon
