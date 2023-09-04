@@ -25,6 +25,8 @@ tile.btb.moonsnow.name=Surface Moon Dust
 tile.btb.moonsnow.desc=A great portal conductor!
 tile.btb.pancakestack.name=Pancake Stack
 tile.btb.pancakestack.desc=I could write a song called "stack 'em to the heavens"!
+tile.btb.torch.unlit.name=Extinguished Torch
+tile.btb.torch.unlit.desc=Does not help light the way.
 
 #space armor
 item.btb.armor.helmet.space.name=Space Helmet
@@ -59,7 +61,7 @@ item.btb.pancake.desc=Tastes great with syrup!
 #misc
 dimension.moon.name=Moon
 worldType.moon.default.name=Moon
-worldType.moon.default.desc=Start on the Moon,\n an inhospitable desert orbiting the Overworld.
+worldType.moon.default.desc=Start on the Moon,\nan inhospitable desert\norbiting the Overworld.
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

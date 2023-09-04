@@ -88,12 +88,10 @@ public class ModBlocks {
     public static final Block layerPancake = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
             .setResistance(0.0f)
-            .setTopTexture("pancake_top.png")
+            .setTopBottomTexture("pancake_top.png")
             .setSideTextures("pancake_side.png")
-            .setBottomTexture("pancake_bottom.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.cake));
-
 
     public static final Block torchUnlit = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
