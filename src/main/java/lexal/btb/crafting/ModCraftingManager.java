@@ -41,8 +41,8 @@ public class ModCraftingManager {
                 'B', Block.blockGold,
                 'I', Item.ingotGold});
         RecipeHelper.Crafting.createRecipe(ModBlocks.glowstoneTorch, 3, new Object[]{
-                "C",
-                "L",
+                "G",
+                "S",
                 'S', Item.stick,
                 'G', Item.dustGlowstone});
 

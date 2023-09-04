@@ -100,10 +100,9 @@ public class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(2)) // Torch model
             .build(new BlockTorchUnlit("torch.unlit", UtilIdRegistrar.nextIdBlock())).withDisabledNeighborNotifyOnMetadataChange();
     public static final Block glowstoneTorch = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(0.0f)
-            .setResistance(0.0f)
+            .setHardness(0)
             .setTextures("glowstone_torch.png")
-            .setLuminance(8)
+            .setLuminance(10)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
