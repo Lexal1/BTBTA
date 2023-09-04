@@ -1,15 +1,13 @@
 package lexal.btb;
 
-import lexal.btb.block.BlockCatwalk;
-import lexal.btb.block.BlockCheeseOre;
-import lexal.btb.block.BlockCheeseWheel;
-import lexal.btb.block.BlockMoonstone;
+import lexal.btb.block.*;
 import lexal.btb.entity.EntityPenguin;
 import lexal.btb.entity.EntitySpaceSkeleton;
 import lexal.btb.entity.EntitySpaceZombie;
 import lexal.btb.entity.renderer.ModelPenguin;
 import lexal.btb.entity.renderer.PenguinRenderer;
 import lexal.btb.entity.renderer.SpaceZombieRenderer;
+import lexal.btb.item.ItemPlacableLayer;
 import lexal.btb.world.BiomeMoon;
 import lexal.btb.world.WorldTypeMoonDefault;
 import net.fabricmc.api.ModInitializer;
@@ -24,6 +22,8 @@ import net.minecraft.core.entity.monster.EntitySkeleton;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.ItemFood;
+import net.minecraft.core.item.ItemPlaceable;
+import net.minecraft.core.item.block.ItemBlockLayer;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.biome.Biome;
@@ -33,9 +33,12 @@ import net.minecraft.core.world.type.WorldTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.*;
+import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
+import useless.prismaticlibe.helper.SoundHelper;
 
 public class BTBTA implements ModInitializer {
+
     public static int blockIdTacker = 3000;
     public static int itemIdTacker = 20000;
     public static final String MODID = "btb";
@@ -70,7 +73,7 @@ public class BTBTA implements ModInitializer {
             .setHardness(1.5f)
             .setResistance(1.5f)
             .setTopBottomTexture(7,19)
-            .setSides("catwalk_side.png")
+            .setSideTextures("catwalk_side.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockCatwalk("catwalk", blockIdTacker++,Material.metal));
     public static final Block mooncobblestone = new BlockBuilder(MODID)
@@ -100,8 +103,27 @@ public class BTBTA implements ModInitializer {
             .setTextures("moon_stone_gold.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.CAVES_CUT_THROUGH)
             .build(new BlockOreGold("moongold", blockIdTacker++,Material.stone));
+    public static final Block moonsnow = new BlockBuilder(MODID)
+            .setHardness(0.5f)
+            .setResistance(0.0f)
+            .setTextures("moon_turf.png")
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES)
+            .build(new BlockLayerSnow("moonsnow",blockIdTacker++,Material.stone));
 
+    public static final Block layerPancake = new BlockBuilder(MODID)
+            .setHardness(0.5f)
+            .setResistance(0.0f)
+            .setTopTexture("pancake_top.png")
+            .setSideTextures("pancake_side.png")
+            .setBottomTexture("pancake_bottom.png")
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockLayerPancake("layer.pancake",blockIdTacker++, Material.cake));
 
+    static {
+        Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
+        ((BlockLayerBase)moonsnow).setFullBlockID(moonturf.id);
+        Item.itemsList[moonsnow.id] = new ItemBlockLayer(moonsnow);
+    }
 
 
 
@@ -120,6 +142,8 @@ public class BTBTA implements ModInitializer {
     //items
     public static final Item cheese = ItemHelper.createItem(MODID,new ItemFood("cheese",itemIdTacker++,5,false),"cheese","cheese.png");
     public static final Item burger = ItemHelper.createItem(MODID,new ItemFood("burger",itemIdTacker++,20,true),"burger","hamburger.png");
+    public static final Item moondust = ItemHelper.createItem(MODID,new Item(MODID,itemIdTacker++),"moondust","moondust.png");
+    public static final Item pancake = ItemHelper.createItem(MODID,new ItemPlacableLayer(MODID, itemIdTacker++, layerPancake, false, false),"pancake","pancake.png");
 
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
 
@@ -142,7 +166,7 @@ public class BTBTA implements ModInitializer {
     public static final Biome biomeMoon = Biomes.register("btb:moon.moon", new BiomeMoon());
     static
     {
-        biomeMoon.topBlock = (short) moonturf.id;
+        biomeMoon.topBlock = (short) moonsnow.id;
         biomeMoon.fillerBlock = (short) moonturf.id;
     }
     public static final Dimension dimensionMoon = new Dimension("moon", Dimension.overworld, 3f, BTBTA.portalmoon.id).setDefaultWorldType(worldTypeMoon);
@@ -249,8 +273,7 @@ public class BTBTA implements ModInitializer {
                 "CCC",
                 'B', Block.cobbleBasalt,
                 'C', Block.cobbleStone});
-
-
+        RecipeHelper.Crafting.createShapelessRecipe(BTBTA.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
         LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
 
         EntityHelper.createEntity(EntitySpaceZombie.class, new SpaceZombieRenderer(new ModelZombie(), 1), 900, "spaceZombie");
@@ -260,6 +283,6 @@ public class BTBTA implements ModInitializer {
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
         }
-        LOGGER.info("btbta loaded all entities successfully!"); //put recipes before this point
+        LOGGER.info("btbta loaded all entities successfully!"); //put entities before this point
     }
 }

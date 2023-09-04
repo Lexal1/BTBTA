@@ -42,7 +42,7 @@ public class EntityPlayerMixin extends EntityLiving {
 
     @Inject(method = "tick()V", at = @At("TAIL"))
     private void moonThreshold(CallbackInfo ci){
-        if (this.y > this.world.getWorldType().getMaxY() && !world.isDaytime()){
+        if (this.y > this.world.getWorldType().getMaxY()+5 && !world.isDaytime()){
 
             int targetDim = BTBTA.dimensionMoon.id;
             Minecraft mc = Minecraft.getMinecraft(this);

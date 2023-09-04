@@ -11,8 +11,8 @@ public class BiomeMoon extends Biome {
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
-        this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceSkeleton.class, 10));
-        this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceZombie.class, 10));
+        this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceSkeleton.class, 7));
+        this.spawnableMonsterList.add(new SpawnListEntry(EntitySpaceZombie.class, 5));
     }
     @Override
     public int getSkyColor(float temperature) {

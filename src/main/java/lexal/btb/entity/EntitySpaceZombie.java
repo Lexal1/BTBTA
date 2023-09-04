@@ -16,14 +16,7 @@ public class EntitySpaceZombie extends EntityArmoredZombie {
         this.isHoldingSword = rand.nextInt(3) == 0;
         this.skinName = "zombie";
         this.health = 50;
-        this.attackStrength = this.isHoldingSword ? 5 : 2;
-    }
-    public EntitySpaceZombie(World world, boolean isHoldingSword) {
-        super(world);
-        this.isHoldingSword = isHoldingSword;
-        this.skinName = "zombie";
-        this.health = 50;
-        this.attackStrength = this.isHoldingSword ? 5 : 2;
+        this.attackStrength = this.isHoldingSword ? 5 : 3;
     }
 
     @Override

@@ -31,7 +31,7 @@ public class ChunkDecoratorMoon implements ChunkDecorator {
         int zf;
         for(max = 0; max < 25; ++max) {
             xf = x + rand.nextInt(16);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
+            yf = minY + rand.nextInt(rangeY - 8) + 2;
             zf = z + rand.nextInt(16);
             (new WorldFeatureMoonOre(BTBTA.cheeseore.id, 4, false)).generate(this.world, rand, xf, yf, zf);
         }
@@ -43,7 +43,7 @@ public class ChunkDecoratorMoon implements ChunkDecorator {
         }
         for(max = 0; max < 20; ++max) {
             xf = x + rand.nextInt(16);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
+            yf = minY + rand.nextInt(rangeY - 8);
             zf = z + rand.nextInt(16);
             (new WorldFeatureMoonOre(BTBTA.moongold.id, 4, false)).generate(this.world, rand, xf, yf, zf);
         }
