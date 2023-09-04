@@ -13,13 +13,8 @@ public class ModCraftingManager {
 
     public static void register() {
         //item recipes
-        RecipeHelper.Crafting.createRecipe(ModItems.burger, 1, new Object[]{
-                " B ",
-                "CSC",
-                " B ",
-                'B', Item.foodBread,
-                'S', Item.foodPorkchopCooked,
-                'C', ModItems.cheese});
+
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.burger, 1, new Object[]{Item.foodPorkchopCooked, Item.foodBread, Item.foodBread, ModItems.cheese});
 
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
 
@@ -45,13 +40,19 @@ public class ModCraftingManager {
                 "I I",
                 'B', Block.blockGold,
                 'I', Item.ingotGold});
+        RecipeHelper.Crafting.createRecipe(ModBlocks.glowstoneTorch, 3, new Object[]{
+                "C",
+                "L",
+                'S', Item.stick,
+                'G', Item.dustGlowstone});
 
-        RecipeHelper.Crafting.createRecipe(ModBlocks.moonstone, 1, new Object[]{
+        RecipeHelper.Crafting.createRecipe(ModBlocks.moonstone, 1, new Object[]{ //TEMP RECIPE! REMOVE WHEN MOON TRAVEL FIXED
                 "CCC",
                 "CBC",
                 "CCC",
                 'B', Block.cobbleBasalt,
                 'C', Block.cobbleStone});
+
 
         //armor recipes
         RecipeHelper.Crafting.createRecipe(ModItems.armorHelmetSpace, 1, new Object[]{
