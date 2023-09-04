@@ -9,6 +9,8 @@
     "core.WorldMixin",
     "core.block.BlockFluidFlowingMixin",
     "core.block.BlockTorchMixin",
+    "core.entity.EntityArrowMixin",
+    "core.entity.EntityCannonBallMixin",
     "core.entity.EntityItemMixin",
     "core.entity.EntityLivingMixin",
     "core.entity.EntityPlayerMixin",
