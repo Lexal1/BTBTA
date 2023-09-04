@@ -5,14 +5,15 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "core.BiomesMixin",
+    "core.MinecraftMixin",
+    "core.WorldMixin",
+    "core.block.BlockFluidFlowingMixin",
     "core.block.BlockTorchMixin",
     "core.entity.EntityItemMixin",
     "core.entity.EntityLivingMixin",
     "core.entity.EntityPlayerMixin",
     "core.entity.EntitySkeletonMixin",
-    "core.item.ItemFirestrikerMixin",
-    "core.MinecraftMixin",
-    "core.WorldMixin"
+    "core.item.ItemFirestrikerMixin"
   ],
   "client": [
     "client.GuiIngameMixin",
