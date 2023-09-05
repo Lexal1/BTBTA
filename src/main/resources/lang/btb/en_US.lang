@@ -39,6 +39,9 @@ item.btb.armor.leggings.space.name=Space Leggings
 item.btb.armor.leggings.space.desc=Look who's on the moon now, Mr. Fancy Pants.
 item.btb.armor.boots.space.name=Space Boots
 item.btb.armor.boots.space.desc=One giant leap for mankind!
+#crash armor
+item.btb.armor.boots.crash.name=Crash Landing Boots
+item.btb.armor.boots.crash.desc=Spongy but fragile
 
 #cloth armor
 item.btb.armor.helmet.clothes.name=Cloth Hood
