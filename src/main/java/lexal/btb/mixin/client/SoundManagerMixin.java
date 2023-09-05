@@ -42,6 +42,9 @@ public class SoundManagerMixin {
         if (Keyboard.isKeyDown(Keyboard.KEY_K) && Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)){ // Skip Song
             sndSystem.stop("BgMusic");
         }
+        if (Keyboard.isKeyDown(Keyboard.KEY_N) && Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)){ // Skip Song
+            ticksBeforeMusic = 0;
+        }
         Minecraft mc = Minecraft.getMinecraft(this);
         if (mc.theWorld.dimension == ModDimensions.dimensionMoon){
             if (!loaded || sndSystem == null || SoundTypeHelper.getEffectiveVolume(SoundType.MUSIC, options) == 0.0f) {
