@@ -47,12 +47,11 @@ public class EntityPlayerMixin extends EntityLiving {
         if (this.y > this.world.getWorldType().getMaxY()+5 && !world.isDaytime()){
 
             int targetDim = ModDimensions.dimensionMoon.id;
-            Minecraft mc = Minecraft.getMinecraft(this);
 
             if (this.dimension == targetDim) {
-                mc.usePortal(0);
+                ModDimensions.dimensionShift(0);
             } else {
-                mc.usePortal(targetDim);
+                ModDimensions.dimensionShift(targetDim);
             }
         }
     }
