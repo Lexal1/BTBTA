@@ -19,7 +19,8 @@
   ],
   "client": [
     "client.GuiIngameMixin",
-    "client.RenderGlobalMixin"
+    "client.RenderGlobalMixin",
+    "client.SoundManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
