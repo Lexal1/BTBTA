@@ -7,8 +7,10 @@ import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockLayer;
+import org.lwjgl.input.Keyboard;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public class ModBlocks {
@@ -91,7 +93,7 @@ public class ModBlocks {
             .setTopBottomTexture("pancake_top.png")
             .setSideTextures("pancake_side.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.cake));
+            .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.cloth));
 
     public static final Block torchUnlit = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
@@ -102,7 +104,7 @@ public class ModBlocks {
     public static final Block glowstoneTorch = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
             .setTextures("glowstone_torch.png")
-            .setLuminance(10)
+            .setLuminance(15)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
@@ -115,4 +117,5 @@ public class ModBlocks {
     }
 
     public static void register() {}
+
 }

@@ -30,6 +30,9 @@ public class ModItems {
     public static final Item moondust = ItemHelper.createItem(BTBTA.MOD_ID, new Item("dust.moon", UtilIdRegistrar.nextIdItem()),"moondust","moondust.png");
     public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false),"pancake","pancake.png").setMaxStackSize(16);
 
+    public static final ArmorMaterial crashlandingsuit = ArmorHelper.createArmorMaterial("space",8,0.0f,0.0f,0.0f,500.0f);
+    public static final Item armorBootsCrash = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Crash Boots", UtilIdRegistrar.nextIdItem(), crashlandingsuit, 3), "armor.boots.crash", "crash_landing_boots.png");
+
     //spawn eggs
     public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");
     public static Item spaceZombieSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.spacezombie", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.spacezombie", "unknown.png");

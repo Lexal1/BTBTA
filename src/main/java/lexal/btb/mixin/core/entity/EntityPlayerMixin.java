@@ -36,7 +36,7 @@ public class EntityPlayerMixin extends EntityLiving {
                 headSlotItem!= null && headSlotItem.getItem() == ModItems.armorHelmetSpace
                 && chestSlotItem!= null && chestSlotItem.getItem() == ModItems.armorChestplateSpace
                 && legsSlotItem!= null && legsSlotItem.getItem() == ModItems.armorLeggingsSpace
-                && bootsSlotItem!= null && bootsSlotItem.getItem() == ModItems.armorBootsSpace
+                && bootsSlotItem!= null && (bootsSlotItem.getItem() == ModItems.armorBootsSpace || bootsSlotItem.getItem() == ModItems.armorBootsCrash)
         ){
             cir.setReturnValue(true); // Don't suffocate with helmet on
         }
@@ -47,12 +47,11 @@ public class EntityPlayerMixin extends EntityLiving {
         if (this.y > this.world.getWorldType().getMaxY()+5 && !world.isDaytime()){
 
             int targetDim = ModDimensions.dimensionMoon.id;
-            Minecraft mc = Minecraft.getMinecraft(this);
 
             if (this.dimension == targetDim) {
-                mc.usePortal(0);
+                ModDimensions.dimensionShift(0);
             } else {
-                mc.usePortal(targetDim);
+                ModDimensions.dimensionShift(targetDim);
             }
         }
     }

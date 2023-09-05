@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ConfigHandler;
 import useless.prismaticlibe.helper.ModCheckHelper;
+import useless.prismaticlibe.helper.SoundHelper;
 
 import java.util.Properties;
 
@@ -47,6 +48,12 @@ public class BTBTA implements ModInitializer {
         ModDimensions.register();
 
         ModEntities.register();
+
+        SoundHelper.addMusic(MOD_ID, "moon0.wav");
+        SoundHelper.addMusic(MOD_ID, "moon1.wav");
+        SoundHelper.addMusic(MOD_ID, "moon2.wav");
+        SoundHelper.addMusic(MOD_ID, "moon3.wav");
+        SoundHelper.addMusic(MOD_ID, "moon4.wav");
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;

@@ -107,6 +107,12 @@ public class ModCraftingManager {
                 "L L",
                 'L', Item.leather,
                 'C', Item.cloth});
+        RecipeHelper.Crafting.createRecipe(ModItems.armorBootsCrash, 1, new Object[]{
+                "B",
+                "S",
+                "S",
+                'B', ModItems.armorBootsSpace,
+                'S', Block.spongeDry});
 
         BTBTA.LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
     }

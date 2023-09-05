@@ -1,9 +1,7 @@
 package lexal.btb;
 
-import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
 
-import java.util.Arrays;
 
 public class UtilIdRegistrar {
     private static int curr_item_id = 0;
@@ -37,7 +35,7 @@ public class UtilIdRegistrar {
     }
     private static void throwException(int id){
         if (usedIds[id]) { // If id is already used then throw exception
-            throw new RuntimeException("Tried to use id: " + id + " while its already being used by " + Item.itemsList[id] + "!");
+            throw new RuntimeException("Tried to use id: " + id + " while its already being used by " + Item.itemsList[id].getKey() + "!");
         }
         else {
             usedIds[id] = true;
