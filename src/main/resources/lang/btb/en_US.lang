@@ -29,6 +29,10 @@ tile.btb.torch.unlit.name=Extinguished Torch
 tile.btb.torch.unlit.desc=Does not help light the way.
 tile.btb.torch.glowstone.name=Glowstone Torch
 tile.btb.torch.glowstone.desc=Helps light the way in less-than-ideal atmospheres.
+tile.btb.whitetile.name=White Tile
+tile.btb.whitetile.desc=A decorative white tile.
+tile.btb.blacktile.name=Black Tile
+tile.btb.blacktile.desc=A decorative black tile.
 
 #space armor
 item.btb.armor.helmet.space.name=Space Helmet
@@ -41,7 +45,7 @@ item.btb.armor.boots.space.name=Space Boots
 item.btb.armor.boots.space.desc=One giant leap for mankind!
 #crash armor
 item.btb.armor.boots.crash.name=Crash Landing Boots
-item.btb.armor.boots.crash.desc=Spongy but fragile
+item.btb.armor.boots.crash.desc=Spongy but fragile.
 
 #cloth armor
 item.btb.armor.helmet.clothes.name=Cloth Hood

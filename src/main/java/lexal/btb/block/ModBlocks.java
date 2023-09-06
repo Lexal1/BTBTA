@@ -56,6 +56,7 @@ public class ModBlocks {
     public static final Block cheesewheel = new BlockBuilder(BTBTA.MOD_ID)
             .setTextures("cheese_block.png")
             .build(new BlockCheeseWheel("cheesewheel", UtilIdRegistrar.nextIdBlock()));
+
     public static final Block cheeseore = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.5f)
             .setResistance(2.5f)
@@ -108,6 +109,19 @@ public class ModBlocks {
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
+
+    public static final Block whitetile = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.0f)
+            .setResistance(2.0f)
+            .setTextures("white_tile.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("whitetile",UtilIdRegistrar.nextIdBlock(),Material.cloth));
+    public static final Block blacktile = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(2.5f)
+            .setTextures("black_tile.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("blacktile",UtilIdRegistrar.nextIdBlock(),Material.metal));
 
 
     static {
