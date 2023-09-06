@@ -104,7 +104,7 @@ public class ModBlocks {
     public static final Block glowstoneTorch = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
             .setTextures("glowstone_torch.png")
-            .setLuminance(15)
+            .setLuminance(8)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
