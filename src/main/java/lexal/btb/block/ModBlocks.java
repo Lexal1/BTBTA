@@ -2,15 +2,14 @@ package lexal.btb.block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
+import lexal.btb.item.ItemGasLayer;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockLayer;
-import org.lwjgl.input.Keyboard;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public class ModBlocks {
@@ -79,7 +78,7 @@ public class ModBlocks {
             .setResistance(0.0f)
             .setTextures("moon_turf.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES, BlockTags.BROKEN_BY_FLUIDS)
-            .build(new BlockLayerSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.stone));
+            .build(new BlockLayerSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.topSnow));
 
     public static final Block portalmoon = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(-1.0f)
@@ -108,12 +107,24 @@ public class ModBlocks {
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
+    public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(13,12)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
+            .build(new BlockGasFlowing("gas.air.flowing", UtilIdRegistrar.nextIdBlock()));
+    public static final Block gasAirStill = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(13,12)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
+            .build(new BlockGasStill("gas.air.still", UtilIdRegistrar.nextIdBlock()));
 
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
         ((BlockLayerBase)moonsnow).setFullBlockID(moonturf.id);
         Item.itemsList[moonsnow.id] = new ItemBlockLayer(moonsnow);
+        Item.itemsList[gasAirStill.id] = new ItemGasLayer(gasAirStill);
+        Item.itemsList[gasAirFlowing.id] = new ItemGasLayer(gasAirFlowing);
     }
 
     public static void register() {}

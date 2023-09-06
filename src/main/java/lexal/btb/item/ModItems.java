@@ -32,6 +32,7 @@ public class ModItems {
 
     public static final ArmorMaterial crashlandingsuit = ArmorHelper.createArmorMaterial("space",8,0.0f,0.0f,0.0f,500.0f);
     public static final Item armorBootsCrash = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Crash Boots", UtilIdRegistrar.nextIdItem(), crashlandingsuit, 3), "armor.boots.crash", "crash_landing_boots.png");
+    public static final Item bucketAir = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketGas("Air Bucket", UtilIdRegistrar.nextIdItem(), ModBlocks.gasAirFlowing.id, 16), "bucket.air").setIconCoord(10,4);
 
     //spawn eggs
     public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");
