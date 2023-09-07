@@ -8,6 +8,8 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemArmor;
 import net.minecraft.core.item.ItemFood;
 import net.minecraft.core.item.material.ArmorMaterial;
+import net.minecraft.core.item.material.ToolMaterial;
+import net.minecraft.core.item.tool.*;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 
@@ -25,6 +27,7 @@ public class ModItems {
     public static final Item armorChestplateCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Shirt", UtilIdRegistrar.nextIdItem(), armorclothing, 1), "armor.chestplate.clothes", "cloth_shirt.png");
     public static final Item armorLeggingsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Pants", UtilIdRegistrar.nextIdItem(), armorclothing, 2), "armor.leggings.clothes", "cloth_pants.png");
     public static final Item armorBootsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Shoes", UtilIdRegistrar.nextIdItem(), armorclothing, 3), "armor.boots.clothes", "cloth_boots.png");
+
     //items
     public static final Item cheese = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("cheese",UtilIdRegistrar.nextIdItem(),5,false),"cheese","cheese.png");
     public static final Item burger = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood("burger",UtilIdRegistrar.nextIdItem(),20,true),"burger","hamburger.png");
@@ -34,6 +37,19 @@ public class ModItems {
     public static final ArmorMaterial crashlandingsuit = ArmorHelper.createArmorMaterial("space",8,0.0f,0.0f,0.0f,500.0f);
     public static final Item armorBootsCrash = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Crash Boots", UtilIdRegistrar.nextIdItem(), crashlandingsuit, 3), "armor.boots.crash", "crash_landing_boots.png").withTags(ModItemTags.breathable);
     public static final Item bucketAir = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketGas("Air Bucket", UtilIdRegistrar.nextIdItem(), ModBlocks.gasAirFlowing.id, 255), "bucket.air").setIconCoord(10,4);
+
+    //tools
+    public static final ToolMaterial starsteel = new ToolMaterial().setDurability(5068).setEfficiency(10f, 20f).setMiningLevel(3).setBlockHitDelay(5).setDamage(5);
+    public static final Item toolSwordStar = ItemHelper.createItem(BTBTA.MOD_ID,new ItemToolSword("starsteelsword",UtilIdRegistrar.nextIdItem(), starsteel),"tool.sword.star","meteor_sword.png");
+    public static final Item toolPickaxeStar = ItemHelper.createItem(BTBTA.MOD_ID,new ItemToolPickaxe("starsteelpick",UtilIdRegistrar.nextIdItem(), starsteel),"tool.pickaxe.star","meteor_pickaxe.png");
+    public static final Item toolAxeStar = ItemHelper.createItem(BTBTA.MOD_ID,new ItemToolAxe("starsteelaxe",UtilIdRegistrar.nextIdItem(), starsteel),"tool.axe.star","meteor_axe.png");
+    public static final Item toolShovelStar = ItemHelper.createItem(BTBTA.MOD_ID,new ItemToolShovel("starsteelshovel",UtilIdRegistrar.nextIdItem(), starsteel),"tool.shovel.star","meteor_shovel.png");
+    public static final Item toolHoeStar = ItemHelper.createItem(BTBTA.MOD_ID,new ItemToolHoe("starsteelhoe",UtilIdRegistrar.nextIdItem(), starsteel),"tool.hoe.star","meteor_hoe.png");
+
+
+
+
+
 
     //spawn eggs
     public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");
