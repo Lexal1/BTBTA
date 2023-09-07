@@ -2,15 +2,14 @@ package lexal.btb.block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
+import lexal.btb.item.ItemGasLayer;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockLayer;
-import org.lwjgl.input.Keyboard;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public class ModBlocks {
@@ -79,8 +78,8 @@ public class ModBlocks {
             .setHardness(0.5f)
             .setResistance(0.0f)
             .setTextures("moon_turf.png")
-            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES, BlockTags.BROKEN_BY_FLUIDS)
-            .build(new BlockLayerSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.stone));
+            .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES, BlockTags.BROKEN_BY_FLUIDS, ModBlockTags.GAS_DESTROYS)
+            .build(new BlockLayerSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.topSnow));
 
     public static final Block portalmoon = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(-1.0f)
@@ -109,7 +108,6 @@ public class ModBlocks {
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PREVENT_MOB_SPAWNS)
             .setBlockModel(new BlockModelRenderBlocks(2))
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
-
     public static final Block whitetile = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.0f)
             .setResistance(2.0f)
@@ -122,12 +120,49 @@ public class ModBlocks {
             .setTextures("black_tile.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("blacktile",UtilIdRegistrar.nextIdBlock(),Material.metal));
+    public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(6/*-2*/,12/*-1*/)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES, ModBlockTags.IS_GAS)
+            .build(new BlockGasFlowing("gas.air.flowing", UtilIdRegistrar.nextIdBlock()));
+    public static final Block gasAirStill = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(1/*+3*/,3/*+8*/)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES, ModBlockTags.IS_GAS)
+            .build(new BlockGasStill("gas.air.still", UtilIdRegistrar.nextIdBlock()));
+    public static final Block machinePressurizerIdle = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(3.5f)
+            .setNorthTexture("pressurizer_idle.png")
+            .setSouthTexture("iron_plating.png")
+            .setEastTexture("iron_plating.png")
+            .setWestTexture("iron_plating.png")
+            .setTopTexture("iron_plating.png")
+            .setBottomTexture("iron_plating.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockMachinePressurizer("machine.pressurizer.idle", UtilIdRegistrar.nextIdBlock(), false) {});
+    public static final Block machinePressurizerActive = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(3.5f)
+            .setNorthTexture("pressurizer_active.png")
+            .setSouthTexture("iron_plating.png")
+            .setEastTexture("iron_plating.png")
+            .setWestTexture("iron_plating.png")
+            .setTopTexture("iron_plating.png")
+            .setBottomTexture("iron_plating.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockMachinePressurizer("machine.pressurizer.active", UtilIdRegistrar.nextIdBlock(), true) {});
+    public static final Block gasSponge = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(0,3)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS)
+            .build(new BlockGasSponge("sponge.gas", UtilIdRegistrar.nextIdBlock()));
 
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
         ((BlockLayerBase)moonsnow).setFullBlockID(moonturf.id);
         Item.itemsList[moonsnow.id] = new ItemBlockLayer(moonsnow);
+        Item.itemsList[gasAirStill.id] = new ItemGasLayer(gasAirStill);
+        Item.itemsList[gasAirFlowing.id] = new ItemGasLayer(gasAirFlowing);
     }
 
     public static void register() {}

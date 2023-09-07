@@ -1,5 +1,6 @@
-package lexal.btb;
+package lexal.btb.modmodule;
 
+import lexal.btb.BTBTA;
 import lexal.btb.item.ModItems;
 import turniplabs.halplibe.helper.ItemHelper;
 import useless.spawneggs.ItemSpawnEgg;

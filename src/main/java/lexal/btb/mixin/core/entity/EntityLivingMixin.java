@@ -1,6 +1,7 @@
 package lexal.btb.mixin.core.entity;
 
 import com.mojang.nbt.CompoundTag;
+import lexal.btb.block.ModMaterials;
 import lexal.btb.world.IGravity;
 import lexal.btb.world.worldType.WorldTypeMoon;
 import net.minecraft.core.block.material.Material;
@@ -25,6 +26,9 @@ public class EntityLivingMixin extends Entity {
     @Redirect(method = "baseTick()V",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/EntityLiving;isUnderLiquid(Lnet/minecraft/core/block/material/Material;)Z"))
     public boolean moonSuffocation(EntityLiving living, Material material){
+        if (living.isUnderLiquid(ModMaterials.gas)){
+            return false;
+        }
         return (living.isUnderLiquid(material) || (living.world.getWorldType() instanceof WorldTypeMoon)); // Suffocate underwater or on moon
     }
 
