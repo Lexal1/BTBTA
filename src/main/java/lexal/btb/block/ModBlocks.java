@@ -109,12 +109,12 @@ public class ModBlocks {
             .build(new BlockTorch("torch.glowstone",UtilIdRegistrar.nextIdBlock()));
     public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
-            .setTextures(13,12)
+            .setTextures(6,12)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
             .build(new BlockGasFlowing("gas.air.flowing", UtilIdRegistrar.nextIdBlock()));
     public static final Block gasAirStill = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
-            .setTextures(13,12)
+            .setTextures(1,3)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
             .build(new BlockGasStill("gas.air.still", UtilIdRegistrar.nextIdBlock()));
 

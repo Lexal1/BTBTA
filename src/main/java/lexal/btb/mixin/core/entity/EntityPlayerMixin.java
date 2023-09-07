@@ -1,5 +1,6 @@
 package lexal.btb.mixin.core.entity;
 
+import lexal.btb.ModMaterials;
 import lexal.btb.item.ModItems;
 import lexal.btb.world.ModDimensions;
 import net.minecraft.client.Minecraft;
@@ -28,6 +29,9 @@ public class EntityPlayerMixin extends EntityLiving {
     @Inject(method = "canBreatheUnderwater()Z", at = @At("HEAD"), cancellable = true)
     public void breathingMixin(CallbackInfoReturnable<Boolean> cir) {
         EntityPlayer player = (EntityPlayer)(Object)this;
+        if (player.isUnderLiquid(ModMaterials.gas)){
+            cir.setReturnValue(true);
+        }
         ItemStack headSlotItem = player.inventory.armorItemInSlot(3);
         ItemStack chestSlotItem = player.inventory.armorItemInSlot(2);
         ItemStack legsSlotItem = player.inventory.armorItemInSlot(1);

@@ -1,11 +1,7 @@
 package lexal.btb.block;
 
 import lexal.btb.ModMaterials;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFluid;
-import net.minecraft.core.block.BlockPortal;
-import net.minecraft.core.block.material.Material;
-import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.WorldSource;
 
@@ -15,7 +11,7 @@ public class BlockGas extends BlockFluid {
     }
     @Override
     public int tickRate() {
-        return 5;
+        return 0;
     }
     @Override
     public boolean renderAsNormalBlock() {
