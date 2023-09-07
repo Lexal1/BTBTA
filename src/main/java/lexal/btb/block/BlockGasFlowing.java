@@ -84,8 +84,6 @@ public class BlockGasFlowing extends BlockGas {
         int lowestIndex = getIndexOfMin(horizontalAdjacentAir);
         if (lowestIndex == -1) {return false;}
         if (horizontalAdjacentAir[lowestIndex] + 1 < airAmount){
-            BTBTA.LOGGER.info(String.valueOf(lowestIndex));
-            BTBTA.LOGGER.info(String.valueOf(horizontalAdjacentAir[lowestIndex]));
             int x2 = x;
             int z2 = z;
             if (lowestIndex == 0){
@@ -131,15 +129,13 @@ public class BlockGasFlowing extends BlockGas {
                 adjacentAir[i] = adjacentBlocksMeta[i] + 1;
                 continue;
             }
-            if (adjacentBlocksIds[i] == 0){
+            if (adjacentBlocksIds[i] == 0 || Block.blocksList[adjacentBlocksIds[i]].hasTag(ModBlockTags.GAS_DESTROYS)){
                 adjacentAir[i] = 0;
                 continue;
             }
             adjacentAir[i] = -1;
         }
         System.arraycopy(adjacentAir, 0, horizontalAdjacentAir, 0, 4);
-        BTBTA.LOGGER.info(Arrays.toString(adjacentAir));
-        BTBTA.LOGGER.info(Arrays.toString(horizontalAdjacentAir));
     }
     private int getIndexOfMin(int[] arr){
         int minVal = -1;// = arr[0]; // take first as minVal

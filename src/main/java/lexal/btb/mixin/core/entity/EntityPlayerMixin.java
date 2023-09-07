@@ -1,21 +1,18 @@
 package lexal.btb.mixin.core.entity;
 
-import lexal.btb.ModMaterials;
+import lexal.btb.block.ModMaterials;
 import lexal.btb.item.ModItems;
 import lexal.btb.world.ModDimensions;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import lexal.btb.BTBTA;
 
 @Mixin(value = EntityPlayer.class, remap = false)
 public class EntityPlayerMixin extends EntityLiving {

@@ -4,6 +4,7 @@ import lexal.btb.block.*;
 import lexal.btb.crafting.ModCraftingManager;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
+import lexal.btb.modmodule.SpawnEggsModule;
 import lexal.btb.world.*;
 import lexal.btb.world.biomes.ModBiomes;
 import lexal.btb.world.worldType.ModWorldType;
@@ -38,6 +39,8 @@ public class BTBTA implements ModInitializer {
     public void onInitialize() {
         LOGGER.info("btbta loading! watch out for bugs");
         handleConfig();
+
+        ModBlockTags.register();
 
         ModBlocks.register();
         ModItems.register();
