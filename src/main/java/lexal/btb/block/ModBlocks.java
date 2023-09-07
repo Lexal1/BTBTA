@@ -122,12 +122,12 @@ public class ModBlocks {
             .build(new Block("blacktile",UtilIdRegistrar.nextIdBlock(),Material.metal));
     public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
-            .setTextures(6-2,12-1)
+            .setTextures(6/*-2*/,12/*-1*/)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
             .build(new BlockGasFlowing("gas.air.flowing", UtilIdRegistrar.nextIdBlock()));
     public static final Block gasAirStill = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
-            .setTextures(1+3,3+8)
+            .setTextures(1/*+3*/,3/*+8*/)
             .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
             .build(new BlockGasStill("gas.air.still", UtilIdRegistrar.nextIdBlock()));
 

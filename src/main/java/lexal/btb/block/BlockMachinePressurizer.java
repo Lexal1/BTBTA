@@ -61,10 +61,8 @@ public class BlockMachinePressurizer extends BlockRotatableHorizontal {
         }
 
         int blockId = world.getBlockId(xAdj, y, zAdj);
-        if (blockId == 0 || Block.blocksList[blockId].hasTag(ModBlockTags.GAS_DESTROYS)){
+        if (blockId == 0 || (Block.blocksList[blockId].hasTag(ModBlockTags.GAS_DESTROYS) || blockId == ModBlocks.gasAirFlowing.id || blockId == ModBlocks.gasAirStill.id)){
             world.setBlockAndMetadataWithNotify(xAdj,y,zAdj, ModBlocks.gasAirFlowing.id, 31);
-        } else if (blockId == ModBlocks.gasAirFlowing.id || blockId == ModBlocks.gasAirStill.id) {
-            world.setBlockMetadataWithNotify(xAdj,y,zAdj, 31);
         }
     }
 
