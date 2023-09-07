@@ -29,11 +29,11 @@ public class BlockGas extends BlockFluid {
     }
     @Override
     public boolean shouldSideBeRendered(WorldSource blockAccess, int x, int y, int z, int side, int meta) {
-        return true;
-        /*if (blockAccess.getBlockId(x, y, z) == this.id && blockAccess.getBlockMetadata(x, y, z) == meta) {
+        //return true;
+        if (blockAccess.getBlockId(x, y, z) == this.id && blockAccess.getBlockMetadata(x, y, z) == meta) {
             return false;
         }
-        return super.shouldSideBeRendered(blockAccess, x, y, z, side);*/
+        return super.shouldSideBeRendered(blockAccess, x, y, z, side);
     }
     @Override
     public void onBlockAdded(World world, int i, int j, int k) {
@@ -50,7 +50,7 @@ public class BlockGas extends BlockFluid {
 
     @Override
     public boolean shouldSideBeRendered(WorldSource blockAccess, int x, int y, int z, int side) {
-        return true;
-        //return super.shouldSideBeRendered(blockAccess, x, y, z, side);
+        //return true;
+        return super.shouldSideBeRendered(blockAccess, x, y, z, side);
     }
 }
