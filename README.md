@@ -19,7 +19,7 @@ and more!
 no there isn't, i don't know where you heard that
 ## credits
 Lexal
-- main guy (idea, moon dimension, art)\
+- main guy (idea, moon dimension, art)
 UselessBullets
 - moon features (gravity, suffocation, star rendering, music), penguins, mixins, fixing my terrible code
 ## pictures
