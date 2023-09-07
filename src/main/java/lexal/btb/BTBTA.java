@@ -11,7 +11,9 @@ import lexal.btb.world.worldType.ModWorldType;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import turniplabs.halplibe.helper.AchievementHelper;
 import turniplabs.halplibe.util.ConfigHandler;
+import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
 import useless.prismaticlibe.helper.SoundHelper;
 
@@ -20,6 +22,7 @@ import java.util.Properties;
 public class BTBTA implements ModInitializer {
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static final AchievementPage BTBACHIEVEMENTS = new ModAchievements();
 
     private void handleConfig() {
         Properties prop = new Properties();
@@ -38,6 +41,7 @@ public class BTBTA implements ModInitializer {
     @Override
     public void onInitialize() {
         LOGGER.info("btbta loading! watch out for bugs");
+        AchievementHelper.addPage(BTBACHIEVEMENTS);
         handleConfig();
 
         ModBlockTags.register();

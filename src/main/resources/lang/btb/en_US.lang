@@ -99,6 +99,10 @@ item.btb.ingot.starsteel.desc=Steel imbued with the power of the stars.
 dimension.moon.name=Moon
 worldType.moon.default.name=Moon
 worldType.moon.default.desc=Start on the Moon,\nan inhospitable desert\norbiting the Overworld.
+achievement.btb.root=root advance
+achievement.btb.root.desc=will fix later
+
+
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg
