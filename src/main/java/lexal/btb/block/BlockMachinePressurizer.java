@@ -16,7 +16,7 @@ public class BlockMachinePressurizer extends BlockRotatableHorizontal {
     }
     @Override
     public int tickRate() {
-        return 2;
+        return 5;
     }
 
     @Override
@@ -46,7 +46,6 @@ public class BlockMachinePressurizer extends BlockRotatableHorizontal {
     private void pumpGas(World world, int x, int y, int z){
         int meta = world.getBlockMetadata(x, y, z);
         int direction = meta & 0b111;
-        BTBTA.LOGGER.info(String.valueOf(direction));
 
         int xAdj = x;
         int zAdj = z;
