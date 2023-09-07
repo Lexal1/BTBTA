@@ -13,6 +13,12 @@ public class BlockGas extends BlockFluid {
     public int tickRate() {
         return 0;
     }
+    public static float getPercentAir(int meta) {
+        if (meta >= 15) {
+            meta = 15;
+        }
+        return (float)(meta + 1) / 16.0f;
+    }
     @Override
     public boolean renderAsNormalBlock() {
         return true;
