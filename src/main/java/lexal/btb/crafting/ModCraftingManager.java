@@ -18,6 +18,8 @@ public class ModCraftingManager {
 
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
 
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.starsteel, 1, new Object[]{Item.ingotSteel,ModItems.crudestarsteel,ModItems.crudestarsteel,ModItems.crudestarsteel,ModItems.crudestarsteel});
+
         //block recipes
         RecipeHelper.Crafting.createRecipe(ModBlocks.catwalk, 8, new Object[]{
                 "CCC",
@@ -47,7 +49,29 @@ public class ModCraftingManager {
                 'G', Item.dustGlowstone});
 
         RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.whitetile, 2, new Object[]{Block.stonePolished,ModItems.moondust,ModItems.moondust,ModItems.moondust,ModItems.moondust});
-        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.blacktile, 8, new Object[]{ModBlocks.whitetile,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel});
+        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.blacktile, 16, new Object[]{ModBlocks.whitetile,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel});
+
+        RecipeHelper.Crafting.createRecipe(ModBlocks.starsteelblock, 1, new Object[]{
+                "III",
+                "III",
+                "III",
+                'I', ModItems.starsteel});
+
+
+
+        RecipeHelper.Blasting.createRecipe(ModItems.crudestarsteel,ModItems.rawmeteor);
+
+        RecipeHelper.Smelting.createRecipe(ModItems.cheese,ModBlocks.cheeseore);
+        RecipeHelper.Blasting.createRecipe(ModItems.cheese,ModBlocks.cheeseore);
+
+        RecipeHelper.Smelting.createRecipe(Item.ingotIron,ModBlocks.mooniron);
+        RecipeHelper.Blasting.createRecipe(Item.ingotIron,ModBlocks.mooniron);
+
+        RecipeHelper.Smelting.createRecipe(Item.ingotGold,ModBlocks.moongold);
+        RecipeHelper.Blasting.createRecipe(Item.ingotGold,ModBlocks.moongold);
+
+        RecipeHelper.Smelting.createRecipe(ModBlocks.moonstone,ModBlocks.mooncobblestone);
+        RecipeHelper.Blasting.createRecipe(ModBlocks.moonstone,ModBlocks.mooncobblestone);
 
 
         //armor recipes

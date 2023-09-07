@@ -120,6 +120,14 @@ public class ModBlocks {
             .setTextures("black_tile.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("blacktile",UtilIdRegistrar.nextIdBlock(),Material.metal));
+    public static final Block starsteelblock = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(3.0f)
+            .setResistance(5.0f)
+            .setTopTexture("starsteelblock_top.png")
+            .setSideTextures("starsteelblock_side.png")
+            .setBottomTexture("starsteelblock_bottom.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("starsteelblock",UtilIdRegistrar.nextIdBlock(),Material.metal));
     public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
             .setTextures(6/*-2*/,12/*-1*/)
@@ -155,6 +163,18 @@ public class ModBlocks {
             .setTextures(0,3)
             .setTags(BlockTags.MINEABLE_BY_SHEARS)
             .build(new BlockGasSponge("sponge.gas", UtilIdRegistrar.nextIdBlock()));
+    public static final Block meteorblock = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(3.0f)
+            .setResistance(3.0f)
+            .setTextures("meteorrock.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new Block("meteorrock", UtilIdRegistrar.nextIdBlock(),Material.stone));
+    public static final Block meteorore = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(3.0f)
+            .setResistance(3.0f)
+            .setTextures("meteor_ore.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockMoonstone("meteorore", UtilIdRegistrar.nextIdBlock(),Material.stone));
 
 
     static {
