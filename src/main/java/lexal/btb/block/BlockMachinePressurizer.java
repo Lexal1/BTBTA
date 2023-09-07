@@ -69,6 +69,5 @@ public class BlockMachinePressurizer extends BlockRotatableHorizontal {
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         checkActiveState(world, x, y, z);
-
     }
 }

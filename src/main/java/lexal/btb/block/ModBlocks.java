@@ -123,14 +123,13 @@ public class ModBlocks {
     public static final Block gasAirFlowing = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
             .setTextures(6/*-2*/,12/*-1*/)
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES, ModBlockTags.IS_GAS)
             .build(new BlockGasFlowing("gas.air.flowing", UtilIdRegistrar.nextIdBlock()));
     public static final Block gasAirStill = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0)
             .setTextures(1/*+3*/,3/*+8*/)
-            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES)
+            .setTags(BlockTags.BROKEN_BY_FLUIDS, BlockTags.PLACE_OVERWRITES, ModBlockTags.IS_GAS)
             .build(new BlockGasStill("gas.air.still", UtilIdRegistrar.nextIdBlock()));
-
     public static final Block machinePressurizerIdle = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(3.5f)
             .setNorthTexture("pressurizer_idle.png")
@@ -151,6 +150,11 @@ public class ModBlocks {
             .setBottomTexture("iron_plating.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockMachinePressurizer("machine.pressurizer.active", UtilIdRegistrar.nextIdBlock(), true) {});
+    public static final Block gasSponge = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0)
+            .setTextures(0,3)
+            .setTags(BlockTags.MINEABLE_BY_SHEARS)
+            .build(new BlockGasSponge("sponge.gas", UtilIdRegistrar.nextIdBlock()));
 
 
     static {
