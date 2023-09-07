@@ -12,12 +12,11 @@ public class BlockMoonstone extends Block {
     public BlockMoonstone(String key, int id, Material material) {
         super(key, id, material);
     }
-    @Override
+    /*@Override
     public void onBlockAdded(World world, int i, int j, int k) {
         if (world.getBlockId(i, j - 1, k) == ModBlocks.ironplating.id && ((BlockPortal)ModBlocks.portalmoon).tryToCreatePortal(world, i, j, k)) {
         }
-    }
-
+    }*/
     @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         switch (dropCause) {

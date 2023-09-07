@@ -46,12 +46,8 @@ public class ModCraftingManager {
                 'S', Item.stick,
                 'G', Item.dustGlowstone});
 
-        RecipeHelper.Crafting.createRecipe(ModBlocks.moonstone, 1, new Object[]{ //TEMP RECIPE! REMOVE WHEN MOON TRAVEL FIXED
-                "CCC",
-                "CBC",
-                "CCC",
-                'B', Block.cobbleBasalt,
-                'C', Block.cobbleStone});
+        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.whitetile, 2, new Object[]{Block.stonePolished,ModItems.moondust,ModItems.moondust,ModItems.moondust,ModItems.moondust});
+        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.blacktile, 8, new Object[]{ModBlocks.whitetile,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel,Item.ingotSteel});
 
 
         //armor recipes
