@@ -1,6 +1,7 @@
 package lexal.btb.mixin.core.entity;
 
 import lexal.btb.block.ModMaterials;
+import lexal.btb.item.ModItemTags;
 import lexal.btb.item.ModItems;
 import lexal.btb.world.ModDimensions;
 import net.minecraft.core.entity.EntityLiving;
@@ -34,10 +35,10 @@ public class EntityPlayerMixin extends EntityLiving {
         ItemStack legsSlotItem = player.inventory.armorItemInSlot(1);
         ItemStack bootsSlotItem = player.inventory.armorItemInSlot(0);
         if (
-                headSlotItem!= null && headSlotItem.getItem() == ModItems.armorHelmetSpace
-                && chestSlotItem!= null && chestSlotItem.getItem() == ModItems.armorChestplateSpace
-                && legsSlotItem!= null && legsSlotItem.getItem() == ModItems.armorLeggingsSpace
-                && bootsSlotItem!= null && (bootsSlotItem.getItem() == ModItems.armorBootsSpace || bootsSlotItem.getItem() == ModItems.armorBootsCrash)
+                headSlotItem!= null && headSlotItem.getItem().hasTag(ModItemTags.breathable)
+                && chestSlotItem!= null && chestSlotItem.getItem().hasTag(ModItemTags.breathable)
+                && legsSlotItem!= null && legsSlotItem.getItem().hasTag(ModItemTags.breathable)
+                && bootsSlotItem!= null && bootsSlotItem.getItem().hasTag(ModItemTags.breathable)
         ){
             cir.setReturnValue(true); // Don't suffocate with helmet on
         }
