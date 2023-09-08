@@ -27,10 +27,9 @@ public class ModDimensions {
         player.dimension = targetDimension;
         world.setEntityDead(player);
         player.removed = false;
-        double d = player.x;
-        double d1 = player.z;
-        double newY = world.getHeightBlocks()+1;
-        player.moveTo(d *= (double)net.minecraft.core.world.Dimension.getCoordScale(lastDim, newDim), newY, d1 *= (double)net.minecraft.core.world.Dimension.getCoordScale(lastDim, newDim), player.yRot, player.xRot);
+        double x = player.x;
+        double z = player.z;
+        player.moveTo(x *= (double)Dimension.getCoordScale(lastDim, newDim), player.y, z *= (double)Dimension.getCoordScale(lastDim, newDim), player.yRot, player.xRot);
         if (player.isAlive()) {
             world.updateEntityWithOptionalForce(player, false);
         }
@@ -45,11 +44,8 @@ public class ModDimensions {
         }
         player.world = world;
         if (player.isAlive()) {
-            player.moveTo(d, newY, d1, player.yRot, player.xRot);
+            player.moveTo(player.x, world.worldType.getMaxY()+1, player.z, player.yRot, player.xRot);
             world.updateEntityWithOptionalForce(player, false);
-            int newX = (int)((player.x / lastDim.worldScale) * newDim.worldScale);
-            int newZ = (int)((player.z / lastDim.worldScale) * newDim.worldScale);
-            player.moveTo(newX, world.worldType.getMaxY()+1, newZ, player.yRot, 0.0f);
         }
 
     }
