@@ -24,7 +24,7 @@ public class ModItems {
     public static final Item rawmeteor = ItemHelper.createItem(BTBTA.MOD_ID, new Item("ore.meteor", UtilIdRegistrar.nextIdItem()), "ore.meteor", "raw_meteor_ore.png");
 
     //armor
-    public static final ArmorMaterial armorspacesuit = ArmorHelper.createArmorMaterial("space",256,25.0f,25.0f,30.0f,50.0f);
+    public static final ArmorMaterial armorspacesuit = ArmorHelper.createArmorMaterial("space",256,55.0f,55.0f,55.0f,75.0f);
     public static final Item armorHelmetSpace = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Space Helmet", UtilIdRegistrar.nextIdItem(), armorspacesuit, 0), "armor.helmet.space", "space_helmet.png").withTags(ModItemTags.breathable);
     public static final Item armorChestplateSpace = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Space Suit", UtilIdRegistrar.nextIdItem(), armorspacesuit, 1), "armor.chestplate.space", "space_suit.png").withTags(ModItemTags.breathable);
     public static final Item armorLeggingsSpace = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Space Leggings", UtilIdRegistrar.nextIdItem(), armorspacesuit, 2), "armor.leggings.space", "space_pants.png").withTags(ModItemTags.breathable);
