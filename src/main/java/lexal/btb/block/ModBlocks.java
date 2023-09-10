@@ -79,7 +79,7 @@ public class ModBlocks {
             .setResistance(0.0f)
             .setTextures("moon_turf.png")
             .setTags(BlockTags.MINEABLE_BY_SHOVEL, BlockTags.CAVES_CUT_THROUGH, BlockTags.PLACE_OVERWRITES, BlockTags.BROKEN_BY_FLUIDS, ModBlockTags.GAS_DESTROYS)
-            .build(new BlockLayerSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.topSnow));
+            .build(new BlockMoonSnow("moonsnow", UtilIdRegistrar.nextIdBlock(), Material.topSnow));
 
     public static final Block portalmoon = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(-1.0f)
