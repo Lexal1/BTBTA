@@ -5,9 +5,6 @@ import lexal.btb.crafting.ModCraftingManager;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
 import lexal.btb.modmodule.SpawnEggsModule;
-import lexal.btb.world.*;
-import lexal.btb.world.biomes.ModBiomes;
-import lexal.btb.world.worldType.ModWorldType;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,9 +47,6 @@ public class BTBTA implements ModInitializer {
         ModItems.register();
         ModCraftingManager.register();
 
-        ModBiomes.register();
-        ModWorldType.register();
-        ModDimensions.register();
 
         ModEntities.register();
 

@@ -4,23 +4,8 @@
   "package": "lexal.btb.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "core.BiomesMixin",
-    "core.MinecraftMixin",
-    "core.WorldMixin",
-    "core.block.BlockFluidFlowingMixin",
-    "core.block.BlockTorchMixin",
-    "core.entity.EntityArrowMixin",
-    "core.entity.EntityCannonBallMixin",
-    "core.entity.EntityItemMixin",
-    "core.entity.EntityLivingMixin",
-    "core.entity.EntityPlayerMixin",
-    "core.entity.EntitySkeletonMixin",
-    "core.item.ItemFirestrikerMixin"
   ],
   "client": [
-    "client.GuiIngameMixin",
-    "client.RenderGlobalMixin",
-    "client.SoundManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
