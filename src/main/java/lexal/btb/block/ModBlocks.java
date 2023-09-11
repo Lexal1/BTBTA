@@ -176,6 +176,14 @@ public class ModBlocks {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockMoonstone("meteorore", UtilIdRegistrar.nextIdBlock(),Material.stone));
 
+    public static final Block paperwall = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(1.0f)
+            .setResistance(0.0f)
+            .setSideTextures("paperwall.png")
+            .setTopBottomTexture("paperwall.png")
+            //.setBlockModel(new BlockModelRenderBlocks(31))
+            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .build(new BlockPaperWall("paperwall",UtilIdRegistrar.nextIdBlock(),Material.snow));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
