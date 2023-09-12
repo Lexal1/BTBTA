@@ -19,7 +19,6 @@ import java.util.Properties;
 public class BTBTA implements ModInitializer {
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final AchievementPage BTBACHIEVEMENTS = new ModAchievements();
 
     private void handleConfig() {
         Properties prop = new Properties();
@@ -34,11 +33,11 @@ public class BTBTA implements ModInitializer {
         config.updateConfig();
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
+    public static final AchievementPage BTBACHIEVEMENTS = new ModAchievements();
 
     @Override
     public void onInitialize() {
         LOGGER.info("btbta loading! watch out for bugs");
-        AchievementHelper.addPage(BTBACHIEVEMENTS);
         handleConfig();
 
         ModBlockTags.register();
@@ -59,6 +58,8 @@ public class BTBTA implements ModInitializer {
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
         }
+
+        AchievementHelper.addPage(BTBACHIEVEMENTS);
         LOGGER.info("btbta loaded successfully!");
     }
 }

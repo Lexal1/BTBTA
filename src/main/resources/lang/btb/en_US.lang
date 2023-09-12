@@ -30,7 +30,14 @@ item.btb.syrup.desc=A soupy-sweet brown liquid in a jar.
 ###misc
 achievement.btb.root=root advance
 achievement.btb.root.desc=will fix later
-
+achievement.btb.syrup=get syrup
+achievement.btb.syrup.desc=yummy yum
+achievement.btb.pancakes=syrup on pancakes
+achievement.btb.pancakes.desc=tasty yumn
+achievement.btb.damage=ultrakill
+achievement.btb.damage.desc=deala lotta damag
+achievement.btb.flowers=pretty!
+achievement.btb.flowers.desc=get all flowers
 
 
 #optionals

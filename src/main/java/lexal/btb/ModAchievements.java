@@ -1,12 +1,14 @@
 package lexal.btb;
 
 import lexal.btb.block.ModBlocks;
+import lexal.btb.item.ModItems;
 import net.minecraft.client.render.TextureFX;
 import net.minecraft.core.Global;
 import net.minecraft.core.achievement.Achievement;
 import net.minecraft.core.achievement.AchievementList;
 import net.minecraft.core.achievement.stat.StatBase;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.util.helper.Side;
 import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.util.achievements.AchievementPage;
@@ -16,12 +18,20 @@ import java.util.Random;
 
 public class ModAchievements extends AchievementPage {
 
-    public static final Achievement ROOT = new Achievement(AchievementList.achievementList.size()+1,"btb.root",0,0, Block.netherrack/*change this to a modded block, i dare you*/,null);
-
+    public static final Achievement ROOT = new Achievement(AchievementList.achievementList.size()+1,"btb.root",0,0, Item.basket/*change this to a modded block, i dare you*/,null);
+    public static final Achievement SYRUP = new Achievement(AchievementList.achievementList.size()+1,"btb.syrup",2,1, Item.jar,ROOT);
+    public static final Achievement PANCAKES = new Achievement(AchievementList.achievementList.size()+1,"btb.pancakes",4,1, Item.eggChicken,SYRUP);
+    public static final Achievement OVERKILL = new Achievement(AchievementList.achievementList.size()+1,"btb.damage",0,3, Item.toolSwordSteel,ROOT);
+    public static final Achievement FLOWERS = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",-2,0, Block.flowerRed,ROOT);
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
         ((StatBase)ROOT).registerStat();
+
         achievementList.add(ROOT);
+        achievementList.add(SYRUP);
+        achievementList.add(PANCAKES);
+        achievementList.add(OVERKILL);
+        achievementList.add(FLOWERS);
     }
 
     @Override
