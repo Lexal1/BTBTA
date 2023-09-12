@@ -16,6 +16,12 @@ public class ModCraftingManager {
         //item recipes
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
         RecipeHelper.Crafting.createShapelessRecipe(new ItemStack(Item.dye, 2, 6), new Object[]{ModBlocks.blueRose});
+        RecipeHelper.Crafting.createRecipe(ModItems.unPopcorn, 1, new Object[]{
+                " C ",
+                "CBC",
+                " C ",
+                'C', ModItems.corn,
+                'B', Item.bucket});
 
         //block recipes
 
@@ -43,6 +49,11 @@ public class ModCraftingManager {
 
         RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
         RecipeHelper.Smelting.createRecipe(ModBlocks.netherBrick,Block.netherrack);
+
+        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.corn);
+        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.corn);
+        RecipeHelper.Blasting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
+        RecipeHelper.Smelting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
 
         BTBTA.LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
     }

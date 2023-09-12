@@ -41,6 +41,14 @@ public class ModBlocks {
             .setBlockDrop(Block.logBirch)
             .setTopBottomTexture(1,24)
             .build(new BlockLog("syruplog",UtilIdRegistrar.nextIdBlock()));
+    public static final Block layerPancakeSyrup = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0.5f)
+            .setResistance(0.0f)
+            .setBlockSound(BlockSounds.CLOTH)
+            .setTopBottomTexture("pancake_top_syrup.png")
+            .setSideTextures("pancake_side_syrup.png")
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockLayerPancakeSyrup("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
 
 
 

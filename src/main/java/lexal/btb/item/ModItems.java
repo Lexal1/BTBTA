@@ -4,9 +4,7 @@ import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import lexal.btb.block.ModBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemArmor;
-import net.minecraft.core.item.ItemFood;
+import net.minecraft.core.item.*;
 import net.minecraft.core.item.material.ArmorMaterial;
 import net.minecraft.core.item.material.ToolMaterial;
 import net.minecraft.core.item.tool.*;
@@ -17,6 +15,12 @@ public class ModItems {
     //items
     public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false), "pancake", "pancake.png").setMaxStackSize(16);
     public static final Item syrupJar = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "syrup", "syrup_jar.png").setMaxStackSize(1);
+    public static final Item corn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFoodStackable(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false,32), "corn", "corn.png");
+    public static final Item popcornBucket = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketIceCream(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),5), "popcorn", "popcorn.png");
+    public static final Item unPopcorn = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "unpopcorn", "unpopped_corn.png").setMaxStackSize(1);
+    public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),10,false), "cornbread", "cornbread.png");
+    
+
 
     //armor
     public static final ArmorMaterial armorclothing = ArmorHelper.createArmorMaterial("clothes", 128, 10.0f, 0.0f, 0.0f, 10.0f);

@@ -26,6 +26,19 @@ item.btb.pancake.name=Pancake
 item.btb.pancake.desc=Tastes great with syrup!
 item.btb.syrup.name=Syrup
 item.btb.syrup.desc=A soupy-sweet brown liquid in a jar.
+item.btb.corn.name=Corn
+item.btb.corn.desc=A grain grown in warm places.
+item.btb.unpopcorn.name=Unpopped Corn
+item.btb.unpopcorn.desc=This is just depressing.
+item.btb.popcorn.name=Popcorn
+item.btb.popcorn.desc=Crunch!
+item.btb.cornbread.name=Cornbread
+item.btb.cornbread.desc=Very mealy.
+
+
+
+
+
 
 ###misc
 achievement.btb.root=root advance

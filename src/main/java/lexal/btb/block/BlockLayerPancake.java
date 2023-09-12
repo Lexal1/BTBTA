@@ -13,6 +13,8 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
+import java.util.Objects;
+
 public class BlockLayerPancake extends BlockLayerBase {
     public BlockLayerPancake(String key, int id, Material material) {
         super(key, id, material);
@@ -35,14 +37,15 @@ public class BlockLayerPancake extends BlockLayerBase {
     }
     @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
-        if (player.getHeldItem() != null || player.isSneaking())/*or(player.getHeldItem() == new ItemStack(ModItems.syrupJar))*/ {return false;} // not empty hand or sneaking then do nothing
-        this.eatPancakeLayer(world, x, y, z, player); // Eat layer
-        return true;
+        if (player.getHeldItem() != null && player.getHeldItem().getItem() == ModItems.syrupJar) /*player.getHeldItem() = new ItemStack(Item.jar);*/ world.setBlockAndMetadataWithNotify(x,y,z, ModBlocks.layerPancakeSyrup.id,world.getBlockMetadata(x,y,z));
+        if (player.getHeldItem() != null || player.isSneaking()) {return false;}// not empty hand or sneaking then do nothing
+    this.eatPancakeLayer(world, x, y, z, player); // Eat layer
+    return true;
     }
 
     private void eatPancakeLayer(World world, int i, int j, int k, EntityPlayer entityplayer) {
         if (entityplayer.health < 20) { // Not max health
-            entityplayer.heal(4); // heal 2 hearts
+            entityplayer.heal(3); // heal 1 1/2 hearts
             int l = world.getBlockMetadata(i, j, k) - 1; // new layer meta data
             if (l < 0) { // if no more layers
                 world.setBlockWithNotify(i, j, k, 0); // replace with air
