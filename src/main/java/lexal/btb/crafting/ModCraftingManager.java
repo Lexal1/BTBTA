@@ -6,6 +6,7 @@ import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.helper.RecipeHelper;
 
 public class ModCraftingManager {
@@ -14,13 +15,9 @@ public class ModCraftingManager {
     public static void register() {
         //item recipes
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
+        RecipeHelper.Crafting.createShapelessRecipe(Item.dye, 2, new Object[]{ModBlocks.blueRose});
 
         //block recipes
-        RecipeHelper.Crafting.createRecipe(ModBlocks.paperwall, 4, new Object[]{
-                "IUI",
-                "IUI",
-                'I', Item.stick,
-                'U', Item.paper});
 
 
         //armor recipes
@@ -43,6 +40,10 @@ public class ModCraftingManager {
                 "L L",
                 'L', Item.leather,
                 'C', Item.cloth});
+
+        RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
+        RecipeHelper.Smelting.createRecipe(ModBlocks.netherBrick,Block.netherrack);
+
         BTBTA.LOGGER.info("btbta loaded all recipes successfully!"); //put recipes before this point
     }
 

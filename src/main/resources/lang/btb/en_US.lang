@@ -1,6 +1,12 @@
 ###blocks
 tile.btb.pancakestack.name=Pancake Stack
 tile.btb.pancakestack.desc=I could write a song called "stack 'em to the heavens"!
+tile.btb.bluerose.name=Cyan Rose
+tile.btb.bluerose.desc=A beautiful blue flower.
+tile.btb.netherbrick.name=Netherrack Bricks
+tile.btb.netherbrick.desc=Stacked bricks of netherrack.
+
+
 
 ###armors
 

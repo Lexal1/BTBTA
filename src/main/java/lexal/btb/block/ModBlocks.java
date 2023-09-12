@@ -2,6 +2,8 @@ package lexal.btb.block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
+import net.minecraft.client.render.block.model.BlockModel;
+import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.material.Material;
@@ -20,14 +22,19 @@ public class ModBlocks {
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
 
-    public static final Block paperwall = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.0f)
-            .setResistance(0.0f)
-            .setSideTextures("paperwall.png")
-            .setTopBottomTexture("paperwall.png")
-            //.setBlockModel(new BlockModelRenderBlocks(31))
-            .setTags(BlockTags.MINEABLE_BY_AXE)
-            .build(new BlockPaperWall("paperwall",UtilIdRegistrar.nextIdBlock(),Material.snow));
+    public static final Block blueRose = new BlockBuilder(BTBTA.MOD_ID)
+            .setTextures("flower_rose_blue.png")
+            .setBlockSound(BlockSounds.GRASS)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
+
+    public static final Block netherBrick = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(2.5f)
+            .setTextures("nether_bricks.png")
+            .build(new Block("netherbrick",UtilIdRegistrar.nextIdBlock(),Material.stone));
+
+
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
