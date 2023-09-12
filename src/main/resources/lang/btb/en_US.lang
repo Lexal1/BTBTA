@@ -5,7 +5,8 @@ tile.btb.bluerose.name=Cyan Rose
 tile.btb.bluerose.desc=A beautiful blue flower.
 tile.btb.netherbrick.name=Netherrack Bricks
 tile.btb.netherbrick.desc=Stacked bricks of netherrack.
-
+tile.btb.syruplog.name=Birch Syrup Log
+tile.btb.syruplog.desc=Dripping with liquid sugar!
 
 
 ###armors
@@ -23,7 +24,8 @@ item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
 ###items
 item.btb.pancake.name=Pancake
 item.btb.pancake.desc=Tastes great with syrup!
-
+item.btb.syrup.name=Syrup
+item.btb.syrup.desc=A soupy-sweet brown liquid in a jar.
 
 ###misc
 achievement.btb.root=root advance

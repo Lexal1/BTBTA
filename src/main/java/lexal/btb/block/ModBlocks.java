@@ -33,6 +33,14 @@ public class ModBlocks {
             .setResistance(2.5f)
             .setTextures("nether_bricks.png")
             .build(new Block("netherbrick",UtilIdRegistrar.nextIdBlock(),Material.stone));
+    public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(1.0f)
+            .setResistance(1.0f)
+            .setSideTextures("birch_syrup.png")
+            .setTags(BlockTags.MINEABLE_BY_AXE)
+            .setBlockDrop(Block.logBirch)
+            .setTopBottomTexture(1,24)
+            .build(new BlockLog("syruplog",UtilIdRegistrar.nextIdBlock()));
 
 
 

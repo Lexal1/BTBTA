@@ -16,6 +16,7 @@ import turniplabs.halplibe.helper.ItemHelper;
 public class ModItems {
     //items
     public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false), "pancake", "pancake.png").setMaxStackSize(16);
+    public static final Item syrupJar = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "syrup", "syrup_jar.png").setMaxStackSize(1);
 
     //armor
     public static final ArmorMaterial armorclothing = ArmorHelper.createArmorMaterial("clothes", 128, 10.0f, 0.0f, 0.0f, 10.0f);

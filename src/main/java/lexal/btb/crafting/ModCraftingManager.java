@@ -15,7 +15,7 @@ public class ModCraftingManager {
     public static void register() {
         //item recipes
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
-        RecipeHelper.Crafting.createShapelessRecipe(Item.dye, 2, new Object[]{ModBlocks.blueRose});
+        RecipeHelper.Crafting.createShapelessRecipe(new ItemStack(Item.dye, 2, 6), new Object[]{ModBlocks.blueRose});
 
         //block recipes
 
