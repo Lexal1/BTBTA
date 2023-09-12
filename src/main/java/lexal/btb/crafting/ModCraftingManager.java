@@ -22,6 +22,7 @@ public class ModCraftingManager {
                 " C ",
                 'C', ModItems.corn,
                 'B', Item.bucket});
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.corn,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN
 
         //block recipes
 
