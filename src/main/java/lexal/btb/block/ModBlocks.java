@@ -49,6 +49,10 @@ public class ModBlocks {
             .setSideTextures("pancake_side_syrup.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLayerPancakeSyrup("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
+    public static final Block cornCrop = new BlockBuilder(BTBTA.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .build(new BlockCropCorn("corncrop",UtilIdRegistrar.nextIdBlock()));
 
 
 
