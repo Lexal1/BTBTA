@@ -4,6 +4,8 @@
   "package": "lexal.btb.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "BlockGrassMixin",
+    "ChunkDecoratorOverworldMixin"
   ],
   "client": [
   ],
