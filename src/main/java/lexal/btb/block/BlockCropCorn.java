@@ -4,6 +4,7 @@ import lexal.btb.BTBTA;
 import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCrops;
+import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
@@ -14,7 +15,7 @@ import turniplabs.halplibe.helper.TextureHelper;
 
 import java.util.Random;
 
-public class BlockCropCorn extends BlockCrops {
+public class BlockCropCorn extends BlockFlower {
     int[] stage0 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage0.png");
     int[] stage1 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage1.png");
     int[] stage2 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage2.png");
@@ -84,7 +85,7 @@ public class BlockCropCorn extends BlockCrops {
     public boolean canThisPlantGrowOnThisBlockID(int i) {
         return i == Block.farmlandDirt.id;
     }
-    @Override
+
     public void fertilize(World world, int i, int j, int k) {
         world.setBlockAndMetadataWithNotify(i, j, k, this.id,5);
     }
