@@ -2,7 +2,6 @@ package lexal.btb.block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
-import net.minecraft.client.render.block.model.BlockModel;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;

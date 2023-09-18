@@ -30,6 +30,5 @@ final class ItemDyeMixin {
                 cir.setReturnValue(true);
             }
         }
-        return;
     }
 }

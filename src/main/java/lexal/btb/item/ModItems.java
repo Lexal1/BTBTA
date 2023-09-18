@@ -3,11 +3,8 @@ package lexal.btb.item;
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import lexal.btb.block.ModBlocks;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.item.*;
 import net.minecraft.core.item.material.ArmorMaterial;
-import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.*;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 
