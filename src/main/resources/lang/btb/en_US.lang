@@ -54,6 +54,9 @@ achievement.btb.damage.desc=deala lotta damag
 achievement.btb.flowers=pretty!
 achievement.btb.flowers.desc=get all flowers
 
+tile.btb.corncroptop.name = Corn Crop Top
+tile.btb.corncropbottom.name = Crop Crop Bottom
+
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

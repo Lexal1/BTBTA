@@ -80,9 +80,8 @@ public class BlockCropCornBottom extends BlockCrops {
     }
     @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        super.updateTick(world, x, y, z, rand);
+        super.updateTick(world,x,y,z,rand);
         if (world.getBlockLightValue(x, y + 1, z) >= 9) {
-
             int blockMetadata = world.getBlockMetadata(x, y, z);
             float f = this.getGrowthRate(world, x, y, z);
             if (blockMetadata > 0) {
@@ -92,7 +91,7 @@ public class BlockCropCornBottom extends BlockCrops {
                     world.setBlockMetadataWithNotify(x, y + 1, z, world.getBlockMetadata(x, y+1, z)+1);
                 }
             }
-            if (blockMetadata == 0) {
+            if (blockMetadata == 0 && world.getBlockId(x, y+1, z) == 0) {
                 if (rand.nextInt((int) (100.0F / f)) == 0) {
                     ++blockMetadata;
                     world.setBlockMetadataWithNotify(x, y, z, blockMetadata);
@@ -103,9 +102,12 @@ public class BlockCropCornBottom extends BlockCrops {
     }
 
 
-    public void fertilize(World world, int i, int j, int k) {
-        world.setBlockMetadataWithNotify(i, j, k,1);
-        world.setBlockAndMetadataWithNotify(i, j+1, k, ModBlocks.cornCropTop.id,1);
+    public void fertilize(World world, int x, int y, int z) {
+        world.setBlockMetadataWithNotify(x, y, z,4);
+        if(world.getBlockId(x, y+1, z) == 0){
+            world.setBlockMetadataWithNotify(x, y, z,4);
+            world.setBlockAndMetadataWithNotify(x, y+1, z, ModBlocks.cornCropTop.id,4);
+        }
     }
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
