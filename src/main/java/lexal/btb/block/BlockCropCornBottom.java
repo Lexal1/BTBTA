@@ -4,31 +4,31 @@ import lexal.btb.BTBTA;
 import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCrops;
-import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.TextureHelper;
 
+
 import java.util.Random;
 
-public class BlockCropCorn extends BlockFlower {
+
+public class BlockCropCornBottom extends BlockCrops {
     int[] stage0 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage0.png");
-    int[] stage1 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage1.png");
-    int[] stage2 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage2.png");
-    int[] stage3 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage3.png");
-    int[] stage4 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage4.png");
+    int[] stage1 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage1_bottom.png");
+    int[] stage2 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage2_bottom.png");
+    int[] stage3 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage3_bottom.png");
+    int[] stage4 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage4_bottom.png");
 
     public final int[] growthStageTextures = new int[]{texCoordToIndex(stage0[0], stage0[1]), texCoordToIndex(stage1[0], stage1[1]), texCoordToIndex(stage2[0], stage2[1]), texCoordToIndex(stage3[0], stage3[1]),texCoordToIndex(stage4[0], stage4[1])};
 
-    public BlockCropCorn(String key, int id) {
+    public BlockCropCornBottom(String key, int id) {
         super(key, id);
         this.setTickOnLoad(true);
+        this.setBlockBounds(0.3125F, 0.0F, 0.3125F, 0.6875F, 0.5F, 0.6875F);
     }
-
 
     private float getGrowthRate(World world, int i, int j, int k) {
         float f = 0.1F;
@@ -69,35 +69,53 @@ public class BlockCropCorn extends BlockFlower {
         return f;
     }
     @Override
+    public boolean canBlockStay(World world, int x, int y, int z) {
+        if(world.getBlockMetadata(x, y, z) == 0){
+            return true;
+        }
+        if(world.getBlockId(x, y+1, z) == ModBlocks.cornCropTop.id && world.getBlockMetadata(x,y,z) >= 0){
+            return true;
+        }
+        return false;
+    }
+    @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
         super.updateTick(world, x, y, z, rand);
         if (world.getBlockLightValue(x, y + 1, z) >= 9) {
-            int l = world.getBlockMetadata(x, y, z);
-            if (l < 5) {
-                float f = this.getGrowthRate(world, x, y, z);
-                if (rand.nextInt((int)(100.0F / f)) == 0) {
-                    ++l;
-                    world.setBlockMetadataWithNotify(x, y, z, l);
+
+            int blockMetadata = world.getBlockMetadata(x, y, z);
+            float f = this.getGrowthRate(world, x, y, z);
+            if (blockMetadata > 0) {
+                if (rand.nextInt((int) (100.0F / f)) == 0) {
+                    ++blockMetadata;
+                    world.setBlockMetadataWithNotify(x, y, z, blockMetadata);
+                    world.setBlockMetadataWithNotify(x, y + 1, z, world.getBlockMetadata(x, y+1, z)+1);
+                }
+            }
+            if (blockMetadata == 0) {
+                if (rand.nextInt((int) (100.0F / f)) == 0) {
+                    ++blockMetadata;
+                    world.setBlockMetadataWithNotify(x, y, z, blockMetadata);
+                    world.setBlockAndMetadataWithNotify(x, y + 1, z, ModBlocks.cornCropTop.id, 0);
                 }
             }
         }
     }
-    public boolean canThisPlantGrowOnThisBlockID(int i) {
-        return i == Block.farmlandDirt.id;
-    }
+
 
     public void fertilize(World world, int i, int j, int k) {
-        world.setBlockAndMetadataWithNotify(i, j, k, this.id,5);
+        world.setBlockMetadataWithNotify(i, j, k,1);
+        world.setBlockAndMetadataWithNotify(i, j+1, k, ModBlocks.cornCropTop.id,1);
     }
     @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int j) {
-        if (j < 0 || j > 5) {
-            j = 5;
+    public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
+        if (meta < 0 || meta > 4) {
+            meta = 4;
         }
-        return this.growthStageTextures[j];
+        return this.growthStageTextures[meta];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return meta != 5 ? new ItemStack[]{new ItemStack(ModItems.cornSeeds)} : new ItemStack[]{new ItemStack(ModItems.cornSeeds, world.rand.nextInt(3) + 1), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
+        return meta != 4 ? new ItemStack[]{new ItemStack(ModItems.cornSeeds)} : new ItemStack[]{new ItemStack(ModItems.cornSeeds, world.rand.nextInt(3) + 1), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
     }
 }
