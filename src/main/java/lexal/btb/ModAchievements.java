@@ -21,12 +21,12 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement ROOT = new Achievement(AchievementList.achievementList.size()+1,"btb.root",0,0, Item.basket/*change this to a modded block, i dare you*/,null);
     public static final Achievement SYRUP = new Achievement(AchievementList.achievementList.size()+1,"btb.syrup",2,1, Item.jar,ROOT);
     public static final Achievement PANCAKES = new Achievement(AchievementList.achievementList.size()+1,"btb.pancakes",4,1, Item.eggChicken,SYRUP);
-    public static final Achievement OVERKILL = new Achievement(AchievementList.achievementList.size()+1,"btb.damage",0,3, Item.toolSwordSteel,ROOT);//make special
+    public static final Achievement OVERKILL = new Achievement(AchievementList.achievementList.size()+1,"btb.damage",0,3, Item.toolSwordSteel,ROOT).setSpecial();
     public static final Achievement FLOWERS = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",-2,0, Block.flowerRed,ROOT);
-    public static final Achievement DAYS = new Achievement(AchievementList.achievementList.size()+1,"btb.days",-2,2, Item.eggChicken,ROOT);//make special
-    public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",-4,4, Item.eggChicken,ROOT);
-    public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",-4,6, Item.eggChicken,ROOT);
-    public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-2,4, Item.eggChicken,ROOT);//make special
+    public static final Achievement DAYS = new Achievement(AchievementList.achievementList.size()+1,"btb.days",-2,2, Item.toolClock,ROOT).setSpecial();
+    public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",3,-2, Item.featherChicken,ROOT);
+    public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",-2,-1, Item.wheat,ROOT);
+    public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",1,-4, Block.netherrack,ROOT).setSpecial();
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
         ((StatBase)ROOT).registerStat();
