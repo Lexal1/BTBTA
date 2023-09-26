@@ -54,6 +54,17 @@ public class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(1))
             .build(new BlockCropCorn("corncrop",UtilIdRegistrar.nextIdBlock()));
 
+    public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(3.0f)
+            .setTextures("frame_glass.png")
+            .build(new BlockGlassTinted("glass.framed",UtilIdRegistrar.nextIdBlock()));
+
+    public static final Block trapdoorFrameGlass = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(3.0f)
+            .setTextures("frame_glass.png")
+            .build(new BlockFramedGlassTrapdoor("glass.framed.trapdoor",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
 
 
     static {

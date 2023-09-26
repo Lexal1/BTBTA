@@ -8,7 +8,10 @@ tile.btb.netherbrick.name=Netherrack Bricks
 tile.btb.netherbrick.desc=Stacked bricks of netherrack.
 tile.btb.syruplog.name=Birch Syrup Log
 tile.btb.syruplog.desc=Dripping with liquid sugar!
-
+tile.btb.glass.framed.name=Framed Glass
+tile.btb.glass.framed.desc=Glass's fancier cousin.
+tile.btb.glass.framed.trapdoor.name=Framed Glass Trapdoor
+tile.btb.glass.framed.trapdoor.desc=At least it looks nice.
 
 ###armor
 
