@@ -48,13 +48,17 @@ public class ModBlocks {
             .setSideTextures("pancake_side_syrup.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockLayerPancakeSyrup("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
+
     public static final Block cornCropTop = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockCropCornTop("corncroptop",UtilIdRegistrar.nextIdBlock()));
+
     public static final Block cornCropBottom = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockCropCornBottom("corncropbottom",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
