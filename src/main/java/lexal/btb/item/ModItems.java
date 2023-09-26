@@ -3,11 +3,8 @@ package lexal.btb.item;
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import lexal.btb.block.ModBlocks;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.item.*;
 import net.minecraft.core.item.material.ArmorMaterial;
-import net.minecraft.core.item.material.ToolMaterial;
-import net.minecraft.core.item.tool.*;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemHelper;
 
@@ -19,8 +16,9 @@ public class ModItems {
     public static final Item popcornBucket = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketIceCream(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),5), "popcorn", "popcorn.png");
     public static final Item unPopcorn = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "unpopcorn", "unpopped_corn.png").setMaxStackSize(1);
     public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),10,false), "cornbread", "cornbread.png");
-    public static final Item cornSeeds = ItemHelper.createItem(BTBTA.MOD_ID, new ItemSeeds(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),ModBlocks.cornCrop), "cornseeds", "corn_seeds.png");
+    public static final Item cornSeeds = ItemHelper.createItem(BTBTA.MOD_ID, new ItemSeeds(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),ModBlocks.cornCropBottom), "cornseeds", "corn_seeds.png");
     //public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecord(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),"discrain"), "recordrain", "record_5.png");
+
 
 
 
