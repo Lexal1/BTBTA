@@ -1,4 +1,5 @@
 ###blocks
+
 tile.btb.pancakestack.name=Pancake Stack
 tile.btb.pancakestack.desc=I could write a song called "stack 'em to the heavens"!
 tile.btb.bluerose.name=Cyan Rose
@@ -7,11 +8,13 @@ tile.btb.netherbrick.name=Netherrack Bricks
 tile.btb.netherbrick.desc=Stacked bricks of netherrack.
 tile.btb.syruplog.name=Birch Syrup Log
 tile.btb.syruplog.desc=Dripping with liquid sugar!
+tile.btb.glass.framed.name=Framed Glass
+tile.btb.glass.framed.desc=Glass's fancier cousin.
+tile.btb.glass.framed.trapdoor.name=Framed Glass Trapdoor
+tile.btb.glass.framed.trapdoor.desc=At least it looks nice.
 
+###armor
 
-###armors
-
-#cloth armor
 item.btb.armor.helmet.clothes.name=Cloth Hood
 item.btb.armor.helmet.clothes.desc=For all your ritualistic needs!
 item.btb.armor.chestplate.clothes.name=Cloth Shirt
@@ -22,6 +25,7 @@ item.btb.armor.boots.clothes.name=Shoes
 item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
 
 ###items
+
 item.btb.pancake.name=Pancake
 item.btb.pancake.desc=Tastes great with syrup!
 item.btb.syrup.name=Syrup
@@ -43,20 +47,30 @@ item.btb.cornseeds.desc=Corn seeds that may be planted in soil.
 
 
 ###misc
-achievement.btb.root=root advance
-achievement.btb.root.desc=will fix later
-achievement.btb.syrup=get syrup
-achievement.btb.syrup.desc=yummy yum
-achievement.btb.pancakes=syrup on pancakes
-achievement.btb.pancakes.desc=tasty yumn
-achievement.btb.damage=ultrakill
-achievement.btb.damage.desc=deala lotta damag
-achievement.btb.flowers=pretty!
-achievement.btb.flowers.desc=get all flowers
+
+achievement.btb.root=Better Than!
+achievement.btb.root.desc=Install BTBTA.
+achievement.btb.syrup=Syrup Usurper
+achievement.btb.syrup.desc=Collect a jar of syrup.
+achievement.btb.pancakes=Caked Up
+achievement.btb.pancakes.desc=Complete a stack of pancakes.
+achievement.btb.damage=ULTRAKILL
+achievement.btb.damage.desc=Deal a lot of damage.
+achievement.btb.flowers=Flowerful
+achievement.btb.flowers.desc=Get every type of flower.
+achievement.btb.days=You Win A Cookie
+achievement.btb.days.desc=Survive 100 days.
+achievement.btb.netherdist=Nether Been Better
+achievement.btb.netherdist.desc=Travel 10,000 blocks in the overworld through the nether.
+achievement.btb.penguintame=Smile And Wave, Boys
+achievement.btb.penguintame.desc=Tame a penguin.
+achievement.btb.popcorn=Movie Theatre
+achievement.btb.popcorn.desc=Get a bucket of popcorn.
 
 tile.btb.corncroptop.name = Corn Crop Top
 tile.btb.corncropbottom.name = Crop Crop Bottom
 
 
 #optionals
+
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

@@ -25,6 +25,12 @@ public class ModCraftingManager {
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.corn,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN
 
         //block recipes
+        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.frameGlass,2,new Object[]{Item.ingotIron,Block.glass});
+
+        RecipeHelper.Crafting.createRecipe(ModBlocks.trapdoorFrameGlass, 6, new Object[]{
+                "CCC",
+                "CCC",
+                'C', ModBlocks.frameGlass});
 
 
         //armor recipes
