@@ -27,11 +27,11 @@ public class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(1))
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
-    public static final Block netherBrick = new BlockBuilder(BTBTA.MOD_ID)
+    public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.5f)
             .setResistance(2.5f)
-            .setTextures("nether_bricks.png")
-            .build(new Block("netherbrick",UtilIdRegistrar.nextIdBlock(),Material.stone));
+            .setTextures("tile_top.png")
+            .build(new Block("flint_tile",UtilIdRegistrar.nextIdBlock(),Material.stone));
     public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.0f)
             .setResistance(1.0f)
@@ -72,6 +72,12 @@ public class ModBlocks {
             .setResistance(3.0f)
             .setTextures("frame_glass.png")
             .build(new BlockFramedGlassTrapdoor("glass.framed.trapdoor",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
+
+    public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(2.5f)
+            .setTextures("tile_top.png")
+            .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
 
 
     static {

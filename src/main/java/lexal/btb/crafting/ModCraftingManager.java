@@ -33,7 +33,17 @@ public class ModCraftingManager {
                 "CCC",
                 'C', ModBlocks.frameGlass});
 
+        RecipeHelper.Crafting.createRecipe(ModBlocks.flintTile, 2, new Object[]{
+                "CC",
+                "CC",
+                'C', Item.flint});
+
+        RecipeHelper.Crafting.createRecipe(ModBlocks.flintTileSlab, 6, new Object[]{
+                "CCC",
+                'C', ModBlocks.flintTile});
+
         //armor recipes
+
         RecipeHelper.Crafting.createRecipe(ModItems.armorHelmetCloth, 1, new Object[]{
                 "CCC",
                 "C C",
@@ -55,7 +65,6 @@ public class ModCraftingManager {
                 'C', Item.cloth});
 
         RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
-        RecipeHelper.Smelting.createRecipe(ModBlocks.netherBrick,Block.netherrack);
 
         RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.corn);
         RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.corn);
