@@ -22,16 +22,16 @@ public class ModCraftingManager {
                 " C ",
                 'C', ModItems.corn,
                 'B', Item.bucket});
-        RecipeHelper.Crafting.createShapelessRecipe(ModItems.cornSeeds,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.cornSeeds,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN SEEDS
 
         //block recipes
+
         RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.frameGlass,2,new Object[]{Item.ingotIron,Block.glass});
 
         RecipeHelper.Crafting.createRecipe(ModBlocks.trapdoorFrameGlass, 6, new Object[]{
                 "CCC",
                 "CCC",
                 'C', ModBlocks.frameGlass});
-
 
         //armor recipes
         RecipeHelper.Crafting.createRecipe(ModItems.armorHelmetCloth, 1, new Object[]{
