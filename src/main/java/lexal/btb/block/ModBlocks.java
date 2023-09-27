@@ -47,7 +47,7 @@ public class ModBlocks {
             .setTopBottomTexture("pancake_top_syrup.png")
             .setSideTextures("pancake_side_syrup.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancakeSyrup("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
+            .build(new BlockLayerPancakeSyrup("layer.pancake.syrup",UtilIdRegistrar.nextIdBlock(), Material.snow));
 
     public static final Block cornCropTop = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
@@ -71,7 +71,12 @@ public class ModBlocks {
             .setHardness(2.5f)
             .setResistance(3.0f)
             .setTextures("frame_glass.png")
-            .build(new BlockFramedGlassTrapdoor("glass.framed.trapdoor",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
+            .build(new BlockFramedGlassTrapdoor(
+                    "glass.framed.trapdoor",
+                    UtilIdRegistrar.nextIdBlock(),
+                    Material.glass,
+                    false)
+            ).withDisabledNeighborNotifyOnMetadataChange();
 
     public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.5f)
@@ -79,6 +84,12 @@ public class ModBlocks {
             .setTextures("tile_top.png")
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
 
+    public static final Block inscriber = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(2.5f)
+            .setResistance(2.5f)
+            .setTopBottomTexture("inscriber_top.png")
+            .setSideTextures("inscriber_side.png")
+            .build(new Block("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);

@@ -14,19 +14,27 @@ public class ModCraftingManager {
 
     public static void register() {
         //item recipes
+
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
+
         RecipeHelper.Crafting.createShapelessRecipe(new ItemStack(Item.dye, 2, 6), new Object[]{ModBlocks.blueRose});
+
         RecipeHelper.Crafting.createRecipe(ModItems.unPopcorn, 1, new Object[]{
                 " C ",
                 "CBC",
                 " C ",
                 'C', ModItems.corn,
                 'B', Item.bucket});
+
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.cornSeeds,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN SEEDS
 
         //block recipes
 
-        RecipeHelper.Crafting.createShapelessRecipe(ModBlocks.frameGlass,2,new Object[]{Item.ingotIron,Block.glass});
+        RecipeHelper.Crafting.createRecipe(ModBlocks.frameGlass, 8, new Object[]{
+                "GCG",
+                "CGC",
+                'C', Item.ingotSteelCrude,
+                'G', Block.glass});
 
         RecipeHelper.Crafting.createRecipe(ModBlocks.trapdoorFrameGlass, 6, new Object[]{
                 "CCC",

@@ -1,17 +1,31 @@
 ###blocks
 
-tile.btb.pancakestack.name=Pancake Stack
-tile.btb.pancakestack.desc=I could write a song called "stack 'em to the heavens"!
 tile.btb.bluerose.name=Cyan Rose
 tile.btb.bluerose.desc=A beautiful blue flower.
-tile.btb.netherbrick.name=Netherrack Bricks
-tile.btb.netherbrick.desc=Stacked bricks of netherrack.
-tile.btb.syruplog.name=Birch Syrup Log
-tile.btb.syruplog.desc=Dripping with liquid sugar!
+tile.btb.flint_tile.name=Flint Tile
+tile.btb.flint_tile.desc=Overlayed pieces of flint to make a roof.
+tile.btb.slab.flint_tile.name=Flint Tile Slab
+tile.btb.slab.flint_tile.desc=Overlayed pieces of flint to make a thin roof.
 tile.btb.glass.framed.name=Framed Glass
 tile.btb.glass.framed.desc=Glass's fancier cousin.
 tile.btb.glass.framed.trapdoor.name=Framed Glass Trapdoor
 tile.btb.glass.framed.trapdoor.desc=At least it looks nice.
+tile.btb.inscriber.name=Inscriber
+tile.btb.inscriber.desc=Copy all your favorite music!
+
+#unobtainables
+
+tile.btb.corncroptop.name=Corn Crop Top
+tile.btb.corncroptop.desc=Did you know?
+tile.btb.corncropbottom.name=Crop Crop Bottom
+tile.btb.corncropbottom.desc=After all, it could cost you your life, and you got that for free!
+tile.btb.syruplog.name=Birch Syrup Log
+tile.btb.syruplog.desc=Dripping with liquid sugar!
+tile.btb.layer.pancake.name=Pancake Stack
+tile.btb.layer.pancake.desc=Stack 'em to the heavens, stack 'em to the heavens!
+tile.btb.layer.pancake.syrup.name=Syrupy Pancake Stack
+tile.btb.layer.pancake.syrup.desc=I could write a song called "stack 'em to the heavens"!
+
 
 ###armor
 
@@ -24,6 +38,7 @@ item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants.
 item.btb.armor.boots.clothes.name=Shoes
 item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
 
+
 ###items
 
 item.btb.pancake.name=Pancake
@@ -33,17 +48,13 @@ item.btb.syrup.desc=A soupy-sweet brown liquid in a jar.
 item.btb.corn.name=Corn
 item.btb.corn.desc=A grain grown in warm places.
 item.btb.unpopcorn.name=Unpopped Corn
-item.btb.unpopcorn.desc=This is just depressing.
+item.btb.unpopcorn.desc=Corn, waiting to be popped for movie enjoyment.
 item.btb.popcorn.name=Popcorn
 item.btb.popcorn.desc=Crunch!
 item.btb.cornbread.name=Cornbread
 item.btb.cornbread.desc=Very mealy.
 item.btb.cornseeds.name=Corn Seeds
 item.btb.cornseeds.desc=Corn seeds that may be planted in soil.
-
-
-
-
 
 
 ###misc
@@ -66,9 +77,6 @@ achievement.btb.penguintame=Smile And Wave, Boys
 achievement.btb.penguintame.desc=Tame a penguin.
 achievement.btb.popcorn=Movie Theatre
 achievement.btb.popcorn.desc=Get a bucket of popcorn.
-
-tile.btb.corncroptop.name = Corn Crop Top
-tile.btb.corncropbottom.name = Crop Crop Bottom
 
 
 #optionals
