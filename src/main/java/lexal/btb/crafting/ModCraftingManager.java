@@ -13,6 +13,7 @@ public class ModCraftingManager {
 
 
     public static void register() {
+
         //item recipes
 
         RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar});
@@ -25,6 +26,13 @@ public class ModCraftingManager {
                 " C ",
                 'C', ModItems.corn,
                 'B', Item.bucket});
+
+        RecipeHelper.Crafting.createRecipe(ModItems.recordBlank, 1, new Object[]{
+                " C ",
+                "CBC",
+                " C ",
+                'C', Item.sulphur,
+                'B', Item.paper});
 
         //block recipes
 

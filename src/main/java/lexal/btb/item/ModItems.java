@@ -17,8 +17,8 @@ public class ModItems {
     public static final Item unPopcorn = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "unpopcorn", "unpopped_corn.png").setMaxStackSize(1);
     public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),10,false), "cornbread", "cornbread.png");
     public static final Item cornSeeds = ItemHelper.createItem(BTBTA.MOD_ID, new ItemSeeds(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),ModBlocks.cornCropBottom), "cornseeds", "corn_seeds.png");
-    //public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecord(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),"discrain"), "recordrain", "record_5.png");
-
+    public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "record.rain", "record_5.png"); // ItemRecord is protected i am sobbing rn
+    public static final Item recordBlank = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "record.blank", "blank_disc.png");
 
 
 
