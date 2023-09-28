@@ -95,6 +95,9 @@ public class ModBlocks {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
     }
 
-    public static void register() {}
+    public static void register() {
+        Block.tickOnLoad[cornCropBottom.id] = true;
+        Block.tickOnLoad[cornCropTop.id] = true;
+    }
 
 }
