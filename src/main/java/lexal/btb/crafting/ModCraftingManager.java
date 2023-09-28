@@ -26,8 +26,6 @@ public class ModCraftingManager {
                 'C', ModItems.corn,
                 'B', Item.bucket});
 
-        RecipeHelper.Crafting.createShapelessRecipe(ModItems.cornSeeds,1,new Object[]{Item.stick,Item.wheat});//TEMP RECIPE PLEASE ADD PROPER WAY TO GET CORN SEEDS
-
         //block recipes
 
         RecipeHelper.Crafting.createRecipe(ModBlocks.frameGlass, 8, new Object[]{

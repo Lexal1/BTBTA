@@ -27,7 +27,7 @@ public class BlockCropCornBottom extends BlockCrops {
     public BlockCropCornBottom(String key, int id) {
         super(key, id);
         this.setTickOnLoad(true);
-        this.setBlockBounds(0.3125F, 0.0F, 0.3125F, 0.6875F, 0.5F, 0.6875F);
+        this.setBlockBounds(0.3125F, 0.0F, 0.3125F, 0.6875F, 1.0F, 0.6875F);
     }
 
     private float getGrowthRate(World world, int i, int j, int k) {
