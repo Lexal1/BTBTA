@@ -65,7 +65,7 @@ public class ModBlocks {
             .setHardness(2.5f)
             .setResistance(3.0f)
             .setTextures("frame_glass.png")
-            .build(new BlockGlassTinted("glass.framed",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockFramedGlass("glass.framed",UtilIdRegistrar.nextIdBlock(),Material.glass,true));
 
     public static final Block trapdoorFrameGlass = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.5f)
