@@ -98,6 +98,9 @@ public class ModBlocks {
     public static void register() {
         Block.tickOnLoad[cornCropBottom.id] = true;
         Block.tickOnLoad[cornCropTop.id] = true;
+        Block.blocksList[Block.logBirch.id] = null; // :)
+        Block.blocksList[Block.logBirch.id] = new BlockBirchLog().withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+        Block.tickOnLoad[Block.logBirch.id] = true;
     }
 
 }
