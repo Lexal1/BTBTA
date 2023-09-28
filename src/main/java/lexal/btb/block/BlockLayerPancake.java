@@ -37,7 +37,7 @@ public class BlockLayerPancake extends BlockLayerBase {
     }
     @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
-        if (player.getHeldItem() != null && player.getHeldItem().getItem() == ModItems.syrupJar) /*player.getHeldItem() = new ItemStack(Item.jar);*/ world.setBlockAndMetadataWithNotify(x,y,z, ModBlocks.layerPancakeSyrup.id,world.getBlockMetadata(x,y,z));
+        if (player.getHeldItem() != null && player.getHeldItem().getItem() == ModItems.syrupJar) world.setBlockAndMetadataWithNotify(x,y,z, ModBlocks.layerPancakeSyrup.id,world.getBlockMetadata(x,y,z));
         if (player.getHeldItem() != null || player.isSneaking()) {return false;}// not empty hand or sneaking then do nothing
     this.eatPancakeLayer(world, x, y, z, player); // Eat layer
     return true;
