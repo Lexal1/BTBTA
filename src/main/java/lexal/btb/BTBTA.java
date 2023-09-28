@@ -49,8 +49,6 @@ public class BTBTA implements ModInitializer {
         LOGGER.info("btbta loading! watch out for bugs");
         handleConfig();
 
-        ModBlockTags.register();
-
         ModBlocks.register();
         ModItems.register();
         ModCraftingManager.register();
@@ -58,11 +56,7 @@ public class BTBTA implements ModInitializer {
 
         ModEntities.register();
 
-        SoundHelper.addMusic(MOD_ID, "moon0.wav");
-        SoundHelper.addMusic(MOD_ID, "moon1.wav");
-        SoundHelper.addMusic(MOD_ID, "moon2.wav");
-        SoundHelper.addMusic(MOD_ID, "moon3.wav");
-        SoundHelper.addMusic(MOD_ID, "moon4.wav");
+        SoundHelper.addMusic(MOD_ID, "discrain.wav");
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
