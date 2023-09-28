@@ -24,7 +24,7 @@ public class ModItems {
 
     //armor
     public static final ArmorMaterial armorclothing = ArmorHelper.createArmorMaterial("clothes", 128, 10.0f, 0.0f, 0.0f, 10.0f);
-    public static final Item armorHelmetCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Hood", UtilIdRegistrar.nextIdItem(), armorclothing, 0), "armor.helmet.clothes", "cloth_hood.png");
+    public static final Item armorHelmetCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Hood", UtilIdRegistrar.nextIdItem(), armorclothing, 0), "armor.helmet.clothes", "cloth_hood.png").withTags(ModItemTags.hideName);
     public static final Item armorChestplateCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Shirt", UtilIdRegistrar.nextIdItem(), armorclothing, 1), "armor.chestplate.clothes", "cloth_shirt.png");
     public static final Item armorLeggingsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Cloth Pants", UtilIdRegistrar.nextIdItem(), armorclothing, 2), "armor.leggings.clothes", "cloth_pants.png");
     public static final Item armorBootsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmor("Shoes", UtilIdRegistrar.nextIdItem(), armorclothing, 3), "armor.boots.clothes", "cloth_boots.png");
