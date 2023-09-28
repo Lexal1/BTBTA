@@ -71,32 +71,30 @@ public class BlockCropCornBottom extends BlockCrops {
     @Override
     public boolean canBlockStay(World world, int x, int y, int z) {
         if(world.getBlockMetadata(x, y, z) == 0){
-            return true;
+            return super.canBlockStay(world, x ,y, z);
         }
         if(world.getBlockId(x, y+1, z) == ModBlocks.cornCropTop.id && world.getBlockMetadata(x,y,z) >= 0){
-            return true;
+            return super.canBlockStay(world, x ,y, z);
         }
         return false;
     }
     @Override
     public void updateTick(World world, int x, int y, int z, Random rand) {
-        super.updateTick(world,x,y,z,rand);
+        if (world.seasonManager.getCurrentSeason() != null && world.seasonManager.getCurrentSeason().killFlowers && this.killedByWeather && rand.nextInt(256) == 0) {
+            world.setBlockWithNotify(x, y, z, 0);
+        }
+
         if (world.getBlockLightValue(x, y + 1, z) >= 9) {
             int blockMetadata = world.getBlockMetadata(x, y, z);
-            float f = this.getGrowthRate(world, x, y, z);
-            if (blockMetadata > 0) {
-                if (rand.nextInt((int) (100.0F / f)) == 0) {
-                    ++blockMetadata;
-                    world.setBlockMetadataWithNotify(x, y, z, blockMetadata);
-                    world.setBlockMetadataWithNotify(x, y + 1, z, world.getBlockMetadata(x, y+1, z)+1);
-                }
+            if (blockMetadata >= 4){
+                return;
             }
-            if (blockMetadata == 0 && world.getBlockId(x, y+1, z) == 0) {
-                if (rand.nextInt((int) (100.0F / f)) == 0) {
-                    ++blockMetadata;
-                    world.setBlockMetadataWithNotify(x, y, z, blockMetadata);
-                    world.setBlockAndMetadataWithNotify(x, y + 1, z, ModBlocks.cornCropTop.id, 0);
-                }
+            float f = this.getGrowthRate(world, x, y, z);
+            int blockAbove = world.getBlockId(x, y+1, z);
+            if ((blockAbove == 0 || blockAbove == ModBlocks.cornCropTop.id) && rand.nextInt((int) (100.0F / f)) == 0) {
+                world.setBlockAndMetadataWithNotify(x, y + 1, z, ModBlocks.cornCropTop.id, blockMetadata);
+                world.setBlockMetadataWithNotify(x, y, z, ++blockMetadata);
+
             }
         }
     }
@@ -104,7 +102,8 @@ public class BlockCropCornBottom extends BlockCrops {
 
     public void fertilize(World world, int x, int y, int z) {
         world.setBlockMetadataWithNotify(x, y, z,4);
-        if(world.getBlockId(x, y+1, z) == 0){
+        int blockAbove = world.getBlockId(x, y+1, z);
+        if(blockAbove == 0 || blockAbove == ModBlocks.cornCropTop.id){
             world.setBlockMetadataWithNotify(x, y, z,4);
             world.setBlockAndMetadataWithNotify(x, y+1, z, ModBlocks.cornCropTop.id,4);
         }
