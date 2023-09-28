@@ -6,7 +6,8 @@
   "mixins": [
     "BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
-    "ItemDyeMixin"
+    "ItemDyeMixin",
+    "WorldFeatureLabyrinthMixin"
   ],
   "client": [
   ],
