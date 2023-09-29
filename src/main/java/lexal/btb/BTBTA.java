@@ -56,7 +56,7 @@ public class BTBTA implements ModInitializer {
 
         ModEntities.register();
 
-        SoundHelper.addMusic(MOD_ID, "discrain.wav");
+        SoundHelper.addStreaming(MOD_ID, "discrain.wav");
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();;
