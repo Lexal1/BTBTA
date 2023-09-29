@@ -2,13 +2,54 @@ package lexal.btb.block;
 
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
+import lexal.btb.item.ModItems;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.item.ItemRecord;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 
 public class TileEntityInscriber extends TileEntity implements IInventory {
+    public int currentInscribeTime = 0;
+    public int maxInscribeTime = 200;
     protected ItemStack[] inscriberItemStacks = new ItemStack[3];
+    public int getInscribeProgressScaled(int i) {
+        if (this.maxInscribeTime == 0) {
+            return 0;
+        }
+        return this.currentInscribeTime * i / this.maxInscribeTime;
+    }
+    public boolean canInscribe() {
+        if (inscriberItemStacks[0] == null) {return false;}
+        if (inscriberItemStacks[0].getItem() != ModItems.recordBlank) {return false;}
+        if (inscriberItemStacks[1] != null) { return false;}
+        if (inscriberItemStacks[2] == null) { return false;}
+        if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord)) { return false;}
+        return true;
+    }
+    public void updateEntity() {
+        if (canInscribe()){
+            ++currentInscribeTime;
+            if (currentInscribeTime >= maxInscribeTime){
+                currentInscribeTime = 0;
+                inscribeItem();
+            }
+        } else {
+            currentInscribeTime = 0;
+        }
+
+    }
+    public void inscribeItem(){
+        if (!canInscribe()) { return;}
+        ItemStack itemstack = new ItemStack(inscriberItemStacks[2]);
+        if (inscriberItemStacks[1] == null){
+            inscriberItemStacks[1] = itemstack.copy();
+        }
+        --inscriberItemStacks[0].stackSize;
+        if (this.inscriberItemStacks[0].stackSize <= 0) {
+            this.inscriberItemStacks[0] = null;
+        }
+    }
     @Override
     public int getSizeInventory() {
         return inscriberItemStacks.length;
@@ -72,6 +113,7 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
             if (byte0 < 0 || byte0 >= this.inscriberItemStacks.length) continue;
             this.inscriberItemStacks[byte0] = ItemStack.readItemStackFromNbt(nbttagcompound1);
         }
+        this.currentInscribeTime = nbttagcompound.getShort("InscribeTime");
     }
 
     @Override
@@ -86,5 +128,6 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
             nbttaglist.addTag(nbttagcompound1);
         }
         nbttagcompound.put("Items", nbttaglist);
+        nbttagcompound.putShort("InscribeTime", (short) this.currentInscribeTime);
     }
 }

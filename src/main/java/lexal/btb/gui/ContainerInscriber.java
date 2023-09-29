@@ -2,12 +2,10 @@ package lexal.btb.gui;
 
 import lexal.btb.block.TileEntityInscriber;
 import net.minecraft.core.InventoryAction;
-import net.minecraft.core.block.entity.TileEntityFurnace;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.player.inventory.InventoryPlayer;
 import net.minecraft.core.player.inventory.slot.Slot;
-import net.minecraft.core.player.inventory.slot.SlotFurnace;
 
 import java.util.List;
 

@@ -4,15 +4,16 @@
   "package": "lexal.btb.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "Block.BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
+    "NetClientHandlerMixin",
+    "PlayerRendererMixin",
+    "WorldFeatureLabyrinthMixin",
+    "Block.BlockGrassMixin",
     "Entity.EntityPlayerMixin",
     "Entity.EntityPlayerSPMixin",
-    "Item.ItemDyeMixin",
-    "Item.ItemJarMixin",
-    "PlayerRendererMixin",
     "Entity.TileEntityMixin",
-    "WorldFeatureLabyrinthMixin"
+    "Item.ItemDyeMixin",
+    "Item.ItemJarMixin"
   ],
   "client": [
   ],
