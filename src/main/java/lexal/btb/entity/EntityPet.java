@@ -1,6 +1,7 @@
 package lexal.btb.entity;
 
 import com.mojang.nbt.CompoundTag;
+import lexal.btb.ModAchievements;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.EntityLiving;
@@ -245,6 +246,9 @@ public class EntityPet extends EntityAnimal {
                     itemstack.consumeItem(entityplayer);
                     if (itemstack.stackSize <= 0) {
                         entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, (ItemStack) null);
+                    }
+                    if (this instanceof EntityPenguin){
+                        entityplayer.triggerAchievement(ModAchievements.PENGUIN);
                     }
 
                     if (!this.world.isClientSide) {
