@@ -6,6 +6,8 @@
   "mixins": [
     "BlockGrassMixin",
     "ChunkDecoratorOverworldMixin",
+    "EntityPlayerMixin",
+    "EntityPlayerSPMixin",
     "ItemDyeMixin",
     "ItemJarMixin",
     "PlayerRendererMixin",

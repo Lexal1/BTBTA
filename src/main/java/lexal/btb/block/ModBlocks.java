@@ -89,7 +89,7 @@ public class ModBlocks {
             .setResistance(2.5f)
             .setTopBottomTexture("inscriber_top.png")
             .setSideTextures("inscriber_side.png")
-            .build(new Block("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
+            .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
