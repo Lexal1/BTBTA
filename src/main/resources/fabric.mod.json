@@ -28,8 +28,8 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "halplibe": ">=2.2.0",
-    "prismaticlibe": ">=2.1.4"
+    "halplibe": ">=2.3.0",
+    "prismaticlibe": ">=2.2.0"
   },
   "suggests": {
     "spawneggs": ">=1.1.0"
