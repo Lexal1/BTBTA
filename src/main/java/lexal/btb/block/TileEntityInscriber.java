@@ -1,5 +1,7 @@
 package lexal.btb.block;
 
+import com.mojang.nbt.CompoundTag;
+import com.mojang.nbt.ListTag;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
@@ -58,5 +60,31 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
             return false;
         }
         return entityplayer.distanceToSqr((double)this.xCoord + 0.5, (double)this.yCoord + 0.5, (double)this.zCoord + 0.5) <= 64.0;
+    }
+    @Override
+    public void readFromNBT(CompoundTag nbttagcompound) {
+        super.readFromNBT(nbttagcompound);
+        ListTag nbttaglist = nbttagcompound.getList("Items");
+        this.inscriberItemStacks = new ItemStack[this.getSizeInventory()];
+        for (int i = 0; i < nbttaglist.tagCount(); ++i) {
+            CompoundTag nbttagcompound1 = (CompoundTag)nbttaglist.tagAt(i);
+            byte byte0 = nbttagcompound1.getByte("Slot");
+            if (byte0 < 0 || byte0 >= this.inscriberItemStacks.length) continue;
+            this.inscriberItemStacks[byte0] = ItemStack.readItemStackFromNbt(nbttagcompound1);
+        }
+    }
+
+    @Override
+    public void writeToNBT(CompoundTag nbttagcompound) {
+        super.writeToNBT(nbttagcompound);
+        ListTag nbttaglist = new ListTag();
+        for (int i = 0; i < this.inscriberItemStacks.length; ++i) {
+            if (this.inscriberItemStacks[i] == null) continue;
+            CompoundTag nbttagcompound1 = new CompoundTag();
+            nbttagcompound1.putByte("Slot", (byte)i);
+            this.inscriberItemStacks[i].writeToNBT(nbttagcompound1);
+            nbttaglist.addTag(nbttagcompound1);
+        }
+        nbttagcompound.put("Items", nbttaglist);
     }
 }

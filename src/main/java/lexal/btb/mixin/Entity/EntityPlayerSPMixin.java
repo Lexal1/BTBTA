@@ -1,4 +1,4 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.Entity;
 
 import lexal.btb.block.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
