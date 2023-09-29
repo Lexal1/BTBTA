@@ -5,6 +5,7 @@ import lexal.btb.UtilIdRegistrar;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
+import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
@@ -87,9 +88,10 @@ public class ModBlocks {
     public static final Block inscriber = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(2.5f)
             .setResistance(2.5f)
+            .setImmovable()
             .setTopBottomTexture("inscriber_top.png")
             .setSideTextures("inscriber_side.png")
-            .build(new Block("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
+            .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);

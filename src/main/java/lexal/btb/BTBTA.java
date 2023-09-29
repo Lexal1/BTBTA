@@ -28,18 +28,21 @@ public class BTBTA implements ModInitializer {
 
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static int GUI_ID_INSCRIBER = 9;
 
     private void handleConfig() {
         Properties prop = new Properties();
         prop.setProperty("starting_block_id","3000");
         prop.setProperty("starting_item_id","20000");
         prop.setProperty("starting_spawneggs_item_id","20200");
+        prop.setProperty("gui_inscriber_id", "9");
         ConfigHandler config = new ConfigHandler(MOD_ID,prop);
         UtilIdRegistrar.initIds(
                 config.getInt("starting_block_id"),
                 config.getInt("starting_item_id"),
                 config.getInt("starting_spawneggs_item_id"));
         config.updateConfig();
+        GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
     public static final AchievementPage BTBACHIEVEMENTS = new ModAchievements();

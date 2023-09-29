@@ -1,4 +1,4 @@
-package lexal.btb.mixin;
+package lexal.btb.mixin.Block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.block.ModBlocks;
