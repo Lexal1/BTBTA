@@ -1,5 +1,6 @@
 package lexal.btb.item;
 
+import lexal.btb.ModAchievements;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.tag.BlockTags;
@@ -49,6 +50,9 @@ public class ItemPlacableLayer extends ItemPlaceable {
                 return false;
             }
             if (newMeta < 7) {
+                if (newMeta == 6 && this.id == ModItems.pancake.id){
+                    entityplayer.triggerAchievement(ModAchievements.PANCAKES);
+                }
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, this.blockID, newMeta);
             } else if (blockLayer.fullBlockID != -1) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, blockLayer.fullBlockID, 0);
