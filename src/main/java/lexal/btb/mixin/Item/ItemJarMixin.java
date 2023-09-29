@@ -1,5 +1,6 @@
 package lexal.btb.mixin.Item;
 
+import lexal.btb.ModAchievements;
 import lexal.btb.block.ModBlocks;
 import lexal.btb.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -27,6 +28,7 @@ public class ItemJarMixin {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, Block.logBirch.id, world.getBlockMetadata(blockX, blockY, blockZ));
                 itemstack.consumeItem(entityplayer);
                 entityplayer.inventory.insertItem(new ItemStack(ModItems.syrupJar), true);
+                entityplayer.triggerAchievement(ModAchievements.SYRUP);
                 cir.setReturnValue(itemstack);
             }
         }
