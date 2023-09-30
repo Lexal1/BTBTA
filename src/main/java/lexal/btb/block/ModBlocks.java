@@ -29,8 +29,8 @@ public class ModBlocks {
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.0f)
-            .setResistance(1.0f)
+            .setHardness(0.5f)
+            .setResistance(0.5f)
             .setTextures("tile_top.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("flint_tile",UtilIdRegistrar.nextIdBlock(),Material.stone));
@@ -81,8 +81,8 @@ public class ModBlocks {
             ).withDisabledNeighborNotifyOnMetadataChange();
 
     public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.0f)
-            .setResistance(1.0f)
+            .setHardness(0.5f)
+            .setResistance(0.5f)
             .setTextures("tile_top.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
