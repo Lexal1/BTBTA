@@ -1,11 +1,10 @@
 package lexal.btb.mixin.Entity;
 
-import lexal.btb.block.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import lexal.btb.gui.ContainerInscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.net.packet.Packet100OpenWindow;
-import net.minecraft.core.player.inventory.ContainerFurnace;
 import net.minecraft.server.entity.player.EntityPlayerMP;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

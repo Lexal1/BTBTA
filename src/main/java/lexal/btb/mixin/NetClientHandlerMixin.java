@@ -1,7 +1,7 @@
 package lexal.btb.mixin;
 
 import lexal.btb.BTBTA;
-import lexal.btb.block.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.net.handler.NetClientHandler;

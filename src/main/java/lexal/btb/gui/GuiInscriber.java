@@ -1,9 +1,8 @@
 package lexal.btb.gui;
 
-import lexal.btb.block.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.client.gui.GuiContainer;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.player.inventory.Container;
 import org.lwjgl.opengl.GL11;
 
 public class GuiInscriber extends GuiContainer {

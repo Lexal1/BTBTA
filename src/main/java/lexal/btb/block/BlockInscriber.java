@@ -1,5 +1,6 @@
 package lexal.btb.block;
 
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;

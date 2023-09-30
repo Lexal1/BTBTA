@@ -1,4 +1,4 @@
-package lexal.btb.block;
+package lexal.btb.block.tile_entity;
 
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
@@ -11,7 +11,7 @@ import net.minecraft.core.player.inventory.IInventory;
 
 public class TileEntityInscriber extends TileEntity implements IInventory {
     public int currentInscribeTime = 0;
-    public int maxInscribeTime = 200;
+    public int maxInscribeTime = 400;
     protected ItemStack[] inscriberItemStacks = new ItemStack[3];
     public int getInscribeProgressScaled(int i) {
         if (this.maxInscribeTime == 0) {

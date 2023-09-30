@@ -1,12 +1,11 @@
 package lexal.btb.mixin.Entity;
 
 import lexal.btb.ModAchievements;
-import lexal.btb.block.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import lexal.btb.gui.GuiInscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
-import net.minecraft.core.achievement.AchievementList;
 import net.minecraft.core.player.Session;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
