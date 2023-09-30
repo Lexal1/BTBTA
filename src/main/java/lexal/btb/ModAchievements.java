@@ -1,7 +1,6 @@
 package lexal.btb;
 
 import lexal.btb.block.ModBlocks;
-import lexal.btb.item.ModItems;
 import net.minecraft.client.render.TextureFX;
 import net.minecraft.core.Global;
 import net.minecraft.core.achievement.Achievement;
@@ -14,10 +13,12 @@ import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import turniplabs.halplibe.util.achievements.GuiAchievements;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ModAchievements extends AchievementPage {
-
+    public static final List<Integer> flowersList = new ArrayList<>();
     public static final Achievement ROOT = new Achievement(AchievementList.achievementList.size()+1,"btb.root",0,0, Item.basket/*change this to a modded block, i dare you*/,null);
     public static final Achievement SYRUP = new Achievement(AchievementList.achievementList.size()+1,"btb.syrup",2,1, Item.jar,ROOT);
     public static final Achievement PANCAKES = new Achievement(AchievementList.achievementList.size()+1,"btb.pancakes",4,1, Item.eggChicken,SYRUP);
@@ -27,6 +28,11 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",3,-2, Item.featherChicken,ROOT);
     public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, Item.wheat,ROOT);
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
+    static {
+        flowersList.add(Block.flowerRed.id);
+        flowersList.add(Block.flowerYellow.id);
+        flowersList.add(ModBlocks.blueRose.id);
+    }
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
         ((StatBase)ROOT).registerStat();

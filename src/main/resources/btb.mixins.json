@@ -10,6 +10,7 @@
     "SlotFurnaceMixin",
     "WorldFeatureLabyrinthMixin",
     "Block.BlockGrassMixin",
+    "Entity.EntityItemMixin",
     "Entity.EntityPlayerMixin",
     "Entity.EntityPlayerMPMixin",
     "Entity.EntityPlayerSPMixin",

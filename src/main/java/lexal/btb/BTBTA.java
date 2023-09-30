@@ -45,7 +45,7 @@ public class BTBTA implements ModInitializer {
         GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
-    public static final AchievementPage BTBACHIEVEMENTS = new ModAchievements();
+    public static AchievementPage BTBACHIEVEMENTS;
 
     @Override
     public void onInitialize() {
@@ -62,9 +62,9 @@ public class BTBTA implements ModInitializer {
         SoundHelper.addStreaming(MOD_ID, "discrain.wav");
 
         if (spawnEggsModPresent){
-            SpawnEggsModule.onInitialize();;
+            SpawnEggsModule.onInitialize();
         }
-
+        BTBACHIEVEMENTS = new ModAchievements();
         AchievementHelper.addPage(BTBACHIEVEMENTS);
         LOGGER.info("btbta loaded successfully!");
     }
