@@ -1,6 +1,6 @@
 package lexal.btb.gui;
 
-import lexal.btb.block.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.core.InventoryAction;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.Container;
