@@ -29,9 +29,10 @@ public class ModBlocks {
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(2.5f)
-            .setResistance(2.5f)
+            .setHardness(0.5f)
+            .setResistance(0.5f)
             .setTextures("tile_top.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("flint_tile",UtilIdRegistrar.nextIdBlock(),Material.stone));
     public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.0f)
@@ -65,13 +66,13 @@ public class ModBlocks {
             .build(new BlockCropCornBottom("corncropbottom",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(2.5f)
+            .setHardness(1.5f)
             .setResistance(3.0f)
             .setTextures("frame_glass.png")
             .build(new BlockFramedGlass("glass.framed",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
 
     public static final Block trapdoorFrameGlass = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(2.5f)
+            .setHardness(1.5f)
             .setResistance(3.0f)
             .setTextures("frame_glass.png")
             .build(new BlockFramedGlassTrapdoor(
@@ -82,17 +83,20 @@ public class ModBlocks {
             ).withDisabledNeighborNotifyOnMetadataChange();
 
     public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(2.5f)
-            .setResistance(2.5f)
+            .setHardness(0.5f)
+            .setResistance(0.5f)
             .setTextures("tile_top.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
 
     public static final Block inscriber = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(2.5f)
-            .setResistance(2.5f)
+            .setBlockSound(BlockSounds.WOOD)
+            .setHardness(1.0f)
+            .setResistance(1.0f)
             .setImmovable()
             .setTopBottomTexture("inscriber_top.png")
             .setSideTextures("inscriber_side.png")
+            .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
     static {
