@@ -1,4 +1,4 @@
-package lexal.btb.block.tile_entity;
+package lexal.btb.entity.tile_entity;
 
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;

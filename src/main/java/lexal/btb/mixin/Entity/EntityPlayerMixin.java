@@ -1,7 +1,7 @@
 package lexal.btb.mixin.Entity;
 
 import lexal.btb.ModAchievements;
-import lexal.btb.block.tile_entity.TileEntityInscriber;
+import lexal.btb.entity.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import net.minecraft.core.achievement.stat.StatBase;
 import net.minecraft.core.entity.player.EntityPlayer;

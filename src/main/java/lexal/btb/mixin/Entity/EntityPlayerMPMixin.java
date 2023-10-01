@@ -1,8 +1,8 @@
 package lexal.btb.mixin.Entity;
 
-import lexal.btb.block.tile_entity.TileEntityInscriber;
+import lexal.btb.entity.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
-import lexal.btb.gui.ContainerInscriber;
+import lexal.btb.gui.container.ContainerInscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.net.packet.Packet100OpenWindow;
 import net.minecraft.server.entity.player.EntityPlayerMP;
