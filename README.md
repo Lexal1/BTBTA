@@ -18,6 +18,10 @@ Lexal
 
 UselessBullets
 - prismatic libe
+- getting the mod to the released state it's in now
+
+forsoothe
+- helping a lot with the corn blocks
 ## pictures
 no pictures, unfortunately :(
 
