@@ -1,11 +1,7 @@
 package lexal.btb.mixin.Entity;
 
-<<<<<<< HEAD
 import lexal.btb.BTBTA;
-import lexal.btb.entity.tile_entity.TileEntityInscriber;
-=======
 import lexal.btb.block.tile_entity.TileEntityInscriber;
->>>>>>> parent of ab11892 (Added Backpacks)
 import lexal.btb.entity.IPlayerDisplay;
 import lexal.btb.gui.ContainerInscriber;
 import net.minecraft.client.Minecraft;
