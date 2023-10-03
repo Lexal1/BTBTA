@@ -4,7 +4,6 @@ import lexal.btb.block.*;
 import lexal.btb.crafting.ModCraftingManager;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
-import lexal.btb.modmodule.BetterThanLegacyModule;
 import lexal.btb.modmodule.SpawnEggsModule;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -30,7 +29,6 @@ public class BTBTA implements ModInitializer {
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static int GUI_ID_INSCRIBER = 9;
-    public static int GUI_LABEL_COLOR = 0x404040;
 
     private void handleConfig() {
         Properties prop = new Properties();
@@ -47,7 +45,6 @@ public class BTBTA implements ModInitializer {
         GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
-    public static final boolean legacyUIModPresent = ModCheckHelper.checkForMod("legacyui", ">=0.8.0");
     public static AchievementPage BTBACHIEVEMENTS;
 
     @Override
@@ -67,9 +64,6 @@ public class BTBTA implements ModInitializer {
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();
-        }
-        if (legacyUIModPresent){
-            BetterThanLegacyModule.onInitialize();
         }
         BTBACHIEVEMENTS = new ModAchievements();
         AchievementHelper.addPage(BTBACHIEVEMENTS);

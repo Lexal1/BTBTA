@@ -1,4 +1,4 @@
-package lexal.btb.gui.slots;
+package lexal.btb.gui;
 
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemRecord;

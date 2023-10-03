@@ -1,9 +1,9 @@
 package lexal.btb.mixin.Entity;
 
 import lexal.btb.ModAchievements;
-import lexal.btb.entity.tile_entity.TileEntityInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
-import lexal.btb.gui.guiscreen.GuiInscriber;
+import lexal.btb.gui.GuiInscriber;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.core.player.Session;

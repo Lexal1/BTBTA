@@ -1,8 +1,6 @@
-package lexal.btb.gui.guiscreen;
+package lexal.btb.gui;
 
-import lexal.btb.BTBTA;
-import lexal.btb.entity.tile_entity.TileEntityInscriber;
-import lexal.btb.gui.container.ContainerInscriber;
+import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.client.gui.GuiContainer;
 import net.minecraft.core.entity.player.EntityPlayer;
 import org.lwjgl.opengl.GL11;
@@ -19,11 +17,6 @@ public class GuiInscriber extends GuiContainer {
         GUIx = (this.width - this.xSize) / 2;
         GUIy = (this.height - this.ySize) / 2;
         super.initGui();
-    }
-    @Override
-    protected void drawGuiContainerForegroundLayer() {
-        this.fontRenderer.drawString("Inscriber", 60, 6, BTBTA.GUI_LABEL_COLOR);
-        this.fontRenderer.drawString("Inventory", 8, this.ySize - 96 + 2, BTBTA.GUI_LABEL_COLOR);
     }
 
     @Override
