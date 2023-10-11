@@ -7,6 +7,7 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.DyeColor;
 import turniplabs.halplibe.helper.RecipeHelper;
 
 public class ModCraftingManager {
@@ -35,6 +36,8 @@ public class ModCraftingManager {
                 'B', Item.paper});
 
         //block recipes
+
+        RecipeHelper.craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, DyeColor.DYE_WHITE.blockMeta), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.birchSyrupLog});
 
         RecipeHelper.craftingManager.addRecipe(new ItemStack(ModBlocks.inscriber, 1), true, false, new Object[]{
                 "PIP",
