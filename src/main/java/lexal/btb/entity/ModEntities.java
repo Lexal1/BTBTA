@@ -7,6 +7,6 @@ import turniplabs.halplibe.helper.EntityHelper;
 public class ModEntities {
 
     public static void register() {
-        EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 902, "Penguin");
+        EntityHelper.createEntity(EntityPenguin.class, new PenguinRenderer(new ModelPenguin(), .25F), 102, "Penguin");
     }
 }
