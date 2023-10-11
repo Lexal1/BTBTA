@@ -1,5 +1,6 @@
 package lexal.btb.mixin.Entity;
 
+import lexal.btb.BTBTA;
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import lexal.btb.gui.ContainerInscriber;
@@ -22,7 +23,7 @@ public abstract class EntityPlayerMPMixin implements IPlayerDisplay {
     @Override
     public void displayGUIInscriber(TileEntityInscriber tileEntityInscriber) {
         getNextWindowId();
-        thisAs.playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, 4, tileEntityInscriber.getInvName(), tileEntityInscriber.getSizeInventory()));
+        thisAs.playerNetServerHandler.sendPacket(new Packet100OpenWindow(currentWindowId, BTBTA.GUI_ID_INSCRIBER, tileEntityInscriber.getInvName(), tileEntityInscriber.getSizeInventory()));
         thisAs.craftingInventory = new ContainerInscriber(thisAs.inventory, tileEntityInscriber);
         thisAs.craftingInventory.windowId = currentWindowId;
         thisAs.craftingInventory.onContainerInit(thisAs);

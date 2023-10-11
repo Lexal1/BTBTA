@@ -7,6 +7,7 @@ import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.player.inventory.InventoryPlayer;
 import net.minecraft.core.player.inventory.slot.Slot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ContainerInscriber extends Container {
@@ -27,48 +28,30 @@ public class ContainerInscriber extends Container {
     }
     @Override
     public List<Integer> getMoveSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
-        if (slot.id >= 0 && slot.id <= 3) {
-            return this.getSlots(slot.id, 1, false);
+        if (slot.id >= 0 && slot.id <= 2) {
+            return this.getSlots(0, 3, false);
+        }
+        if (action == InventoryAction.MOVE_SIMILAR) {
+            return this.getSlots(3, 36, false);
         }
         if (action == InventoryAction.MOVE_ALL) {
-            if (slot.id >= 3 && slot.id <= 30) {
+            if (slot.id < 27) {
                 return this.getSlots(3, 27, false);
             }
-            if (slot.id >= 30 && slot.id <= 38) {
-                return this.getSlots(30, 9, false);
-            }
-        }
-        if (slot.id >= 3 && slot.id <= 38) {
-            return this.getSlots(3, 36, false);
+            return this.getSlots(30, 9, false);
         }
         return null;
     }
 
     @Override
     public List<Integer> getTargetSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
-        if (slot.id >= 3 && slot.id <= 39) {
-            if (action != InventoryAction.MOVE_ALL) {
-                if (target == 1) {
-                    return this.getSlots(0, 1, false);
-                }
-                if (target == 2) {
-                    return this.getSlots(1, 1, false);
-                }
-            }
-            if (slot.id >= 3 && slot.id <= 29) {
-                return this.getSlots(30, 9, false);
-            }
-            if (slot.id >= 31 && slot.id <= 38) {
-                return this.getSlots(3, 27, false);
-            }
-        }
         if (slot.id >= 0 && slot.id <= 2) {
-            if (slot.id == 2) {
-                return this.getSlots(3, 36, true);
-            }
             return this.getSlots(3, 36, false);
         }
-        return null;
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(0);
+        list.add(2);
+        return list;
     }
 
     @Override
