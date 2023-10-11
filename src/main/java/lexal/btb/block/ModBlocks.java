@@ -3,6 +3,7 @@ package lexal.btb.block;
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+import net.minecraft.client.sound.block.BlockSoundDispatcher;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
@@ -41,6 +42,7 @@ public class ModBlocks {
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .setBlockDrop(Block.logBirch)
             .setTopBottomTexture(1,24)
+            .setBlockSound(BlockSounds.WOOD)
             .build(new BlockBirchLog("syruplog",UtilIdRegistrar.nextIdBlock(), true));
     public static final Block layerPancakeSyrup = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
@@ -106,6 +108,7 @@ public class ModBlocks {
     public static void register() {
         Block.blocksList[Block.logBirch.id] = null; // Replace vanilla birch log with custom version
         Block.blocksList[Block.logBirch.id] = new BlockBirchLog("log.birch", 282,false).withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+        BlockSoundDispatcher.getInstance().addDispatch(Block.blocksList[Block.logBirch.id], BlockSounds.WOOD);
         Block.tickOnLoad[Block.logBirch.id] = true;
     }
 
