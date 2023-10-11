@@ -41,7 +41,7 @@ public class ModBlocks {
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .setBlockDrop(Block.logBirch)
             .setTopBottomTexture(1,24)
-            .build(new BlockLog("syruplog",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockBirchLog("syruplog",UtilIdRegistrar.nextIdBlock(), true));
     public static final Block layerPancakeSyrup = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
             .setResistance(0.0f)
@@ -105,7 +105,7 @@ public class ModBlocks {
 
     public static void register() {
         Block.blocksList[Block.logBirch.id] = null; // Replace vanilla birch log with custom version
-        Block.blocksList[Block.logBirch.id] = new BlockBirchLog().withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+        Block.blocksList[Block.logBirch.id] = new BlockBirchLog("log.birch", 282,false).withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
         Block.tickOnLoad[Block.logBirch.id] = true;
     }
 
