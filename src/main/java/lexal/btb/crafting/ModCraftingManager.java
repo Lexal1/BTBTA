@@ -36,6 +36,14 @@ public class ModCraftingManager {
 
         //block recipes
 
+        RecipeHelper.craftingManager.addRecipe(new ItemStack(ModBlocks.inscriber, 1), true, false, new Object[]{
+                "PIP",
+                "PDP",
+                "PPP",
+                'P', Block.planksOak,
+                'I', Item.ingotIron,
+                'D', Item.diamond});
+
         RecipeHelper.Crafting.createRecipe(ModBlocks.frameGlass, 8, new Object[]{
                 "GCG",
                 "CGC",
