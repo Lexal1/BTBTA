@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "lexal.btb.BTBTA"
+    ],
+    "btwaila": [
+      "lexal.btb.modmodule.BTWaila.BTWailaPlugin"
     ]
   },
   "mixins": [

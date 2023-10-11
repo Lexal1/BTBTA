@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "lexal.btb.mixin",
+  "plugin": "lexal.btb.BTBMixinPlugin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ChunkDecoratorOverworldMixin",
