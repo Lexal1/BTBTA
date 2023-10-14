@@ -34,6 +34,8 @@ public class ModBlocks {
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockStone("flint_tile",UtilIdRegistrar.nextIdBlock()));
     public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(1.0f)
+            .setResistance(1.0f)
             .setSideTextures("birch_syrup.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .setBlockDrop(Block.logBirch)
