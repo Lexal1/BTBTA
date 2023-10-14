@@ -67,6 +67,11 @@ public class ModCraftingManager {
                 "CCC",
                 'C', ModBlocks.flintTile});
 
+        RecipeHelper.Crafting.createRecipe(ModBlocks.olivineBricks, 4, new Object[]{
+                "CC",
+                "CC",
+                'C', Item.olivine});
+
         //armor recipes
 
         RecipeHelper.Crafting.createRecipe(ModItems.armorHelmetCloth, 1, new Object[]{

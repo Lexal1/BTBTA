@@ -30,14 +30,10 @@ public class ModBlocks {
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(0.5f)
-            .setResistance(0.5f)
             .setTextures("tile_top.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new Block("flint_tile",UtilIdRegistrar.nextIdBlock(),Material.stone));
+            .build(new BlockStone("flint_tile",UtilIdRegistrar.nextIdBlock()));
     public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.0f)
-            .setResistance(1.0f)
             .setSideTextures("birch_syrup.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .setBlockDrop(Block.logBirch)
@@ -68,14 +64,10 @@ public class ModBlocks {
             .build(new BlockCropCornBottom("corncropbottom",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.5f)
-            .setResistance(3.0f)
             .setTextures("frame_glass.png")
             .build(new BlockFramedGlass("glass.framed",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
 
     public static final Block trapdoorFrameGlass = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(1.5f)
-            .setResistance(3.0f)
             .setTextures("frame_glass.png")
             .build(new BlockFramedGlassTrapdoor(
                     "glass.framed.trapdoor",
@@ -85,8 +77,6 @@ public class ModBlocks {
             ).withDisabledNeighborNotifyOnMetadataChange();
 
     public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
-            .setHardness(0.5f)
-            .setResistance(0.5f)
             .setTextures("tile_top.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
@@ -100,6 +90,10 @@ public class ModBlocks {
             .setSideTextures("inscriber_side.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
+    public static final Block olivineBricks = new BlockBuilder(BTBTA.MOD_ID)
+            .setTextures("olivine_bricks.png")
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            .build(new BlockStone("olivine_bricks",UtilIdRegistrar.nextIdBlock()));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);

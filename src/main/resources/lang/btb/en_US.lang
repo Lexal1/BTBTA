@@ -3,15 +3,18 @@
 tile.btb.bluerose.name=Cyan Rose
 tile.btb.bluerose.desc=A beautiful blue flower.
 tile.btb.flint_tile.name=Flint Tile
-tile.btb.flint_tile.desc=Overlayed pieces of flint to make a roof.
+tile.btb.flint_tile.desc=Stacked pieces of flint.
 tile.btb.slab.flint_tile.name=Flint Tile Slab
-tile.btb.slab.flint_tile.desc=Overlayed pieces of flint to make a thin roof.
+tile.btb.slab.flint_tile.desc=A slab of flint tiles.
 tile.btb.glass.framed.name=Framed Glass
 tile.btb.glass.framed.desc=Glass's fancier cousin.
 tile.btb.glass.framed.trapdoor.name=Framed Glass Trapdoor
 tile.btb.glass.framed.trapdoor.desc=At least it looks nice.
 tile.btb.inscriber.name=Inscriber
 tile.btb.inscriber.desc=Copy all your favorite music!
+tile.btb.olivine_bricks.name=Olivine Bricks
+tile.btb.olivine_bricks.desc=Stacked bricks of olivine.
+
 
 #unobtainables
 
