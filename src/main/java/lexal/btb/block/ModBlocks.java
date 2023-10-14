@@ -21,7 +21,7 @@ public class ModBlocks {
             .setTopBottomTexture("pancake_top.png")
             .setSideTextures("pancake_side.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.snow));
+            .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.cake));
 
     public static final Block blueRose = new BlockBuilder(BTBTA.MOD_ID)
             .setTextures("flower_rose_blue.png")
@@ -47,7 +47,7 @@ public class ModBlocks {
             .setTopBottomTexture("pancake_top_syrup.png")
             .setSideTextures("pancake_side_syrup.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancakeSyrup("layer.pancake.syrup",UtilIdRegistrar.nextIdBlock(), Material.snow));
+            .build(new BlockLayerPancakeSyrup("layer.pancake.syrup",UtilIdRegistrar.nextIdBlock(), Material.cake));
 
     public static final Block cornCropTop = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
