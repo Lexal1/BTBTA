@@ -24,7 +24,7 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
         if (inscriberItemStacks[0].getItem() != ModItems.recordBlank) {return false;}
         if (inscriberItemStacks[1] != null) { return false;}
         if (inscriberItemStacks[2] == null) { return false;}
-        if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord)) { return false;}
+        if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord || inscriberItemStacks[2].getItem().id == ModItems.pancake.id)) { return false;}
         return true;
     }
     public void updateEntity() {
@@ -43,7 +43,12 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
         if (!canInscribe()) { return;}
         ItemStack itemstack = new ItemStack(inscriberItemStacks[2]);
         if (inscriberItemStacks[1] == null){
-            inscriberItemStacks[1] = itemstack.copy();
+            if (inscriberItemStacks[2].getItem().id == ModItems.pancake.id){
+                inscriberItemStacks[1] = new ItemStack(ModItems.recordPancake);
+            } else {
+                inscriberItemStacks[1] = itemstack.copy();
+            }
+
         }
         --inscriberItemStacks[0].stackSize;
         if (this.inscriberItemStacks[0].stackSize <= 0) {

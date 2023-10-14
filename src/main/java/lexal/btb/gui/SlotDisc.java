@@ -14,7 +14,7 @@ public class SlotDisc extends Slot {
 
     @Override
     public boolean canPutStackInSlot(ItemStack itemstack) {
-        return itemstack != null && itemstack.getItem() instanceof ItemRecord && itemstack.getItem().id != ModItems.recordBlank.id;
+        return itemstack != null && (itemstack.getItem() instanceof ItemRecord || itemstack.getItem().id == ModItems.pancake.id) && itemstack.getItem().id != ModItems.recordBlank.id;
     }
 
     @Override
