@@ -47,8 +47,5 @@ public class BlockCropCornTop extends BlockCrops {
         }
         return this.growthStageTextures[j];
     }
-
-    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return meta != 3 ? new ItemStack[]{new ItemStack(ModItems.cornSeeds)} : new ItemStack[]{new ItemStack(ModItems.cornSeeds, world.rand.nextInt(3) + 1), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
-    }
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {return null;}
 }
