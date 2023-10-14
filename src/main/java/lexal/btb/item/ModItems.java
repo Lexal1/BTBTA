@@ -12,10 +12,10 @@ public class ModItems {
     //items
     public static final Item pancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlacableLayer(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.layerPancake, false, false), "pancake", "pancake.png").setMaxStackSize(16);
     public static final Item syrupJar = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "syrup", "syrup_jar.png").setMaxStackSize(1);
-    public static final Item corn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFoodStackable(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false,32), "corn", "corn.png");
-    public static final Item popcornBucket = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketIceCream(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),5), "popcorn", "popcorn.png");
+    public static final Item corn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFoodStackable(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false,8), "corn", "corn.png");
+    public static final Item popcornBucket = ItemHelper.createItem(BTBTA.MOD_ID, new ItemBucketIceCream(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),8), "popcorn", "popcorn.png");
     public static final Item unPopcorn = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "unpopcorn", "unpopped_corn.png").setMaxStackSize(1);
-    public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),10,false), "cornbread", "cornbread.png");
+    public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),5,false), "cornbread", "cornbread.png");
     public static final Item cornSeeds = ItemHelper.createItem(BTBTA.MOD_ID, new ItemSeeds(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),ModBlocks.cornCropBottom), "cornseeds", "corn_seeds.png");
     public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "rain"), "record.rain", "record_5.png");
     public static final Item recordBlank = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "blank"), "record.blank", "blank_disc.png");
