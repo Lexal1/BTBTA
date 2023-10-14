@@ -129,6 +129,11 @@ public class BlockCropCornBottom extends BlockCrops {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return meta != 4 ? new ItemStack[]{new ItemStack(ModItems.cornSeeds)} : new ItemStack[]{new ItemStack(ModItems.cornSeeds, world.rand.nextInt(3) + 1), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
+        if (meta != 4){
+            return new ItemStack[]{new ItemStack(ModItems.cornSeeds)};
+        } else {
+            int seedAmount = 1 + (world.rand.nextInt(5)==0 ? 1 : 0);
+            return new ItemStack[]{new ItemStack(ModItems.cornSeeds, seedAmount), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
+        }
     }
 }
