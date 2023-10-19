@@ -105,7 +105,7 @@ public class ModBlocks {
             .setResistance(5.0f)
             .setTextures("olivine_bricks.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
-            .build(new BlockStone("olivine_bricks",UtilIdRegistrar.nextIdBlock()));
+            .build(new Block("olivine_bricks",UtilIdRegistrar.nextIdBlock(), Material.stone));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
