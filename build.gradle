@@ -96,6 +96,14 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	ivy {
+		url = "https://github.com/UselessBullets"
+		patternLayout {
+			artifact "[organisation]/releases/download/b[revision]/[module]-[revision].jar"
+			m2compatible = true
+		}
+		metadataSources { artifact() }
+	}
 }
 
 dependencies {
@@ -108,8 +116,10 @@ dependencies {
 	// Helper library
 	// If you do not need Halplibe you can comment this line out or delete this line
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
+	//modImplementation name: "halplibe-useless", group: "" , version: "${project.halplibe_version}"
 	modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
 	modImplementation "BTA_Babric_SpawnEggs:spawneggs:1.3.0"
+	modImplementation "TerrainAPI:terrainapi-beta:${project.terrain_api_version}"
 
 	modImplementation "ModMenu:ModMenu:2.0.0"
 	modImplementation "BTWaila:btwaila:0.2.2"
