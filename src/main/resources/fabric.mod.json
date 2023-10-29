@@ -23,6 +23,9 @@
     ],
     "btwaila": [
       "lexal.btb.modmodule.BTWaila.BTWailaPlugin"
+    ],
+    "terrain-api": [
+      "lexal.btb.modmodule.TerrainAPIPlugin"
     ]
   },
   "mixins": [

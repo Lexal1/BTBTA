@@ -2,6 +2,7 @@ package lexal.btb.gui;
 
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.core.InventoryAction;
+import net.minecraft.core.crafting.ICrafting;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.player.inventory.InventoryPlayer;
@@ -12,6 +13,8 @@ import java.util.List;
 
 public class ContainerInscriber extends Container {
     private TileEntityInscriber tileEntity;
+    private int currentInscribeTime = 0;
+    private int itemInscribeTime = 0;
     public ContainerInscriber(InventoryPlayer inventoryplayer, TileEntityInscriber tileEntityInscriber) {
         this.tileEntity = tileEntityInscriber;
         this.addSlot(new SlotDiscBlank(tileEntityInscriber,0, 56, 17));
@@ -27,9 +30,32 @@ public class ContainerInscriber extends Container {
         }
     }
     @Override
+    public void updateClientProgressBar(int id, int value) {
+        if (id == 0) {
+            this.tileEntity.currentInscribeTime = value;
+        }
+        if (id == 1) {
+            this.tileEntity.maxInscribeTime = value;
+        }
+    }
+    @Override
+    public void updateInventory() {
+        super.updateInventory();
+        for (ICrafting crafter : this.crafters) {
+            if (this.currentInscribeTime != this.tileEntity.currentInscribeTime) {
+                crafter.updateCraftingInventoryInfo(this, 0, this.tileEntity.currentInscribeTime);
+            }
+            if (this.itemInscribeTime != this.tileEntity.maxInscribeTime) {
+                crafter.updateCraftingInventoryInfo(this, 1, this.tileEntity.maxInscribeTime);
+            }
+        }
+        this.currentInscribeTime = this.tileEntity.currentInscribeTime;
+        this.itemInscribeTime = this.tileEntity.maxInscribeTime;
+    }
+    @Override
     public List<Integer> getMoveSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
-        if (slot.id >= 0 && slot.id <= 2) {
-            return this.getSlots(0, 3, false);
+        if ((slot.id >= 0 && slot.id <= 2) || target != 0) {
+            return this.getSlots(slot.id, 1, false);
         }
         if (action == InventoryAction.MOVE_SIMILAR) {
             return this.getSlots(3, 36, false);
@@ -45,13 +71,21 @@ public class ContainerInscriber extends Container {
 
     @Override
     public List<Integer> getTargetSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
-        if (slot.id >= 0 && slot.id <= 2) {
-            return this.getSlots(3, 36, false);
+        if (slot.id < 3) { // Inscriber -> Inventory
+            List<Integer> list = this.getSlots(30, 9, false);
+            list.addAll(getSlots(3,27, false));
+            return list;
         }
-        List<Integer> list = new ArrayList<Integer>();
-        list.add(0);
-        list.add(2);
-        return list;
+        if (target == 1){ // Into blank disc slot
+            return getSlots(0, 1, false);
+        }
+        if (target == 2){ // Into Record template slot
+            return getSlots(2, 1, false);
+        }
+        if (slot.id < 30){ // Inventory -> Hotbar
+            return getSlots(30,9,false);
+        }
+        return getSlots(3,27, false); // Hotbar -> Inventory
     }
 
     @Override
