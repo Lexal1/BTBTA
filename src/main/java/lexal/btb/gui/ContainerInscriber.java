@@ -2,6 +2,7 @@ package lexal.btb.gui;
 
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.core.InventoryAction;
+import net.minecraft.core.crafting.ICrafting;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.player.inventory.InventoryPlayer;
@@ -12,6 +13,8 @@ import java.util.List;
 
 public class ContainerInscriber extends Container {
     private TileEntityInscriber tileEntity;
+    private int currentInscribeTime = 0;
+    private int itemInscribeTime = 0;
     public ContainerInscriber(InventoryPlayer inventoryplayer, TileEntityInscriber tileEntityInscriber) {
         this.tileEntity = tileEntityInscriber;
         this.addSlot(new SlotDiscBlank(tileEntityInscriber,0, 56, 17));
@@ -25,6 +28,29 @@ public class ContainerInscriber extends Container {
         for (int j = 0; j < 9; ++j) {
             this.addSlot(new Slot(inventoryplayer, j, 8 + j * 18, 142));
         }
+    }
+    @Override
+    public void updateClientProgressBar(int id, int value) {
+        if (id == 0) {
+            this.tileEntity.currentInscribeTime = value;
+        }
+        if (id == 1) {
+            this.tileEntity.maxInscribeTime = value;
+        }
+    }
+    @Override
+    public void updateInventory() {
+        super.updateInventory();
+        for (ICrafting crafter : this.crafters) {
+            if (this.currentInscribeTime != this.tileEntity.currentInscribeTime) {
+                crafter.updateCraftingInventoryInfo(this, 0, this.tileEntity.currentInscribeTime);
+            }
+            if (this.itemInscribeTime != this.tileEntity.maxInscribeTime) {
+                crafter.updateCraftingInventoryInfo(this, 1, this.tileEntity.maxInscribeTime);
+            }
+        }
+        this.currentInscribeTime = this.tileEntity.currentInscribeTime;
+        this.itemInscribeTime = this.tileEntity.maxInscribeTime;
     }
     @Override
     public List<Integer> getMoveSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
