@@ -55,6 +55,7 @@ public class BTBTA implements ModInitializer {
         SoundHelper.addStreaming(MOD_ID, "rain.wav");
         SoundHelper.addStreaming(MOD_ID, "blank.wav");
         SoundHelper.addStreaming(MOD_ID, "slow_down.wav");
+        SoundHelper.addStreaming(MOD_ID, "sahara.ogg");
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();
