@@ -2,6 +2,7 @@ package lexal.btb.item;
 
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
+import lexal.btb.block.BlockPumpkinPie;
 import lexal.btb.block.ModBlocks;
 import net.minecraft.core.item.*;
 import net.minecraft.core.item.material.ArmorMaterial;
@@ -31,7 +32,8 @@ public class ModItems {
     public static final Item recordPancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "so long"), "record.pancake", "disccake.png").setNotInCreativeMenu();
     public static final Item recordSahara = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "sahara"), "record.sahara", "disc_sahara.png");
     public static final Item crackedCorn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false), "corn.cracked", "cracked_corn.png");
-
+    public static final Item pumpkinPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("pumpkin_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.pumpkinPie),"pie.pumpkin","pumpkin_pie.png").setMaxStackSize(1);
+    public static final Item cherryPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("cherry_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.cherryPie),"pie.cherry","cherry_pie.png").setMaxStackSize(1);
 
     //spawn eggs
     public static Item penguinSpawnEgg = ItemHelper.createItem(BTBTA.MOD_ID, new Item("spawn.egg.penguin", UtilIdRegistrar.nextIdSpawnEggItem()), "spawn.egg.penguin", "unknown.png");

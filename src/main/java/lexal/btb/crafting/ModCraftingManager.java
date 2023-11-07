@@ -39,6 +39,16 @@ public class ModCraftingManager {
                 "CCC",
                 'C', ModItems.crackedCorn});
 
+        RecipeHelper.Crafting.createRecipe(ModItems.cherryPie, 1, new Object[]{
+                "CCC",
+                "SSS",
+                "WEW",
+                'C', Item.cherry,
+                'S', Item.dustSugar,
+                'W', Item.wheat,
+                'E', Item.eggChicken});
+
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar, Block.pumpkin});
         //block recipes
 
         RecipeHelper.craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, DyeColor.DYE_WHITE.blockMeta), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.birchSyrupLog});
@@ -99,9 +109,8 @@ public class ModCraftingManager {
                 'C', Item.cloth});
 
         RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
-
-        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.cracked_corn);
-        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.cracked_corn);
+        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.crackedCorn);
+        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.crackedCorn);
         RecipeHelper.Blasting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
         RecipeHelper.Smelting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
 

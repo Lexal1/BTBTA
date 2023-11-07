@@ -106,6 +106,20 @@ public class ModBlocks {
             .setTextures("olivine_bricks.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("olivine_bricks",UtilIdRegistrar.nextIdBlock(), Material.stone));
+    public static final Block pumpkinPie = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0.5f)
+            .setTopTexture("pumpkin_pie_top.png")
+            .setSideTextures("pie_side.png")
+            .setBottomTexture("pie_bottom.png")
+            .setBlockSound(BlockSounds.CLOTH)
+            .build(new BlockPumpkinPie("pie.pumpkin",UtilIdRegistrar.nextIdBlock()));
+    public static final Block cherryPie = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0.5f)
+            .setTopTexture("cherry_pie_top.png")
+            .setSideTextures("pie_side.png")
+            .setBottomTexture("pie_bottom.png")
+            .setBlockSound(BlockSounds.CLOTH)
+            .build(new BlockCherryPie("pie.cherry",UtilIdRegistrar.nextIdBlock()));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);

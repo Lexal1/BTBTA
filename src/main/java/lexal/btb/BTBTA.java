@@ -49,12 +49,11 @@ public class BTBTA implements ModInitializer {
         ModItems.register();
         ModCraftingManager.register();
 
-
         ModEntities.register();
 
         SoundHelper.addStreaming(MOD_ID, "rain.wav");
         SoundHelper.addStreaming(MOD_ID, "blank.wav");
-        SoundHelper.addStreaming(MOD_ID, "slow_down.wav");
+        SoundHelper.addStreaming(MOD_ID, "so long.wav");
         SoundHelper.addStreaming(MOD_ID, "sahara.ogg");
 
         if (spawnEggsModPresent){
