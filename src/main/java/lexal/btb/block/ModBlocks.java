@@ -112,6 +112,7 @@ public class ModBlocks {
             .setSideTextures("pie_side.png")
             .setBottomTexture("pie_bottom.png")
             .setBlockSound(BlockSounds.CLOTH)
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockPumpkinPie("pie.pumpkin",UtilIdRegistrar.nextIdBlock()));
     public static final Block cherryPie = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
@@ -119,6 +120,7 @@ public class ModBlocks {
             .setSideTextures("pie_side.png")
             .setBottomTexture("pie_bottom.png")
             .setBlockSound(BlockSounds.CLOTH)
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockCherryPie("pie.cherry",UtilIdRegistrar.nextIdBlock()));
 
     static {

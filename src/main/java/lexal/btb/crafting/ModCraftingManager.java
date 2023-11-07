@@ -48,7 +48,7 @@ public class ModCraftingManager {
                 'W', Item.wheat,
                 'E', Item.eggChicken});
 
-        RecipeHelper.Crafting.createShapelessRecipe(ModItems.pancake, 3, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar, Block.pumpkin});
+        RecipeHelper.Crafting.createShapelessRecipe(ModItems.pumpkinPie, 1, new Object[]{Item.eggChicken, Item.wheat, Item.dustSugar, Block.pumpkin});
         //block recipes
 
         RecipeHelper.craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, DyeColor.DYE_WHITE.blockMeta), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.birchSyrupLog});
