@@ -35,6 +35,10 @@ public class ModCraftingManager {
                 'C', Item.sulphur,
                 'B', Item.paper});
 
+        RecipeHelper.Crafting.createRecipe(ModItems.cornBread, 1, new Object[]{
+                "CCC",
+                'C', ModItems.crackedCorn});
+
         //block recipes
 
         RecipeHelper.craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, DyeColor.DYE_WHITE.blockMeta), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.birchSyrupLog});
@@ -96,8 +100,8 @@ public class ModCraftingManager {
 
         RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
 
-        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.corn);
-        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.corn);
+        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.cracked_corn);
+        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.cracked_corn);
         RecipeHelper.Blasting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
         RecipeHelper.Smelting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
 
