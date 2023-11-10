@@ -6,7 +6,7 @@ import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
 import useless.terrainapi.api.TerrainAPI;
-import useless.terrainapi.generation.overworld.ChunkDecoratorOverworldAPI;
+import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
 
 public class TerrainAPIPlugin implements TerrainAPI {
     @Override

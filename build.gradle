@@ -99,7 +99,7 @@ repositories {
 	ivy {
 		url = "https://github.com/UselessBullets"
 		patternLayout {
-			artifact "[organisation]/releases/download/b[revision]/[module]-[revision].jar"
+			artifact "[organisation]/releases/download/r[revision]/[module]-[revision].jar"
 			m2compatible = true
 		}
 		metadataSources { artifact() }
@@ -119,7 +119,7 @@ dependencies {
 	//modImplementation name: "halplibe-useless", group: "" , version: "${project.halplibe_version}"
 	modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
 	modImplementation "BTA_Babric_SpawnEggs:spawneggs:1.3.0"
-	modImplementation "TerrainAPI:terrainapi-beta:${project.terrain_api_version}"
+	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 
 	modImplementation "ModMenu:ModMenu:2.0.0"
 	modImplementation "BTWaila:btwaila:0.2.2"
