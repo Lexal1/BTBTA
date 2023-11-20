@@ -29,6 +29,7 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",3,-2, Item.featherChicken,ROOT);
     public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, ModItems.popcornBucket,ROOT);
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
+    public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
     static {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
@@ -46,6 +47,7 @@ public class ModAchievements extends AchievementPage {
         achievementList.add(PENGUIN);
         achievementList.add(POPCORN);
         achievementList.add(NETHERDIST);
+        achievementList.add(BAKED);
     }
 
     @Override

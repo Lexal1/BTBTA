@@ -100,12 +100,14 @@ public class ModBlocks {
             .setSideTextures("inscriber_side.png")
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
+
     public static final Block olivineBricks = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.5f)
             .setResistance(5.0f)
             .setTextures("olivine_bricks.png")
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("olivine_bricks",UtilIdRegistrar.nextIdBlock(), Material.stone));
+
     public static final Block pumpkinPie = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
             .setTopTexture("pumpkin_pie_top.png")
@@ -114,6 +116,7 @@ public class ModBlocks {
             .setBlockSound(BlockSounds.CLOTH)
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockPumpkinPie("pie.pumpkin",UtilIdRegistrar.nextIdBlock()));
+
     public static final Block cherryPie = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
             .setTopTexture("cherry_pie_top.png")
