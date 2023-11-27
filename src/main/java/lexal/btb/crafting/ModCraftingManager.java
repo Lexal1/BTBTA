@@ -109,8 +109,8 @@ public class ModCraftingManager {
                 'C', Item.cloth});
 
         RecipeHelper.Blasting.createRecipe(Block.netherrackIgneous,Block.netherrack);
-        RecipeHelper.Blasting.createRecipe(ModItems.cornBread,ModItems.crackedCorn);
-        RecipeHelper.Smelting.createRecipe(ModItems.cornBread,ModItems.crackedCorn);
+        RecipeHelper.Blasting.createRecipe(ModItems.crackedCorn,ModItems.corn);
+        RecipeHelper.Smelting.createRecipe(ModItems.crackedCorn,ModItems.corn);
         RecipeHelper.Blasting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
         RecipeHelper.Smelting.createRecipe(ModItems.popcornBucket,ModItems.unPopcorn);
 
