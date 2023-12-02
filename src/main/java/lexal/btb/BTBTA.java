@@ -13,12 +13,16 @@ import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
 import useless.prismaticlibe.helper.SoundHelper;
+import goocraft4evr.nonamedyes.NoNameDyes;
 
 import java.util.Properties;
 
 public class BTBTA implements ModInitializer {
 
-
+    static {
+        new NoNameDyes().onInitialize();
+    }
+    
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static int GUI_ID_INSCRIBER = 9;
