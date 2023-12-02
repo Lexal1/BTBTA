@@ -104,6 +104,22 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	ivy {
+		url = "https://github.com/Turnip-Labs"
+		patternLayout {
+			artifact "[organisation]/releases/download/[revision]/[module]-[revision].0.jar"
+			m2compatible = true
+		}
+		metadataSources { artifact() }
+	}
+	ivy {
+		url = "https://github.com/Gooey-Goo"
+		patternLayout {
+			artifact "[organisation]/releases/download/v[revision]/[module]-[revision].jar"
+			m2compatible = true
+		}
+		metadataSources { artifact() }
+	}
 }
 
 dependencies {
@@ -123,6 +139,9 @@ dependencies {
 
 	modImplementation "ModMenu:ModMenu:2.0.0"
 	modImplementation "BTWaila:btwaila:0.2.2"
+
+	modImplementation "BonusBlocks:bonusblocks:1.4"
+	modImplementation "BTANoNameDyes:noname_dyes:1.0.2"
 
 	implementation 'com.github.nullnoname:paulscode-soundsystem:2013.04.17-unofficial'
 	implementation "org.slf4j:slf4j-api:1.8.0-beta4"
