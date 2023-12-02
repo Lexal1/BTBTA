@@ -13,6 +13,7 @@ import net.minecraft.core.util.helper.Side;
 import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import turniplabs.halplibe.util.achievements.GuiAchievements;
+import luke.bonusblocks.BonusBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +35,13 @@ public class ModAchievements extends AchievementPage {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
         flowersList.add(ModBlocks.blueRose.id);
+        flowersList.add(BonusBlocks.flowerCyan.id);
+        flowersList.add(BonusBlocks.flowerPurple.id);
+        flowersList.add(BonusBlocks.flowerPink.id);
+        flowersList.add(BonusBlocks.flowerSilver.id);
+        flowersList.add(BonusBlocks.flowerOrange.id);
+        flowersList.add(BonusBlocks.flowerLime.id);
+        flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
     }
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
