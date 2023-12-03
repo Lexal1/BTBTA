@@ -18,10 +18,6 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import java.util.Properties;
 
 public class BTBTA implements ModInitializer {
-
-    static {
-        new NoNameDyes().onInitialize();
-    }
     
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -42,6 +38,7 @@ public class BTBTA implements ModInitializer {
         GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
+    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.1");
     public static AchievementPage BTBACHIEVEMENTS;
 
     @Override
@@ -63,6 +60,10 @@ public class BTBTA implements ModInitializer {
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();
         }
+        if (noNameDyesModPresent){
+            new NoNameDyes().onInitialize();
+        }
+        
         BTBACHIEVEMENTS = new ModAchievements();
         AchievementHelper.addPage(BTBACHIEVEMENTS);
         LOGGER.info("btbta loaded successfully!");
