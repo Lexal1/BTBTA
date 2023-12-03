@@ -13,6 +13,7 @@ import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import useless.prismaticlibe.helper.ModCheckHelper;
 import useless.prismaticlibe.helper.SoundHelper;
+import goocraft4evr.nonamedyes.NoNameDyes;
 
 import java.util.Properties;
 
@@ -37,6 +38,7 @@ public class BTBTA implements ModInitializer {
         GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
     public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
+    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.1");
     public static AchievementPage BTBACHIEVEMENTS;
 
     @Override
@@ -57,6 +59,9 @@ public class BTBTA implements ModInitializer {
 
         if (spawnEggsModPresent){
             SpawnEggsModule.onInitialize();
+        }
+        if (noNameDyesModPresent){
+            new NoNameDyes().onInitialize();
         }
         
         BTBACHIEVEMENTS = new ModAchievements();
