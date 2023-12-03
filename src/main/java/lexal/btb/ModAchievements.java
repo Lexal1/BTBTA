@@ -33,8 +33,8 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
     public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
     
-    public static final boolean bonusBlocksModPresent = ModCheckHelper.checkForMod("bonusblocks", ">=1.4.0");
-    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.2");
+    public static final boolean bonusBlocksModPresent = ModCheckHelper.checkForMod("bonusblocks", ">=1.2.0");
+    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.1");
     static {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
