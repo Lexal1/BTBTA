@@ -13,6 +13,7 @@ import net.minecraft.core.util.helper.Side;
 import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import turniplabs.halplibe.util.achievements.GuiAchievements;
+import useless.prismaticlibe.helper.ModCheckHelper;
 import luke.bonusblocks.BonusBlocks;
 
 import java.util.ArrayList;
@@ -31,17 +32,24 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, ModItems.popcornBucket,ROOT);
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
     public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
+    
+    public static final boolean bonusBlocksModPresent = ModCheckHelper.checkForMod("bonusblocks", ">=1.4.0");
+    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.2");
     static {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
         flowersList.add(ModBlocks.blueRose.id);
-        flowersList.add(BonusBlocks.flowerCyan.id);
-        flowersList.add(BonusBlocks.flowerPurple.id);
-        flowersList.add(BonusBlocks.flowerPink.id);
-        flowersList.add(BonusBlocks.flowerSilver.id);
-        flowersList.add(BonusBlocks.flowerOrange.id);
-        flowersList.add(BonusBlocks.flowerLime.id);
-        flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
+        if (bonusBlocksModPresent) {
+            flowersList.add(BonusBlocks.flowerCyan.id);
+            flowersList.add(BonusBlocks.flowerPurple.id);
+            flowersList.add(BonusBlocks.flowerPink.id);
+            flowersList.add(BonusBlocks.flowerSilver.id);
+            flowersList.add(BonusBlocks.flowerOrange.id);
+            flowersList.add(BonusBlocks.flowerLime.id);
+        }
+        if (noNameDyesModPresent) {
+            flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
+        }
     }
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
