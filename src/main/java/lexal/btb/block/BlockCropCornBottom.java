@@ -3,7 +3,7 @@ package lexal.btb.block;
 import lexal.btb.BTBTA;
 import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockCrops;
+import net.minecraft.core.block.BlockCropsWheat;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
@@ -16,7 +16,7 @@ import turniplabs.halplibe.helper.TextureHelper;
 import java.util.Random;
 
 
-public class BlockCropCornBottom extends BlockCrops {
+public class BlockCropCornBottom extends BlockCropsWheat {
     int[] stage0 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage0.png");
     int[] stage1 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage1_bottom.png");
     int[] stage2 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage2_bottom.png");
@@ -27,7 +27,7 @@ public class BlockCropCornBottom extends BlockCrops {
 
     public BlockCropCornBottom(String key, int id) {
         super(key, id);
-        this.setTickOnLoad(true);
+        this.setTicking(true);
         this.setBlockBounds(0.3125F, 0.0F, 0.3125F, 0.6875F, 1.0F, 0.6875F);
     }
 

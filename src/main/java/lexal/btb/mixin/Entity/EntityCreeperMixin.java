@@ -71,7 +71,7 @@ public class EntityCreeperMixin extends EntityMonster {
         Biome currentBiome = entityCreeper.world.getBlockBiome((int) entityCreeper.x, (int) entityCreeper.y, (int) entityCreeper.z);
         if (desertBiomes.contains(currentBiome)) {
             currentDropList.addAll(desertDrops);
-        } else if (entityCreeper.world.currentWeather == Weather.overworldRain || entityCreeper.world.currentWeather == Weather.overworldStorm || entityCreeper.world.currentWeather == Weather.overworldSnow || entityCreeper.world.currentWeather == Weather.overworldWinterSnow){
+        } else if (entityCreeper.world.getCurrentWeather() == Weather.overworldRain || entityCreeper.world.getCurrentWeather() == Weather.overworldStorm || entityCreeper.world.getCurrentWeather() == Weather.overworldSnow || entityCreeper.world.getCurrentWeather() == Weather.overworldWinterSnow){
             currentDropList.addAll(rainDrops);
         }
         return entityCreeper.spawnAtLocation(currentDropList.get(random.nextInt(currentDropList.size())), stacksize);

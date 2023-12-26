@@ -3,7 +3,8 @@ package lexal.btb.mixin.Entity;
 import lexal.btb.ModAchievements;
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
-import net.minecraft.core.achievement.stat.StatBase;
+import net.minecraft.core.achievement.stat.Stat;
+import net.minecraft.core.achievement.stat.StatsCounter;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.world.Dimension;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,8 +29,8 @@ public class EntityPlayerMixin implements IPlayerDisplay {
             thisAs.triggerAchievement(ModAchievements.NETHERDIST);
         }
     }
-    @Redirect(method = "attackTargetEntityWithCurrentItem(Lnet/minecraft/core/entity/Entity;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/player/EntityPlayer;addStat(Lnet/minecraft/core/achievement/stat/StatBase;I)V"))
-    private void damageAchievement(EntityPlayer instance, StatBase statbase, int i){
+    @Redirect(method = "attackTargetEntityWithCurrentItem(Lnet/minecraft/core/entity/Entity;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/entity/player/EntityPlayer;addStat(Lnet/minecraft/core/achievement/stat/Stat;I)V"))
+    private void damageAchievement(EntityPlayer instance, Stat statbase, int i){
         instance.addStat(statbase, i);
         if (i >= 13){ // Diamond sword damage
             thisAs.triggerAchievement(ModAchievements.OVERKILL);

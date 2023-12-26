@@ -1,19 +1,16 @@
 package lexal.btb;
 
 import lexal.btb.block.*;
-import lexal.btb.crafting.ModCraftingManager;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
-import lexal.btb.modmodule.SpawnEggsModule;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.AchievementHelper;
+import turniplabs.halplibe.helper.SoundHelper;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.achievements.AchievementPage;
-import useless.prismaticlibe.helper.ModCheckHelper;
-import useless.prismaticlibe.helper.SoundHelper;
-import goocraft4evr.nonamedyes.NoNameDyes;
 
 import java.util.Properties;
 
@@ -37,8 +34,7 @@ public class BTBTA implements ModInitializer {
         config.updateConfig();
         GUI_ID_INSCRIBER = config.getInt("gui_inscriber_id");
     }
-    public static final boolean spawnEggsModPresent = ModCheckHelper.checkForMod("spawneggs", ">=1.1.0");
-    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.1");
+    public static final boolean noNameDyesModPresent = FabricLoader.getInstance().isModLoaded("nonamedyes");
     public static AchievementPage BTBACHIEVEMENTS;
 
     @Override
@@ -48,7 +44,7 @@ public class BTBTA implements ModInitializer {
 
         ModBlocks.register();
         ModItems.register();
-        ModCraftingManager.register();
+//        ModRecipes.register();
 
         ModEntities.register();
 
@@ -57,12 +53,9 @@ public class BTBTA implements ModInitializer {
         SoundHelper.addStreaming(MOD_ID, "so long.wav");
         SoundHelper.addStreaming(MOD_ID, "sahara.ogg");
 
-        if (spawnEggsModPresent){
-            SpawnEggsModule.onInitialize();
-        }
-        if (noNameDyesModPresent){
-            new NoNameDyes().onInitialize();
-        }
+//        if (noNameDyesModPresent){
+//            new NoNameDyes().onInitialize();
+//        }
         
         BTBACHIEVEMENTS = new ModAchievements();
         AchievementHelper.addPage(BTBACHIEVEMENTS);

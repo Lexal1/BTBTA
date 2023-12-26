@@ -15,7 +15,7 @@ public class BlockBirchLog extends BlockLog {
     public BlockBirchLog(String key, int id,boolean isSyrup) {
         super(key, id);
         this.isSyrup = isSyrup;
-        setTickOnLoad(true);
+        setTicking(true);
     }
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         switch (dropCause){

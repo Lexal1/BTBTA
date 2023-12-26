@@ -26,6 +26,12 @@
     ],
     "terrain-api": [
       "lexal.btb.modmodule.TerrainAPIPlugin"
+    ],
+    "spawneggs": [
+      "lexal.btb.modmodule.SpawnEggsPlugin"
+    ],
+    "recipesReady": [
+      "lexal.btb.crafting.ModRecipes"
     ]
   },
   "mixins": [

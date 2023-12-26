@@ -134,7 +134,7 @@ public class ModBlocks {
         Block.blocksList[Block.logBirch.id] = null; // Replace vanilla birch log with custom version
         Block.blocksList[Block.logBirch.id] = new BlockBirchLog("log.birch", 282,false).withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
         BlockSoundDispatcher.getInstance().addDispatch(Block.blocksList[Block.logBirch.id], BlockSounds.WOOD);
-        Block.tickOnLoad[Block.logBirch.id] = true;
+        Block.shouldTick[Block.logBirch.id] = true;
     }
 
 }

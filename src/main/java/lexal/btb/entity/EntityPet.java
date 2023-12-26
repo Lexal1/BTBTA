@@ -17,7 +17,6 @@ import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.pathfinder.Path;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class EntityPet extends EntityAnimal {
@@ -54,7 +53,7 @@ public class EntityPet extends EntityAnimal {
         this.setAngry(tag.getBoolean("Angry"));
         this.setSitting(tag.getBoolean("Sitting"));
         String s = tag.getString("Owner");
-        if (s.length() > 0) {
+        if (!s.isEmpty()) {
             this.setOwner(s);
             this.setTamed(true);
         }
@@ -126,7 +125,7 @@ public class EntityPet extends EntityAnimal {
         return this.isSitting() ? 20 : super.func_25026_x();
     }
 
-    private void getPathOrWalkableBlock(Entity entity, float f) {
+    protected void getPathOrWalkableBlock(Entity entity, float f) {
         Path pathentity = this.world.getPathToEntity(this, entity, 16.0F);
         if (pathentity == null && f > 12.0F) {
             int i = MathHelper.floor_double(entity.x) - 2;
@@ -136,7 +135,7 @@ public class EntityPet extends EntityAnimal {
             for (int l = 0; l <= 4; ++l) {
                 for (int i1 = 0; i1 <= 4; ++i1) {
                     if ((l < 1 || i1 < 1 || l > 3 || i1 > 3) && this.world.isBlockNormalCube(i + l, k - 1, j + i1) && !this.world.isBlockNormalCube(i + l, k, j + i1) && !this.world.isBlockNormalCube(i + l, k + 1, j + i1)) {
-                        this.moveTo((double) ((float) (i + l) + 0.5F), (double) k, (double) ((float) (j + i1) + 0.5F), this.yRot, this.xRot);
+                        this.moveTo((float) (i + l) + 0.5F, k, (float) (j + i1) + 0.5F, this.yRot, this.xRot);
                         return;
                     }
                 }
@@ -157,13 +156,13 @@ public class EntityPet extends EntityAnimal {
             i = (i + 1) / 2;
         }
 
-        if (!super.hurt((Entity) entity, i, type)) {
+        if (!super.hurt(entity, i, type)) {
             return false;
         } else {
             if (!this.isTamed() && !this.isAngry()) {
                 if (entity instanceof EntityPlayer) {
                     this.setAngry(true);
-                    this.entityToAttack = (Entity) entity;
+                    this.entityToAttack = entity;
                 }
 
                 if (entity instanceof EntityArrow && ((EntityArrow) entity).owner != null) {
@@ -171,14 +170,12 @@ public class EntityPet extends EntityAnimal {
                 }
 
                 if (entity instanceof EntityLiving) {
-                    List list = this.world.getEntitiesWithinAABB(EntityPet.class, AABB.getBoundingBoxFromPool(this.x, this.y, this.z, this.x + 1.0, this.y + 1.0, this.z + 1.0).expand(16.0, 4.0, 16.0));
-                    Iterator iterator = list.iterator();
+                    List<Entity> list = this.world.getEntitiesWithinAABB(EntityPet.class, AABB.getBoundingBoxFromPool(this.x, this.y, this.z, this.x + 1.0, this.y + 1.0, this.z + 1.0).expand(16.0, 4.0, 16.0));
 
-                    while (iterator.hasNext()) {
-                        Entity entity1 = (Entity) iterator.next();
-                        EntityPet entitypet = (EntityPet) entity1;
+                    for (Entity object : list) {
+                        EntityPet entitypet = (EntityPet) object;
                         if (!entitypet.isTamed() && entitypet.entityToAttack == null) {
-                            entitypet.entityToAttack = (Entity) entity;
+                            entitypet.entityToAttack = entity;
                             if (entity instanceof EntityPlayer) {
                                 entitypet.setAngry(true);
                             }
@@ -190,7 +187,7 @@ public class EntityPet extends EntityAnimal {
                     return true;
                 }
 
-                this.entityToAttack = (Entity) entity;
+                this.entityToAttack = entity;
             }
 
             return true;
@@ -226,9 +223,7 @@ public class EntityPet extends EntityAnimal {
 
     public boolean isHealingItem(Item item) {
         if (item instanceof ItemFood){
-            if (((ItemFood)item).getIsWolfsFavoriteMeat()){
-                return true;
-            }
+            return ((ItemFood) item).getIsWolfsFavoriteMeat();
         }
         return false;
     }
@@ -245,7 +240,7 @@ public class EntityPet extends EntityAnimal {
                 if (itemstack != null && itemstack.itemID == tameItemID && !this.isAngry()) {
                     itemstack.consumeItem(entityplayer);
                     if (itemstack.stackSize <= 0) {
-                        entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, (ItemStack) null);
+                        entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, null);
                     }
                     if (this instanceof EntityPenguin){
                         entityplayer.triggerAchievement(ModAchievements.PENGUIN);
@@ -254,7 +249,7 @@ public class EntityPet extends EntityAnimal {
                     if (!this.world.isClientSide) {
                         if (this.random.nextInt(3) == 0) {
                             this.setTamed(true);
-                            this.setPathToEntity((Path) null);
+                            this.setPathToEntity(null);
                             this.setSitting(true);
                             this.health = 20;
                             this.setOwner(entityplayer.username);
@@ -270,12 +265,12 @@ public class EntityPet extends EntityAnimal {
                 }
             } else {
                 if (itemstack != null) {
-                    Item healItem = (Item) Item.itemsList[itemstack.itemID];
+                    Item healItem = Item.itemsList[itemstack.itemID];
                     if (isHealingItem(healItem) && this.entityData.getInt(18) < 20 /*health less that max*/) {
-                        if (entityplayer.getGamemode().consumeBlocks) {
+                        if (entityplayer.getGamemode().consumeBlocks()) {
                             --itemstack.stackSize;
                             if (itemstack.stackSize <= 0) {
-                                entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, (ItemStack) null);
+                                entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, null);
                             }
                         }
 
@@ -288,7 +283,7 @@ public class EntityPet extends EntityAnimal {
                     if (!this.world.isClientSide) {
                             this.setSitting(!this.isSitting());
                             this.isJumping = false;
-                            this.setPathToEntity((Path) null);
+                            this.setPathToEntity(null);
 
                     }
                     return true;
