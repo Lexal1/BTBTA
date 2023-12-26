@@ -44,8 +44,6 @@ public class BTBTA implements ModInitializer {
 
         ModBlocks.register();
         ModItems.register();
-//        ModRecipes.register();
-
         ModEntities.register();
 
         SoundHelper.addStreaming(MOD_ID, "rain.wav");
