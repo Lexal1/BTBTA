@@ -15,8 +15,10 @@ public class ModRecipes implements RecipeEntrypoint {
     public static final RecipeGroup<RecipeEntryCrafting<?, ?>> WORKBENCH = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.workbench)));
     @Override
     public void onRecipesReady() {
+        Registries.RECIPE_TYPES.register("btb:crafting/armor", RecipeEntryDyedArmor.class);
         BTBTA.register("workbench", WORKBENCH);
         Registries.RECIPES.register("btb", BTBTA);
+        WORKBENCH.register("armor", new RecipeEntryDyedArmor());
         DataLoader.loadRecipes("/assets/btb/recipes/workbench.json");
         DataLoader.loadRecipes("/assets/btb/recipes/furnace.json");
         DataLoader.loadRecipes("/assets/btb/recipes/blast_furnace.json");

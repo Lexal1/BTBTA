@@ -18,7 +18,10 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "beforeGameStart": [
+      "lexal.btb.BTBTA"
+    ],
+    "beforeClientStart": [
       "lexal.btb.BTBTA"
     ],
     "btwaila": [

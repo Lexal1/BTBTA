@@ -5,7 +5,6 @@ import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.monster.EntityCreeper;
 import net.minecraft.core.entity.monster.EntityMonster;
 import net.minecraft.core.item.Item;
-import net.minecraft.core.item.ItemRecord;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;

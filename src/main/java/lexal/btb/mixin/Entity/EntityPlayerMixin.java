@@ -4,7 +4,6 @@ import lexal.btb.ModAchievements;
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import lexal.btb.entity.IPlayerDisplay;
 import net.minecraft.core.achievement.stat.Stat;
-import net.minecraft.core.achievement.stat.StatsCounter;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.world.Dimension;
 import org.spongepowered.asm.mixin.Mixin;
