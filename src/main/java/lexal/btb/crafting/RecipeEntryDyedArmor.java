@@ -31,7 +31,6 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
         }
         if (armorStack != null && !dyeStacks.isEmpty()) {
             ItemStack outStack = armorStack.copy();
-            CompoundTag colorTag = new CompoundTag();
             int r = 0;
             int g = 0;
             int b = 0;
@@ -52,7 +51,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
             r /= dyeStacks.size() + 1;
             g /= dyeStacks.size() + 1;
             b /= dyeStacks.size() + 1;
-
+            CompoundTag colorTag = new CompoundTag();
             colorTag.putShort("red", (short) r);
             colorTag.putShort("green", (short) g);
             colorTag.putShort("blue", (short) b);
