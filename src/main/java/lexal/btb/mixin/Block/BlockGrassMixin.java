@@ -1,6 +1,5 @@
 package lexal.btb.mixin.Block;
 
-import lexal.btb.BTBTA;
 import lexal.btb.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockGrass;
