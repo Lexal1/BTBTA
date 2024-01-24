@@ -11,9 +11,20 @@ import net.minecraft.core.player.inventory.InventoryCrafting;
 import net.minecraft.core.util.helper.Color;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
+    public static HashMap<Item, Map<Integer, Color>> dyeMap = new HashMap<>();
+    private static final Map<Integer, Color> vanillaDye;
+    static {
+        vanillaDye = new HashMap<>();
+        for (int color = 0; color < Colors.allSignColors.length; color++) {
+            vanillaDye.put(color, Colors.allSignColors[Colors.allSignColors.length - color - 1]);
+        }
+        dyeMap.put(Item.dye, vanillaDye);
+    }
     @Override
     public ItemStack getCraftingResult(InventoryCrafting inventorycrafting) {
         ItemStack armorStack = null;
@@ -42,7 +53,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
             }
 
             for (ItemStack dyeStack : dyeStacks){
-                Color color = Colors.allChatColors[15 - dyeStack.getMetadata()];
+                Color color = dyeMap.getOrDefault(dyeStack.getItem(), vanillaDye).getOrDefault(dyeStack.getMetadata(), vanillaDye.get(0));
                 r += color.getRed();
                 g += color.getGreen();
                 b += color.getBlue();
