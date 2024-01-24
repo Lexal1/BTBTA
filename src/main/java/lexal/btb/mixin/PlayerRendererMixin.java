@@ -3,7 +3,6 @@ package lexal.btb.mixin;
 import lexal.btb.item.ModItemTags;
 import net.minecraft.client.render.entity.PlayerRenderer;
 import net.minecraft.core.entity.player.EntityPlayer;
-import net.minecraft.core.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;

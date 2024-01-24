@@ -23,7 +23,7 @@ final class ItemDyeMixin {
             if (Block.blocksList[id] instanceof BlockCropCornBottom && meta < 5) {
                 if (!world.isClientSide) {
                     ((BlockCropCornBottom) Block.blocksList[id]).fertilize(world, blockX, blockY, blockZ);
-                    if (entityplayer.getGamemode().consumeBlocks) {
+                    if (entityplayer.getGamemode().consumeBlocks()) {
                         --itemstack.stackSize;
                     }
                 }

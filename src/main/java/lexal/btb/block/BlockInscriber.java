@@ -44,7 +44,7 @@ public class BlockInscriber extends BlockTileEntity {
         return null;
     }
     @Override
-    public void onBlockRemoval(World world, int x, int y, int z) {
+    public void onBlockRemoved(World world, int x, int y, int z, int data) {
         TileEntityInscriber tileEntityInscriber = (TileEntityInscriber) world.getBlockTileEntity(x, y, z);
         for (int l = 0; l < tileEntityInscriber.getSizeInventory(); ++l) {
             ItemStack itemstack = tileEntityInscriber.getStackInSlot(l);
@@ -66,6 +66,6 @@ public class BlockInscriber extends BlockTileEntity {
                 world.entityJoinedWorld(entityitem);
             }
         }
-        super.onBlockRemoval(world, x, y, z);
+        super.onBlockRemoved(world, x, y, z, data);
     }
 }

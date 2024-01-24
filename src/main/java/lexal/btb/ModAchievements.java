@@ -2,19 +2,18 @@ package lexal.btb;
 
 import lexal.btb.block.ModBlocks;
 import lexal.btb.item.ModItems;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.TextureFX;
 import net.minecraft.core.Global;
 import net.minecraft.core.achievement.Achievement;
 import net.minecraft.core.achievement.AchievementList;
-import net.minecraft.core.achievement.stat.StatBase;
+import net.minecraft.core.achievement.stat.Stat;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.util.helper.Side;
 import org.lwjgl.opengl.GL11;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 import turniplabs.halplibe.util.achievements.GuiAchievements;
-import useless.prismaticlibe.helper.ModCheckHelper;
-import luke.bonusblocks.BonusBlocks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,27 +32,27 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
     public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
     
-    public static final boolean bonusBlocksModPresent = ModCheckHelper.checkForMod("bonusblocks", ">=1.2.0");
-    public static final boolean noNameDyesModPresent = ModCheckHelper.checkForMod("nonamedyes", ">=1.0.1");
+    public static final boolean bonusBlocksModPresent = FabricLoader.getInstance().isModLoaded("bonusblocks");
+    public static final boolean noNameDyesModPresent = FabricLoader.getInstance().isModLoaded("nonamedyes");
     static {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
         flowersList.add(ModBlocks.blueRose.id);
-        if (bonusBlocksModPresent) {
-            flowersList.add(BonusBlocks.flowerCyan.id);
-            flowersList.add(BonusBlocks.flowerPurple.id);
-            flowersList.add(BonusBlocks.flowerPink.id);
-            flowersList.add(BonusBlocks.flowerSilver.id);
-            flowersList.add(BonusBlocks.flowerOrange.id);
-            flowersList.add(BonusBlocks.flowerLime.id);
-        }
-        if (noNameDyesModPresent) {
-            flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
-        }
+//        if (bonusBlocksModPresent) {
+//            flowersList.add(BonusBlocks.flowerCyan.id);
+//            flowersList.add(BonusBlocks.flowerPurple.id);
+//            flowersList.add(BonusBlocks.flowerPink.id);
+//            flowersList.add(BonusBlocks.flowerSilver.id);
+//            flowersList.add(BonusBlocks.flowerOrange.id);
+//            flowersList.add(BonusBlocks.flowerLime.id);
+//        }
+//        if (noNameDyesModPresent) {
+//            flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
+//        }
     }
     public ModAchievements() {
         super("BTBTA", "achievements.page.btb");
-        ((StatBase)ROOT).registerStat();
+        ROOT.registerStat();
         achievementList.add(ROOT);
         achievementList.add(SYRUP);
         achievementList.add(PANCAKES);

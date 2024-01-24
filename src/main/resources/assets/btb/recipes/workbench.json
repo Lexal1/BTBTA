@@ -1,0 +1,517 @@
+[
+  {
+    "name": "btb:workbench/pancakes",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "item.egg.chicken",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "item.wheat",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "item.dust.sugar",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.pancake",
+      "amount": 3,
+      "meta": 0
+    }
+  },
+  {
+    "name": "btb:workbench/blue_rose_to_dye",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "tile.btb.bluerose",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.dye",
+      "amount": 2,
+      "meta": 6
+    }
+  },
+  {
+    "name": "btb:workbench/unpopcorn",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      " C ",
+      "CBC",
+      " C "
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.btb.corn",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "B",
+        "stack": {
+          "key": "item.bucket",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.corn.unpopped",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/blank_record",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      " C ",
+      "CBC",
+      " C "
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.sulphur",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "B",
+        "stack": {
+          "key": "item.paper",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.record.blank",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/corn_bread",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.btb.corn.cracked",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.corn.bread",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/pie_cherry",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC",
+      "SSS",
+      "WEW"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.food.cherry",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "S",
+        "stack": {
+          "key": "item.dust.sugar",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "W",
+        "stack": {
+          "key": "item.wheat",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "E",
+        "stack": {
+          "key": "item.egg.chicken",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.pie.cherry",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/pie_pumpkin",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "item.egg.chicken",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "item.wheat",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "item.dust.sugar",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "stack": {
+          "key": "tile.pumpkin",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.pie.pumpkin",
+      "amount": 1,
+      "meta": 0
+    }
+  },
+  {
+    "name": "btb:workbench/white_planks_syrup_log",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "tile.btb.syruplog",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.planks.oak.painted",
+      "amount": 4,
+      "meta": 0
+    }
+  },
+  {
+    "name": "btb:workbench/inscriber",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "PIP",
+      "PDP",
+      "PPP"
+    ],
+    "symbols": [
+      {
+        "symbol": "P",
+        "group": "minecraft:planks"
+      },
+      {
+        "symbol": "I",
+        "stack": {
+          "key": "item.ingot.iron",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "D",
+        "stack": {
+          "key": "item.diamond",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.inscriber",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/framed_glass",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "GCG",
+      "CGC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.ingot.steel.crude",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "G",
+        "stack": {
+          "key": "tile.glass",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.glass.framed",
+      "amount": 8,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/framed_glass_trapdoor",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC",
+      "CCC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "tile.btb.glass.framed",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.glass.framed.trapdoor",
+      "amount": 6,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/flint_tile",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CC",
+      "CC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.flint",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.flint_tile",
+      "amount": 2,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/flint_tile_slab",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "tile.btb.flint_tile",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.slab.flint_tile",
+      "amount": 3,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/olivine_bricks",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CC",
+      "CC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.olivine",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.btb.olivine_bricks",
+      "amount": 4,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/armor_cloth_helm",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC",
+      "C C"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.cloth",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.armor.helmet.clothes",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/armor_cloth_chest",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "C C",
+      "CCC",
+      "CCC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.cloth",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.armor.chestplate.clothes",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/armor_cloth_leggings",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CCC",
+      "C C",
+      "C C"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.cloth",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.armor.leggings.clothes",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  },
+  {
+    "name": "btb:workbench/armor_cloth_boots",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "C C",
+      "L L"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.cloth",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "L",
+        "stack": {
+          "key": "item.leather",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "item.btb.armor.boots.clothes",
+      "amount": 1,
+      "meta": 0
+    },
+    "consumeContainers": true
+  }
+]

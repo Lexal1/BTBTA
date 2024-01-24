@@ -160,7 +160,7 @@ public class ModelPenguin extends ModelBase {
 
     public void setRotationAngles(float limbSwing, float limbYaw, float ticksExisted, float headYaw, float headPitch, float scale) {
         if (!penguinRef.isSliding()){
-            this.head.rotateAngleX = (float)-Math.toRadians(headPitch);
+            this.head.rotateAngleX = (float)Math.toRadians(headPitch);
             this.head.rotateAngleY = (float)Math.toRadians(headYaw);
             this.rightLeg.rotateAngleZ = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
             this.leftLeg.rotateAngleZ = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbYaw;
@@ -168,7 +168,7 @@ public class ModelPenguin extends ModelBase {
             this.leftWing.rotateAngleZ = -ticksExisted - (float) Math.toRadians(10F);
         }
         else {
-            this.head.rotateAngleX = (float)-Math.toRadians(headPitch/2D);
+            this.head.rotateAngleX = (float)-Math.toRadians(headPitch);
             this.head.rotateAngleY = (float)Math.toRadians(headYaw/1.5D);
         }
         this.beak.rotateAngleX = this.head.rotateAngleX;
