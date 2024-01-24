@@ -21,7 +21,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
     static {
         vanillaDye = new HashMap<>();
         for (int color = 0; color < Colors.allSignColors.length; color++) {
-            vanillaDye.put(color, Colors.allSignColors[Colors.allSignColors.length - color - 1]);
+            vanillaDye.put(color, Colors.allSignColors[15 - color]);
         }
         dyeMap.put(Item.dye, vanillaDye);
     }
@@ -35,33 +35,39 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
                 if (stack == null) continue;
                 if (stack.getItem() instanceof ItemArmorColored) {
                     armorStack = stack;
-                } else if (stack.itemID == Item.dye.id) {
+                } else if (dyeMap.containsKey(stack.getItem())) {
                     dyeStacks.add(stack);
                 }
             }
         }
         if (armorStack != null && !dyeStacks.isEmpty()) {
             ItemStack outStack = armorStack.copy();
-            int r = 0;
-            int g = 0;
-            int b = 0;
+            int r = -1;
+            int g = -1;
+            int b = -1;
             if (outStack.getData().containsKey("dyed_color")){
                 CompoundTag armorColorTag = outStack.getData().getCompound("dyed_color");
-                r += armorColorTag.getShort("red");
-                g += armorColorTag.getShort("green");
-                b += armorColorTag.getShort("blue");
+                r = armorColorTag.getShort("red");
+                g = armorColorTag.getShort("green");
+                b = armorColorTag.getShort("blue");
             }
 
             for (ItemStack dyeStack : dyeStacks){
                 Color color = dyeMap.getOrDefault(dyeStack.getItem(), vanillaDye).getOrDefault(dyeStack.getMetadata(), vanillaDye.get(0));
-                r += color.getRed();
-                g += color.getGreen();
-                b += color.getBlue();
+                if (r == -1 || g == -1 || b == -1){
+                    r = (int) (color.getRed() * 0.85f);
+                    g = (int) (color.getGreen() * 0.85f);
+                    b = (int) (color.getBlue() * 0.85f);
+                } else {
+                    r += color.getRed();
+                    g += color.getGreen();
+                    b += color.getBlue();
+                }
             }
 
-            r /= dyeStacks.size() + 1;
-            g /= dyeStacks.size() + 1;
-            b /= dyeStacks.size() + 1;
+            r /= dyeStacks.size();
+            g /= dyeStacks.size();
+            b /= dyeStacks.size();
             CompoundTag colorTag = new CompoundTag();
             colorTag.putShort("red", (short) r);
             colorTag.putShort("green", (short) g);
@@ -93,7 +99,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
                     armorStack = stack;
                     continue;
                 }
-                if (stack.itemID == Item.dye.id) {
+                if (dyeMap.containsKey(stack.getItem())) {
                     dyeStack = stack;
                     continue;
                 }
