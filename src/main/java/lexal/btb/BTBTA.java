@@ -1,9 +1,16 @@
 package lexal.btb;
 
 import lexal.btb.block.ModBlocks;
+import lexal.btb.entity.EntityPenguin;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
+import lexal.btb.world.biomes.BiomeGlacier;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.entity.SpawnListEntry;
+import net.minecraft.core.enums.EnumCreatureType;
+import net.minecraft.core.world.biome.Biome;
+import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.helper.AchievementHelper;
@@ -13,6 +20,7 @@ import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.achievements.AchievementPage;
 
+import java.util.List;
 import java.util.Properties;
 
 public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
@@ -41,6 +49,12 @@ public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
         ModBlocks.register();
         ModItems.register();
         ModEntities.register();
+
+        List<SpawnListEntry> creatures = Biomes.OVERWORLD_GLACIER.getSpawnableList(EnumCreatureType.creature);
+        for (SpawnListEntry creature : creatures){
+            creature.spawnFrequency /= 2;
+        }
+        creatures.add(new SpawnListEntry(EntityPenguin.class, 102));
 
 //        if (noNameDyesModPresent){
 //            new NoNameDyes().onInitialize();

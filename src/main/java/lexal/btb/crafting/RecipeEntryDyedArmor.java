@@ -45,11 +45,13 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
             int r = -1;
             int g = -1;
             int b = -1;
+            int count = 0;
             if (outStack.getData().containsKey("dyed_color")){
                 CompoundTag armorColorTag = outStack.getData().getCompound("dyed_color");
                 r = armorColorTag.getShort("red");
                 g = armorColorTag.getShort("green");
                 b = armorColorTag.getShort("blue");
+                count += 1;
             }
 
             for (ItemStack dyeStack : dyeStacks){
@@ -63,16 +65,20 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
                     g += color.getGreen();
                     b += color.getBlue();
                 }
+                count += 1;
             }
 
-            r /= dyeStacks.size();
-            g /= dyeStacks.size();
-            b /= dyeStacks.size();
-            CompoundTag colorTag = new CompoundTag();
-            colorTag.putShort("red", (short) r);
-            colorTag.putShort("green", (short) g);
-            colorTag.putShort("blue", (short) b);
-            outStack.getData().putCompound("dyed_color", colorTag);
+            if (count > 0){
+                r /= count;
+                g /= count;
+                b /= count;
+                CompoundTag colorTag = new CompoundTag();
+                colorTag.putShort("red", (short) r);
+                colorTag.putShort("green", (short) g);
+                colorTag.putShort("blue", (short) b);
+                outStack.getData().putCompound("dyed_color", colorTag);
+            }
+
             outStack.stackSize = 1;
             return outStack;
         }
