@@ -23,7 +23,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
     static {
         vanillaDye = new HashMap<>();
         for (int color = 0; color < 16; color++) {
-            vanillaDye.put(color, new Color().setARGB(ItemDye.field_31002_bk[15 - color]));
+            vanillaDye.put(color, Colors.allSignColors[15 - color]);
         }
         dyeMap.put(Item.dye, vanillaDye);
     }
