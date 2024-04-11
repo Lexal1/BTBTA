@@ -64,7 +64,7 @@ public class ItemPlacableLayer extends ItemPlaceable {
                     return false;
                 }
             }
-            world.playBlockSoundEffect(entityplayer/*(float)blockX + 0.5f*/, (float)blockY + 0.5f, (float)blockZ + 0.5f, blockLayer/*, EnumBlockSoundEffectType.PLACE*/);
+            world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, blockLayer, EnumBlockSoundEffectType.PLACE);
             itemstack.consumeItem(entityplayer);
             return true;
         }
@@ -92,7 +92,7 @@ public class ItemPlacableLayer extends ItemPlaceable {
                 }
 
             }
-            world.playBlockSoundEffect(/*(float)blockX + 0.5f*/, (float)blockY + 0.5f, (float)blockZ + 0.5f, blockLayer, EnumBlockSoundEffectType.PLACE);
+            world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, blockLayer, EnumBlockSoundEffectType.PLACE);
             itemstack.consumeItem(entityplayer);
             return true;
         }
@@ -100,7 +100,7 @@ public class ItemPlacableLayer extends ItemPlaceable {
             Block block = Block.blocksList[this.blockID];
             if (world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, this.blockID, this.getPlacedBlockMetadata(itemstack.getMetadata()))) {
                 Block.blocksList[this.blockID].onBlockPlaced(world, blockX, blockY, blockZ, null, entityplayer, yPlaced);
-                world.playBlockSoundEffect(entityplayer/*(float)blockX + 0.5f*/, (float)blockY + 0.5f, (float)blockZ + 0.5f, block, EnumBlockSoundEffectType.PLACE);
+                world.playBlockSoundEffect((float)blockX + 0.5f, (float)blockY + 0.5f, (float)blockZ + 0.5f, block, EnumBlockSoundEffectType.PLACE);
                 itemstack.consumeItem(entityplayer);
             }
             return true;
