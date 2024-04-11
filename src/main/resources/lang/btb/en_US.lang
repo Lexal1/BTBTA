@@ -100,7 +100,9 @@ achievement.btb.penguintame.desc=Tame a penguin.
 achievement.btb.popcorn=Movie Theatre
 achievement.btb.popcorn.desc=Get a bucket of popcorn.
 
+#Entity
+btb.penguin.name=Penguin
+btb.penguin.desc=A small feathery creature that lives in very cold places. They are mostly harmless unless provoked. They are fond of foods like raw fish.
 
 #optionals
-
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg

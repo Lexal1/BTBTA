@@ -21,14 +21,13 @@ public class EntityPenguin extends EntityPet {
         super(world);
         this.tameItemID = Item.foodFishRaw.id;
         this.skinName = "penguin";
-        this.highestSkinVariant = -1;
         this.setSize(8f/16f, 14f/16f);
     }
     public String getEntityTexture() {return "/assets/btb/entity/penguin/penguin2.png";}
     public String getDefaultEntityTexture() {
         return "/assets/btb/entity/penguin/penguin2.png";
     }
-    protected String getLivingSound() {
+    public String getLivingSound() {
         return "mob.chicken";
     }
 
@@ -109,17 +108,6 @@ public class EntityPenguin extends EntityPet {
         }
 
     }
-
-    public void setSitting(boolean flag) {
-        byte byte0 = this.entityData.getByte(16);
-        if (flag) {
-            this.entityData.set(16, (byte) (byte0 | 1));
-        } else {
-            this.entityData.set(16, (byte) (byte0 & -2));
-        }
-
-    }
-
     @Override
     public boolean interact(EntityPlayer entityplayer) {
         ItemStack itemstack = entityplayer.inventory.getCurrentItem();

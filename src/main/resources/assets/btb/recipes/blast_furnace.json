@@ -1,0 +1,50 @@
+[
+  {
+    "name": "minecraft:blast_furnace/corn_cracked",
+    "type": "minecraft:smelting/blast",
+    "input": {
+      "stack": {
+        "key": "item.btb.corn",
+        "amount": 1,
+        "meta": 0
+      }
+    },
+    "output": {
+      "key": "item.btb.corn.cracked",
+      "amount": 1,
+      "meta": 0
+    }
+  },
+  {
+    "name": "minecraft:blast_furnace/popcorn",
+    "type": "minecraft:smelting/blast",
+    "input": {
+      "stack": {
+        "key": "item.btb.corn.unpopped",
+        "amount": 1,
+        "meta": 0
+      }
+    },
+    "output": {
+      "key": "item.btb.corn.popped",
+      "amount": 1,
+      "meta": 0
+    }
+  },
+  {
+    "name": "minecraft:blast_furnace/igneous_netherrack",
+    "type": "minecraft:smelting/blast",
+    "input": {
+      "stack": {
+        "key": "tile.netherrack",
+        "amount": 1,
+        "meta": 0
+      }
+    },
+    "output": {
+      "key": "tile.netherrack.igneous",
+      "amount": 1,
+      "meta": 0
+    }
+  }
+]

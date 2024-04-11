@@ -8,6 +8,7 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemRecord;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
+import net.minecraft.core.player.inventory.InventorySorter;
 
 public class TileEntityInscriber extends TileEntity implements IInventory {
     public int currentInscribeTime = 0;
@@ -27,7 +28,7 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
         if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord || inscriberItemStacks[2].getItem().id == ModItems.pancake.id)) { return false;}
         return true;
     }
-    public void updateEntity() {
+    public void tick() {
         if (canInscribe()){
             ++currentInscribeTime;
             if (currentInscribeTime >= maxInscribeTime){
@@ -102,11 +103,17 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
 
     @Override
     public boolean canInteractWith(EntityPlayer entityplayer) {
-        if (this.worldObj.getBlockTileEntity(this.xCoord, this.yCoord, this.zCoord) != this) {
+        if (this.worldObj.getBlockTileEntity(this.x, this.y, this.z) != this) {
             return false;
         }
-        return entityplayer.distanceToSqr((double)this.xCoord + 0.5, (double)this.yCoord + 0.5, (double)this.zCoord + 0.5) <= 64.0;
+        return entityplayer.distanceToSqr((double)this.x + 0.5, (double)this.y + 0.5, (double)this.z + 0.5) <= 64.0;
     }
+
+    @Override
+    public void sortInventory() {
+        InventorySorter.sortInventory(inscriberItemStacks);
+    }
+
     @Override
     public void readFromNBT(CompoundTag nbttagcompound) {
         super.readFromNBT(nbttagcompound);
