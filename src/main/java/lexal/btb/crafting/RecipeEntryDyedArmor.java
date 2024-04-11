@@ -2,10 +2,12 @@ package lexal.btb.crafting;
 
 import com.mojang.nbt.CompoundTag;
 import lexal.btb.item.ItemArmorColored;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.helper.Colors;
 import net.minecraft.core.data.registry.recipe.SearchQuery;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCraftingDynamic;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.InventoryCrafting;
 import net.minecraft.core.util.helper.Color;
