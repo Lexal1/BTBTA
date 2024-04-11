@@ -3,14 +3,15 @@ package lexal.btb.block;
 import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
-import net.minecraft.client.sound.block.BlockSoundDispatcher;
-import net.minecraft.client.sound.block.BlockSounds;
+
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.block.ItemBlockLayer;
+import net.minecraft.core.sound.BlockSoundDispatcher;
+import net.minecraft.core.sound.BlockSounds;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public class ModBlocks {
@@ -125,6 +126,13 @@ public class ModBlocks {
             .setBlockSound(BlockSounds.CLOTH)
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockCherryPie("pie.cherry",UtilIdRegistrar.nextIdBlock()));
+
+    public static final Block chair = new BlockBuilder(BTBTA.MOD_ID)
+            .setHardness(0.5f)
+            .setTopTexture(4,5)
+            .setBlockSound(BlockSounds.CLOTH)
+            .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
+            .build(new BlockSeat("pie.cherry",UtilIdRegistrar.nextIdBlock()));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);

@@ -22,6 +22,7 @@ public class ModRecipes implements RecipeEntrypoint {
         DataLoader.loadRecipes("/assets/btb/recipes/workbench.json");
         DataLoader.loadRecipes("/assets/btb/recipes/furnace.json");
         DataLoader.loadRecipes("/assets/btb/recipes/blast_furnace.json");
+
     }
 
 }

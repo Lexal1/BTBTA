@@ -24,7 +24,7 @@ public class BlockCherryPie extends BlockCake {
     }
 
     private void eatCakeSlice(World world, int i, int j, int k, EntityPlayer entityplayer) {
-        if (entityplayer.health < 20) {
+        if (entityplayer.getHealth() < 20) {
             entityplayer.heal(2);
             int l = world.getBlockMetadata(i, j, k) + 1;
             if (l >= 6) {

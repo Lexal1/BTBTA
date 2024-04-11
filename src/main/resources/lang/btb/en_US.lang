@@ -7,7 +7,7 @@ tile.btb.flint_tile.desc=Stacked pieces of flint.
 tile.btb.slab.flint_tile.name=Flint Tile Slab
 tile.btb.slab.flint_tile.desc=A slab of flint tiles.
 tile.btb.glass.framed.name=Framed Glass
-tile.btb.glass.framed.desc=Glass's fancier cousin.
+tile.btb.glass.framed.desc=Glass' fancier cousin.
 tile.btb.glass.framed.trapdoor.name=Framed Glass Trapdoor
 tile.btb.glass.framed.trapdoor.desc=At least it looks nice.
 tile.btb.inscriber.name=Inscriber
@@ -102,3 +102,4 @@ btb.penguin.desc=A small feathery creature that lives in very cold places. They 
 
 #optionals
 item.btb.spawn.egg.penguin.name=Penguin Spawn Egg
+item.btb.spawn.egg.penguin.desc=penguin penguin penguin penguin penguin penguin penguin penguin penguin

@@ -24,7 +24,7 @@ public class BlockPumpkinPie extends BlockCake {
         return j > 0 && side == Side.WEST ? texCoordToIndex(texture[0], texture[1]) : this.atlasIndices[side.getId()];
     }
     private void eatCakeSlice(World world, int i, int j, int k, EntityPlayer entityplayer) {
-        if (entityplayer.health < 20) {
+        if (entityplayer.getHealth() < 20) {
             entityplayer.heal(1);
             int l = world.getBlockMetadata(i, j, k) + 1;
             if (l >= 6) {

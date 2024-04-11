@@ -33,7 +33,7 @@ public class EntityPet extends EntityAnimal {
         super.init();
         this.entityData.define(16, (byte) 0); // Ai State
         this.entityData.define(17, ""); // Owner String
-        this.entityData.define(18, this.health); // Health
+        this.entityData.define(18, this.getHealth()); // Health
     }
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);

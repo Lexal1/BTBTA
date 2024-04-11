@@ -37,7 +37,7 @@ public class BlockLayerPancakeSyrup extends BlockLayerBase {
     }
 
     private void eatPancakeLayer(World world, int i, int j, int k, EntityPlayer entityplayer) {
-        if (entityplayer.health < 20) { // Not max health
+        if (entityplayer.getHealth() < 20) { // Not max health
             entityplayer.heal(7); // heal 3 and 1/2 hearts
             int l = world.getBlockMetadata(i, j, k) - 1; // new layer meta data
             if (l < 0) { // if no more layers
