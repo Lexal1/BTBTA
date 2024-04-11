@@ -136,8 +136,8 @@ dependencies {
 	modImplementation "BTA_Babric_SpawnEggs:spawneggs:2.0.2-7.1"
 	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 
-//	modImplementation "ModMenu:ModMenu:2.0.3"
-	modImplementation "BTWaila:btwaila:1.0.4-7.1"
+	modImplementation "ModMenu:ModMenu:2.0.5"
+//	modImplementation "BTWaila:btwaila:1.0.4-7.1"
 
 //	modImplementation "BonusBlocks:bonusblocks:1.4"
 //	modImplementation "BTANoNameDyes:noname_dyes:1.0.2"

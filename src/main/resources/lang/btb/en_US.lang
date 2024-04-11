@@ -18,10 +18,7 @@ tile.btb.pie.cherry.name=Cherry Pie
 tile.btb.pie.cherry.desc=A vivid red pie to brighten up your table!
 tile.btb.pie.pumpkin.name=Pumpkin Pie
 tile.btb.pie.pumpkin.desc=A mellow orange pie to complement your table.
-
-
 #unobtainables
-
 tile.btb.corncroptop.name=Corn Crop Top
 tile.btb.corncroptop.desc=The top of a corn plant, where the fluffy tassle is.
 tile.btb.corncropbottom.name=Crop Crop Bottom
@@ -45,7 +42,6 @@ item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants.
 item.btb.armor.boots.clothes.name=Shoes
 item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
 
-
 ###items
 
 item.btb.pancake.name=Pancake
@@ -63,19 +59,19 @@ item.btb.corn.bread.desc=Crazy people eat this with beans.
 item.btb.corn.seeds.name=Corn Seeds
 item.btb.corn.seeds.desc=Corn seeds that may be planted in soil.
 item.btb.corn.cracked.name=Cracked Corn
-item.btb.corn.cracked.desc=Chickens really enjoy this!
+item.btb.corn.cracked.desc=Birds really enjoy this!
 item.btb.record.blank.name=Blank Disc
 item.btb.record.blank.desc=An empty disc that doesn't play any music.
 item.btb.record.rain.name=Music Disc
-item.btb.record.rain.desc=§brain
+item.btb.record.rain.desc=§br1915 - rain
 item.btb.record.pancake.name=Music Disc
 item.btb.record.pancake.desc=§cLexalis8 - so long
 item.btb.record.sahara.name=Music Disc
-item.btb.record.sahara.desc=§4Maow - Sahara
+item.btb.record.sahara.desc=§4Maow - sahara
 item.btb.pie.cherry.name=Cherry Pie
 item.btb.pie.cherry.desc=A delicious slice of spring!
 item.btb.pie.pumpkin.name=Pumpkin Pie
-item.btb.pie.pumpkin.desc=A delicious slice of fall.
+item.btb.pie.pumpkin.desc=A luscious slice of fall.
 
 
 ###misc
