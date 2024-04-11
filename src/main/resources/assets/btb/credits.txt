@@ -1,4 +1,9 @@
 some much better people than me made some textures for this mod
 
-@ikbod - pancakes
-from the bta modding server
+@ikbod - pancake block textures
+from the bta modding discord server
+
+@brokendoop - chair block textures
+from the bta modding discord server
+
+lgplayer13 for being friend

@@ -127,12 +127,12 @@ public class ModBlocks {
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .build(new BlockCherryPie("pie.cherry",UtilIdRegistrar.nextIdBlock()));
 
-    public static final Block chair = new BlockBuilder(BTBTA.MOD_ID)
+    public static final Block stool = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
-            .setTopTexture(4,5)
-            .setBlockSound(BlockSounds.CLOTH)
+            .setTopTexture("stool_top.png")
+            .setSideTextures("stool_side.png")
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockSeat("pie.cherry",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockSeat("stool",UtilIdRegistrar.nextIdBlock()));
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
