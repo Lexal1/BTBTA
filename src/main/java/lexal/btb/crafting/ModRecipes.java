@@ -1,11 +1,8 @@
 package lexal.btb.crafting;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import lexal.btb.block.ModBlocks;
 import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.data.DataLoader;
-import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
