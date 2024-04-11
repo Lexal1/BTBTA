@@ -5,7 +5,8 @@ import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.world.biome.Biome;
 
 public class BiomeGlacier extends Biome {
-    public BiomeGlacier() {
+    public BiomeGlacier(String key) {
+        super(key);
         this.spawnableCreatureList.add(new SpawnListEntry(EntityPenguin.class, 102));
     }
 }

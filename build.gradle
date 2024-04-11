@@ -57,22 +57,6 @@ repositories {
 		metadataSources { artifact() }
 	}
 	ivy {
-		url = "https://github.com/UselessBullets"
-		patternLayout {
-			artifact "[organisation]/releases/download/v[revision]/[module]-[revision].jar"
-			m2compatible = true
-		}
-		metadataSources { artifact() }
-	}
-	ivy {
-		url = "https://github.com/UselessBullets"
-		patternLayout {
-			artifact "[organisation]/releases/download/[revision]/[module]-[revision].jar"
-			m2compatible = true
-		}
-		metadataSources { artifact() }
-	}
-	ivy {
 		url = "https://piston-data.mojang.com"
 		patternLayout {
 			artifact "v1/[organisation]/[revision]/[module].jar"
@@ -97,9 +81,17 @@ repositories {
 		metadataSources { artifact() }
 	}
 	ivy {
-		url = "https://github.com/UselessBullets"
+		url = "https://github.com/UselessSolutions"
 		patternLayout {
-			artifact "[organisation]/releases/download/r[revision]/[module]-[revision].jar"
+			artifact "[organisation]/releases/download/v[revision]/[module]-[revision].jar"
+			m2compatible = true
+		}
+		metadataSources { artifact() }
+	}
+	ivy {
+		url = "https://github.com/UselessSolutions"
+		patternLayout {
+			artifact "[organisation]/releases/download/[revision]/[module]-[revision].jar"
 			m2compatible = true
 		}
 		metadataSources { artifact() }
@@ -137,7 +129,7 @@ dependencies {
 	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 
 	modImplementation "ModMenu:ModMenu:2.0.5"
-	modImplementation "BTWaila:btwaila:1.0.4-7.1"
+	modImplementation "BTWaila:btwaila:1.0.9-7.1"
 
 //	modImplementation "BonusBlocks:bonusblocks:1.4"
 //	modImplementation "BTANoNameDyes:noname_dyes:1.0.2"

@@ -76,7 +76,7 @@ public class EntityPet extends EntityAnimal {
         }
 
         if (!this.world.isClientSide) {
-            this.entityData.set(18, this.health);
+            this.entityData.set(18, this.getHealth());
         }
 
     }
@@ -251,7 +251,7 @@ public class EntityPet extends EntityAnimal {
                             this.setTamed(true);
                             this.setPathToEntity(null);
                             this.setSitting(true);
-                            this.health = 20;
+                            this.setHealthRaw(getMaxHealth());
                             this.setOwner(entityplayer.username);
                             this.showHeartsOrSmokeFX(true);
                             this.world.sendTrackedEntityStatusUpdatePacket(this, (byte) 7);
