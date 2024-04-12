@@ -11,6 +11,6 @@ public class BTBClientContainer {
     public static HitResult getMouseOver(){
         if (Global.isServer) return null;
         Minecraft mc = Minecraft.getMinecraft(Minecraft.class);
-        return getMouseOver();
+        return mc.objectMouseOver;
     }
 }
