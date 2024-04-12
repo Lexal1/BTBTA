@@ -29,6 +29,8 @@ tile.btb.layer.pancake.name=Pancake Stack
 tile.btb.layer.pancake.desc=Stack 'em to the heavens, stack 'em to the heavens!
 tile.btb.layer.pancake.syrup.name=Syrupy Pancake Stack
 tile.btb.layer.pancake.syrup.desc=I could write a song called "stack 'em to the heavens"!
+tile.btb.stool.name=Stool
+tile.btb.stool.desc=A slightly less comfortable place to sit.
 
 
 ###armor
@@ -72,7 +74,8 @@ item.btb.pie.cherry.name=Cherry Pie
 item.btb.pie.cherry.desc=A delicious slice of spring!
 item.btb.pie.pumpkin.name=Pumpkin Pie
 item.btb.pie.pumpkin.desc=A luscious slice of fall.
-
+item.btb.stool.name=Stool
+item.btb.stool.desc=A simple sitting spot, crafted out of wood.
 
 ###misc
 

@@ -33,7 +33,7 @@ public class ModItems {
     public static final Item crackedCorn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false), "corn.cracked", "cracked_corn.png");
     public static final Item pumpkinPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("pumpkin_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.pumpkinPie),"pie.pumpkin","pumpkin_pie.png").setMaxStackSize(1);
     public static final Item cherryPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("cherry_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.cherryPie),"pie.cherry","cherry_pie.png").setMaxStackSize(1);
-
+    public static final Item stool = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), ModBlocks.stool), "stool", "stool.png");
     public static void register() {
     }
 }

@@ -28,6 +28,7 @@ public class ModBlocks {
             .setTextures("flower_rose_blue.png")
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
+            .setTags(BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)

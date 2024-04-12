@@ -174,6 +174,14 @@ public class ModRecipes implements RecipeEntrypoint {
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.netherrack)
                 .create("cracking", Block.netherrackIgneous.getDefaultStack());
+
+        RecipeBuilder.Shaped(MOD_ID)
+                .setShape(
+                        "TT",
+                        "CC")
+                .addInput('C', Item.stick)
+                .addInput('T', Block.trapdoorPlanksOak)
+                .create("stooled", new ItemStack(ModItems.stool));
     }
 
 }
