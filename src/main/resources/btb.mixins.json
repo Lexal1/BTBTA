@@ -18,7 +18,8 @@
     "Entity.EntityPlayerSPMixin",
     "Entity.TileEntityMixin",
     "Item.ItemDyeMixin",
-    "Item.ItemJarMixin"
+    "Item.ItemJarMixin",
+    "Render.RenderGlobalMixin"
   ],
   "client": [
   ],

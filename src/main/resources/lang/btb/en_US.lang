@@ -34,11 +34,11 @@ tile.btb.layer.pancake.syrup.desc=I could write a song called "stack 'em to the 
 ###armor
 
 item.btb.armor.helmet.clothes.name=Cloth Hood
-item.btb.armor.helmet.clothes.desc=Hides your identity.
+item.btb.armor.helmet.clothes.desc=Hides your identity. Can be dyed.
 item.btb.armor.chestplate.clothes.name=Cloth Shirt
-item.btb.armor.chestplate.clothes.desc=A normal, boring, everyday shirt.
+item.btb.armor.chestplate.clothes.desc=A normal, boring, everyday shirt. Can be dyed.
 item.btb.armor.leggings.clothes.name=Cloth Pants
-item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants.
+item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants. Can be dyed.
 item.btb.armor.boots.clothes.name=Shoes
 item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
 
@@ -63,11 +63,11 @@ item.btb.corn.cracked.desc=Birds really enjoy this!
 item.btb.record.blank.name=Blank Disc
 item.btb.record.blank.desc=An empty disc that doesn't play any music.
 item.btb.record.rain.name=Music Disc
-item.btb.record.rain.desc=§br1915 - rain
+item.btb.record.rain.desc=§brain
 item.btb.record.pancake.name=Music Disc
-item.btb.record.pancake.desc=§cLexalis8 - so long
+item.btb.record.pancake.desc=§cso long
 item.btb.record.sahara.name=Music Disc
-item.btb.record.sahara.desc=§4Maow - sahara
+item.btb.record.sahara.desc=§4sahara
 item.btb.pie.cherry.name=Cherry Pie
 item.btb.pie.cherry.desc=A delicious slice of spring!
 item.btb.pie.pumpkin.name=Pumpkin Pie

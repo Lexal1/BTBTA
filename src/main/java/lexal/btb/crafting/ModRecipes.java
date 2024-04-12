@@ -98,7 +98,7 @@ public class ModRecipes implements RecipeEntrypoint {
                         "GGG",
                         "GGG")
                 .addInput('G', ModBlocks.frameGlass)
-                .create("frameglasstrapremix", new ItemStack(ModBlocks.trapdoorFrameGlass));
+                .create("frameglasstrapremix", new ItemStack(ModBlocks.trapdoorFrameGlass, 6));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(

@@ -17,8 +17,8 @@ public class ModItems {
     public static final Item unPopcorn = ItemHelper.createItem(BTBTA.MOD_ID, new Item(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem()), "corn.unpopped", "unpopped_corn.png").setMaxStackSize(1);
     public static final Item cornBread = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),5,false), "corn.bread", "cornbread.png");
     public static final Item cornSeeds = ItemHelper.createItem(BTBTA.MOD_ID, new ItemSeeds(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),ModBlocks.cornCropBottom), "corn.seeds", "corn_seeds.png");
-    public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "rain"), "record.rain", "record_5.png");
-    public static final Item recordBlank = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "blank"), "record.blank", "blank_disc.png");
+    public static final Item recordRain = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "rain", "r1915"), "record.rain", "record_5.png");
+    public static final Item recordBlank = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "blank", ""), "record.blank", "blank_disc.png");
 
 
     //armor
@@ -28,8 +28,8 @@ public class ModItems {
     public static final Item armorLeggingsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmorColored("Cloth Pants", UtilIdRegistrar.nextIdItem(), armorclothing, 2), "armor.leggings.clothes");
     public static final Item armorBootsCloth = ItemHelper.createItem(BTBTA.MOD_ID, new ItemArmorColored("Shoes", UtilIdRegistrar.nextIdItem(), armorclothing, 3), "armor.boots.clothes");
 
-    public static final Item recordPancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "so long"), "record.pancake", "disccake.png").setNotInCreativeMenu();
-    public static final Item recordSahara = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "sahara"), "record.sahara", "disc_sahara.png");
+    public static final Item recordPancake = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "so long", "Lexalis8"), "record.pancake", "disccake.png").setNotInCreativeMenu();
+    public static final Item recordSahara = ItemHelper.createItem(BTBTA.MOD_ID, new ItemRecordAccessor(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(), "sahara", "Maow"), "record.sahara", "disc_sahara.png");
     public static final Item crackedCorn = ItemHelper.createItem(BTBTA.MOD_ID, new ItemFood(BTBTA.MOD_ID, UtilIdRegistrar.nextIdItem(),1,false), "corn.cracked", "cracked_corn.png");
     public static final Item pumpkinPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("pumpkin_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.pumpkinPie),"pie.pumpkin","pumpkin_pie.png").setMaxStackSize(1);
     public static final Item cherryPie = ItemHelper.createItem(BTBTA.MOD_ID, new ItemPlaceable("cherry_pie",UtilIdRegistrar.nextIdItem(),ModBlocks.cherryPie),"pie.cherry","cherry_pie.png").setMaxStackSize(1);
