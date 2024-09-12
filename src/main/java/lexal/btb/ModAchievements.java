@@ -3,7 +3,8 @@ package lexal.btb;
 import lexal.btb.block.ModBlocks;
 import lexal.btb.item.ModItems;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.render.TextureFX;
+import net.minecraft.client.render.block.model.BlockModelDispatcher;
+import net.minecraft.client.render.stitcher.IconCoordinate;
 import net.minecraft.core.Global;
 import net.minecraft.core.achievement.Achievement;
 import net.minecraft.core.achievement.AchievementList;
@@ -30,8 +31,8 @@ public class ModAchievements extends AchievementPage {
     public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",3,-2, Item.featherChicken,ROOT);
     public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, ModItems.popcornBucket,ROOT);
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
-    public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
-    
+    //public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
+
     public static final boolean bonusBlocksModPresent = FabricLoader.getInstance().isModLoaded("bonusblocks");
     public static final boolean noNameDyesModPresent = FabricLoader.getInstance().isModLoaded("nonamedyes");
     static {
@@ -62,7 +63,7 @@ public class ModAchievements extends AchievementPage {
         achievementList.add(PENGUIN);
         achievementList.add(POPCORN);
         achievementList.add(NETHERDIST);
-        achievementList.add(BAKED);
+        //achievementList.add(BAKED);
     }
 
     @Override
@@ -73,8 +74,9 @@ public class ModAchievements extends AchievementPage {
             GL11.glColor4f(f5, f5, f5, 1.0f);
             int i8 = 0;
             while (i8 * 16 - blockX2 < 224) {
-                int k8 = ModBlocks.flintTile.getBlockTextureFromSideAndMetadata(Side.BOTTOM,0);
-                guiAchievements.drawTexturedModalRect(iOffset + i8 * 16 - blockX2, jOffset + l7 * 16 - blockY2, k8 % Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain, k8 / Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain, 16, 16, TextureFX.tileWidthTerrain, 1.0f / (float)(Global.TEXTURE_ATLAS_WIDTH_TILES * TextureFX.tileWidthTerrain));
+                IconCoordinate texture = BlockModelDispatcher.getInstance().getDispatch(ModBlocks.flintTile)
+                    .getBlockTextureFromSideAndMetadata(Side.BOTTOM, 0);
+                guiAchievements.drawTexturedIcon(iOffset + i8 * 16 - blockX2, jOffset + l7 * 16 - blockY2, texture.width, texture.height, texture);
                 ++i8;
             }
             ++l7;

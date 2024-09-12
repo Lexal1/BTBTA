@@ -30,7 +30,7 @@ public class GuiInscriber extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float f) {
-        int i = this.mc.renderEngine.getTexture("/assets/btb/gui/inscriber.png");
+        int i = this.mc.renderEngine.getTexture("/assets/btb/textures/gui/inscriber.png");
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
         this.mc.renderEngine.bindTexture(i);
         drawTexturedModalRect(GUIx, GUIy, 0, 0, this.xSize, this.ySize);

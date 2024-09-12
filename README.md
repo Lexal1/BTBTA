@@ -2,8 +2,7 @@
 small little QoL mod for BTA
 # requirements
 babric\
-halplibe\
-prismaticlibe
+halplibe
 ## features
 cool decoration blocks\
 penguins\

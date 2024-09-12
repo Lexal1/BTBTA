@@ -27,6 +27,7 @@ public class RecipeEntryDyedArmor extends RecipeEntryCraftingDynamic {
         }
         dyeMap.put(Item.dye, vanillaDye);
     }
+
     @Override
     public ItemStack getCraftingResult(InventoryCrafting inventorycrafting) {
         ItemStack armorStack = null;

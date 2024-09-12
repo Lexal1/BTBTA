@@ -1,6 +1,7 @@
 package lexal.btb.block;
 
 import lexal.btb.item.ModItems;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -30,7 +31,7 @@ public class BlockLayerPancakeSyrup extends BlockLayerBase {
         return material == Material.leaves || material.blocksMotion();
     }
     @Override
-    public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
+    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced) {
         if (player.getHeldItem() != null || player.isSneaking()) {return false;} // not empty hand or sneaking then do nothing
         this.eatPancakeLayer(world, x, y, z, player); // Eat layer
         return true;
