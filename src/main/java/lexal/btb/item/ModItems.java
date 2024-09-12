@@ -4,6 +4,7 @@ import lexal.btb.BTBTA;
 import lexal.btb.UtilIdRegistrar;
 import lexal.btb.block.ModBlocks;
 import net.minecraft.core.item.*;
+import net.minecraft.core.item.tag.ItemTags;
 import net.minecraft.core.item.material.ArmorMaterial;
 import turniplabs.halplibe.helper.ArmorHelper;
 import turniplabs.halplibe.helper.ItemBuilder;
@@ -71,7 +72,8 @@ public class ModItems {
 
     public static final Item recordPancake = new ItemBuilder(BTBTA.MOD_ID)
         .setIcon("btb:item/disccake")
-        .build(new ItemRecord("record_pancake", UtilIdRegistrar.nextIdItem(), "so long", "Lexalis8")); //.setNotInCreativeMenu();
+        .setTags(ItemTags.NOT_IN_CREATIVE_MENU)
+        .build(new ItemRecord("record_pancake", UtilIdRegistrar.nextIdItem(), "so long", "Lexalis8"));
 
     public static final Item recordSahara = new ItemBuilder(BTBTA.MOD_ID)
         .setIcon("btb:item/disc_sahara")
