@@ -29,7 +29,7 @@ public class ItemPlacableLayer extends ItemPlaceable {
         this.onlyStackOnTop = onlyStackOnTop;
     }
     @Override
-    public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+    public boolean onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
         int id = world.getBlockId(blockX, blockY, blockZ);
         int meta = world.getBlockMetadata(blockX, blockY, blockZ);
         if (id != this.blockID && Block.blocksList[id] != null && Block.blocksList[id].hasTag(BlockTags.PLACE_OVERWRITES)) {

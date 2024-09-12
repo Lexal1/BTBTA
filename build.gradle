@@ -124,8 +124,8 @@ dependencies {
 	// Helper library
 	// If you do not need Halplibe you can comment this line out or delete this line
 	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
-	modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
-	modImplementation "BTA_Babric_SpawnEggs:spawneggs:2.0.2-7.1"
+	//modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
+	//modImplementation "BTA_Babric_SpawnEggs:spawneggs:2.0.2-7.1"
 	modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
 
 	modImplementation "ModMenu:ModMenu:2.0.5"

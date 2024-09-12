@@ -16,10 +16,10 @@
     "Entity.EntityPlayerMixin",
     "Entity.EntityPlayerMPMixin",
     "Entity.EntityPlayerSPMixin",
+    "Entity/LivingRendererMixin",
     "Entity.TileEntityMixin",
     "Item.ItemDyeMixin",
-    "Item.ItemJarMixin",
-    "Render.RenderGlobalMixin"
+    "Item.ItemJarMixin"
   ],
   "client": [
   ],

@@ -3,6 +3,7 @@ package lexal.btb.crafting;
 import lexal.btb.block.ModBlocks;
 import lexal.btb.item.ModItems;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
@@ -13,9 +14,16 @@ import turniplabs.halplibe.helper.RecipeBuilder;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 public class ModRecipes implements RecipeEntrypoint {
-    public static final RecipeNamespace BTBTA = new RecipeNamespace();
     public static final String MOD_ID = "btbta";
     public static final RecipeGroup<RecipeEntryCrafting<?, ?>> WORKBENCH = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.workbench)));
+
+    @Override
+    public void initNamespaces() {
+        RecipeNamespace BTB = new RecipeNamespace();
+		BTB.register("workbench", WORKBENCH);
+		Registries.RECIPES.register(MOD_ID, BTB);
+    }
+
     @Override
     public void onRecipesReady() {
         RecipeBuilder.Shapeless(MOD_ID)
@@ -56,13 +64,13 @@ public class ModRecipes implements RecipeEntrypoint {
                         "CCC",
                         "SSS",
                         "WEW")
-                .addInput('C', Item.cherry)
+                .addInput('C', Item.foodCherry)
                 .addInput('E', Item.eggChicken)
                 .addInput('S', Item.dustSugar)
                 .addInput('W', Item.wheat)
                 .create("cherycake", new ItemStack(ModItems.cherryPie));
 
-        RecipeBuilder.Shaped(MOD_ID)
+        /*RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "PP",
                         "SE",
@@ -71,7 +79,7 @@ public class ModRecipes implements RecipeEntrypoint {
                 .addInput('E', Item.eggChicken)
                 .addInput('S', Item.dustSugar)
                 .addInput('W', Item.wheat)
-                .create("pumpincake", new ItemStack(ModItems.pumpkinPie));
+                .create("pumpincake", new ItemStack(ModItems.pumpkinPie));*/
 
         // blocks
 
@@ -184,4 +192,8 @@ public class ModRecipes implements RecipeEntrypoint {
                 .create("stooled", new ItemStack(ModItems.stool));
     }
 
+    public static void postInit() {
+        Registries.RECIPE_TYPES.register("dyedArmor", RecipeEntryDyedArmor.class);
+		WORKBENCH.register("dyingArmor", new RecipeEntryDyedArmor());
+    }
 }

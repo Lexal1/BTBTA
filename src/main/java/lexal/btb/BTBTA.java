@@ -4,6 +4,7 @@ import lexal.btb.block.ModBlocks;
 import lexal.btb.entity.EntityPenguin;
 import lexal.btb.entity.ModEntities;
 import lexal.btb.item.ModItems;
+import lexal.btb.crafting.ModRecipes;
 import lexal.btb.world.biomes.BiomeGlacier;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.block.Block;
@@ -24,7 +25,6 @@ import java.util.List;
 import java.util.Properties;
 
 public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
-    
     public static final String MOD_ID = "btb";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static int GUI_ID_INSCRIBER;
@@ -67,19 +67,20 @@ public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
 
     @Override
     public void afterGameStart() {
-
     }
 
     @Override
     public void beforeClientStart() {
-        SoundHelper.Client.addStreaming(MOD_ID, "rain.wav");
-        SoundHelper.Client.addStreaming(MOD_ID, "blank.wav");
-        SoundHelper.Client.addStreaming(MOD_ID, "so long.wav");
-        SoundHelper.Client.addStreaming(MOD_ID, "sahara.ogg");
+        SoundHelper.addStreaming(MOD_ID, "rain.wav");
+        SoundHelper.addStreaming(MOD_ID, "blank.wav");
+        SoundHelper.addStreaming(MOD_ID, "so long.wav");
+        SoundHelper.addStreaming(MOD_ID, "sahara.ogg");
     }
 
     @Override
     public void afterClientStart() {
-
+        LOGGER.info("btbta loaded successfully! :3");
+        ModEntities.registerGui();
+        ModRecipes.postInit();
     }
 }

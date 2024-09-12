@@ -2,6 +2,7 @@ package lexal.btb.block;
 
 import lexal.btb.BTBTA;
 import lexal.btb.item.ModItems;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.BlockLeavesBase;
@@ -36,7 +37,7 @@ public class BlockLayerPancake extends BlockLayerBase {
         return material == Material.leaves || material.blocksMotion();
     }
     @Override
-    public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
+    public boolean onBlockRightClicked(World world, int x, int y, int z, EntityPlayer player, Side side, double xPlaced, double yPlaced) {
         if (player.getHeldItem() != null && player.getHeldItem().getItem() == ModItems.syrupJar){
             world.setBlockAndMetadataWithNotify(x,y,z, ModBlocks.layerPancakeSyrup.id,world.getBlockMetadata(x,y,z));
             player.getHeldItem().consumeItem(player);

@@ -33,7 +33,6 @@ public class EntityPet extends EntityAnimal {
         super.init();
         this.entityData.define(16, (byte) 0); // Ai State
         this.entityData.define(17, ""); // Owner String
-        this.entityData.define(18, this.getHealth()); // Health
     }
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
@@ -74,11 +73,6 @@ public class EntityPet extends EntityAnimal {
         if (this.isInWater()) {
             this.setSitting(false);
         }
-
-        if (!this.world.isClientSide) {
-            this.entityData.set(18, this.getHealth());
-        }
-
     }
 
     public void onLivingUpdate() {
@@ -266,7 +260,7 @@ public class EntityPet extends EntityAnimal {
             } else {
                 if (itemstack != null) {
                     Item healItem = Item.itemsList[itemstack.itemID];
-                    if (isHealingItem(healItem) && this.entityData.getInt(18) < 20 /*health less that max*/) {
+                    if (isHealingItem(healItem) && getHealth() < 20 /*health less that max*/) {
                         if (entityplayer.getGamemode().consumeBlocks()) {
                             --itemstack.stackSize;
                             if (itemstack.stackSize <= 0) {
@@ -303,7 +297,7 @@ public class EntityPet extends EntityAnimal {
             double d = this.random.nextGaussian() * 0.02;
             double d1 = this.random.nextGaussian() * 0.02;
             double d2 = this.random.nextGaussian() * 0.02;
-            this.world.spawnParticle(s, this.x + (double) (this.random.nextFloat() * this.bbWidth * 2.0F) - (double) this.bbWidth, this.y + 0.5 + (double) (this.random.nextFloat() * this.bbHeight), this.z + (double) (this.random.nextFloat() * this.bbWidth * 2.0F) - (double) this.bbWidth, d, d1, d2);
+            this.world.spawnParticle(s, this.x + (double) (this.random.nextFloat() * this.bbWidth * 2.0F) - (double) this.bbWidth, this.y + 0.5 + (double) (this.random.nextFloat() * this.bbHeight), this.z + (double) (this.random.nextFloat() * this.bbWidth * 2.0F) - (double) this.bbWidth, d, d1, d2, 0);
         }
 
     }
@@ -323,7 +317,7 @@ public class EntityPet extends EntityAnimal {
         if (this.isAngry()) {
             return 1.53938F;
         } else {
-            return this.isTamed() ? (0.55F - (float) (20 - this.entityData.getInt(18)) * 0.02F) * 3.141593F : 0.6283185F;
+            return this.isTamed() ? (0.55F - (float) (20 - getHealth()) * 0.02F) * 3.141593F : 0.6283185F;
         }
     }
 

@@ -15,8 +15,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = ItemDye.class, remap = false)
 final class ItemDyeMixin {
-    @Inject(at =@At("HEAD"), method = "onItemUse", cancellable = true)
-    private void injected(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean> cir) {
+    @Inject(at = @At("HEAD"), method = "onUseItemOnBlock", cancellable = true)
+    private void onUseItemOnBlock(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced, CallbackInfoReturnable<Boolean>
+cir) {
         int meta = world.getBlockMetadata(blockX, blockY, blockZ);
         if (itemstack.getMetadata() == 15) {
             int id = world.getBlockId(blockX, blockY, blockZ);

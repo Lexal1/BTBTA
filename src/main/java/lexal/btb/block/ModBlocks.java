@@ -1,14 +1,22 @@
 package lexal.btb.block;
 
 import lexal.btb.BTBTA;
+import lexal.btb.item.ModItems;
 import lexal.btb.UtilIdRegistrar;
-import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+
+import net.minecraft.client.render.block.model.BlockModelCrossedSquares;
+import net.minecraft.client.render.block.model.BlockModelTransparent;
+import net.minecraft.client.render.block.model.BlockModelTrapDoor;
+import net.minecraft.client.render.block.model.BlockModelStandard;
 
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
+import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.world.World;
 import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.block.ItemBlockLayer;
 import net.minecraft.core.sound.BlockSoundDispatcher;
 import net.minecraft.core.sound.BlockSounds;
@@ -19,52 +27,58 @@ public class ModBlocks {
             .setHardness(0.5f)
             .setResistance(0.0f)
             .setBlockSound(BlockSounds.CLOTH)
-            .setTopBottomTexture("pancake_top.png")
-            .setSideTextures("pancake_side.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/pancake_top", "btb:block/pancake_side")
+            )
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancake("layer.pancake",UtilIdRegistrar.nextIdBlock(), Material.cake));
+            .build(new BlockLayerPancake("layer_pancake",UtilIdRegistrar.nextIdBlock(), Material.cake));
 
     public static final Block blueRose = new BlockBuilder(BTBTA.MOD_ID)
-            .setTextures("flower_rose_blue.png")
             .setBlockSound(BlockSounds.GRASS)
-            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setBlockModel(b -> new BlockModelCrossedSquares(b)
+                .withTextures("btb:block/flower_rose_blue")
+            )
             .setTags(BlockTags.PLANTABLE_IN_JAR)
             .build(new BlockFlower("bluerose",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block flintTile = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.5f)
             .setResistance(5.0f)
-            .setTextures("tile_top.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/tile_top")
+            )
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("flint_tile",UtilIdRegistrar.nextIdBlock(), Material.stone));
     public static final Block birchSyrupLog = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.0f)
             .setResistance(1.0f)
-            .setSideTextures("birch_syrup.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("minecraft:block/log_birch_top", "btb:block/birch_syrup")
+            )
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .setBlockDrop(Block.logBirch)
-            .setTopBottomTexture(1,24)
             .setBlockSound(BlockSounds.WOOD)
             .build(new BlockBirchLog("syruplog",UtilIdRegistrar.nextIdBlock(), true));
     public static final Block layerPancakeSyrup = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
             .setResistance(0.0f)
             .setBlockSound(BlockSounds.CLOTH)
-            .setTopBottomTexture("pancake_top_syrup.png")
-            .setSideTextures("pancake_side_syrup.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/pancake_top_syrup", "btb:block/pancake_side_syrup")
+            )
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockLayerPancakeSyrup("layer.pancake.syrup",UtilIdRegistrar.nextIdBlock(), Material.cake));
+            .build(new BlockLayerPancakeSyrup("layer_pancake_syrup",UtilIdRegistrar.nextIdBlock(), Material.cake));
 
     public static final Block cornCropTop = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
-            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setBlockModel(b -> new BlockModelCropCorn(b, false))
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .setTickOnLoad()
             .build(new BlockCropCornTop("corncroptop",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block cornCropBottom = new BlockBuilder(BTBTA.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
-            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setBlockModel(b -> new BlockModelCropCorn(b, true))
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
             .setTickOnLoad()
             .build(new BlockCropCornBottom("corncropbottom",UtilIdRegistrar.nextIdBlock()));
@@ -72,15 +86,19 @@ public class ModBlocks {
     public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.75f)
             .setResistance(0.0f)
-            .setTextures("frame_glass.png")
-            .build(new BlockFramedGlass("glass.framed",UtilIdRegistrar.nextIdBlock(),Material.glass,false));
+            .setBlockModel(b -> new BlockModelTransparent(b, false)
+                .withTextures("btb:block/frame_glass")
+            )
+            .build(new BlockFramedGlass("glass_framed",UtilIdRegistrar.nextIdBlock(),Material.glass));
 
     public static final Block trapdoorFrameGlass = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.75f)
             .setResistance(0.0f)
-            .setTextures("frame_glass.png")
+            .setBlockModel(b -> new BlockModelTrapDoor(b)
+                .withTextures("btb:block/frame_glass")
+            )
             .build(new BlockFramedGlassTrapdoor(
-                    "glass.framed.trapdoor",
+                    "glass_framed_trapdoor",
                     UtilIdRegistrar.nextIdBlock(),
                     Material.glass,
                     false)
@@ -89,7 +107,9 @@ public class ModBlocks {
     public static final Block flintTileSlab = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.5f)
             .setResistance(5.0f)
-            .setTextures("tile_top.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/tile_top")
+            )
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
 
@@ -98,50 +118,69 @@ public class ModBlocks {
             .setHardness(1.0f)
             .setResistance(1.0f)
             .setImmovable()
-            .setTopBottomTexture("inscriber_top.png")
-            .setSideTextures("inscriber_side.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/inscriber_top", "btb:block/inscriber_side")
+            )
             .setTags(BlockTags.MINEABLE_BY_AXE)
             .build(new BlockInscriber("inscriber",UtilIdRegistrar.nextIdBlock(),Material.wood));
 
     public static final Block olivineBricks = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(1.5f)
             .setResistance(5.0f)
-            .setTextures("olivine_bricks.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/olivine_bricks")
+            )
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
             .build(new Block("olivine_bricks",UtilIdRegistrar.nextIdBlock(), Material.stone));
 
-    public static final Block pumpkinPie = new BlockBuilder(BTBTA.MOD_ID)
+    /*public static final Block pumpkinPie = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
-            .setTopTexture("pumpkin_pie_top.png")
-            .setSideTextures("pie_side.png")
-            .setBottomTexture("pie_bottom.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/pumpkin_pie_top", "btb:block/pie_bottom", "btb:block/pie_side")
+            )
             .setBlockSound(BlockSounds.CLOTH)
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockPumpkinPie("pie.pumpkin",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockPumpkinPie("pie_pumpkin",UtilIdRegistrar.nextIdBlock()));*/
+    // For id compat
+    public static final int pumpkinPie_ID = UtilIdRegistrar.nextIdBlock();
 
     public static final Block cherryPie = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
-            .setTopTexture("cherry_pie_top.png")
-            .setSideTextures("pie_side.png")
-            .setBottomTexture("pie_bottom.png")
+            .setBlockModel(b -> new BlockModelPie(b)
+                .withTextures("btb:block/cherry_pie_top", "btb:block/pie_bottom", "btb:block/pie_side")
+            )
             .setBlockSound(BlockSounds.CLOTH)
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockCherryPie("pie.cherry",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockCherryPie("pie_cherry",UtilIdRegistrar.nextIdBlock()));
 
     public static final Block stool = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.5f)
-            .setTopTexture("stool_top.png")
-            .setSideTextures("stool_side.png")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("btb:block/stool_top", "btb:block/stool_side")
+            )
             .setTags(BlockTags.NOT_IN_CREATIVE_MENU)
-            .build(new BlockSeat("stool",UtilIdRegistrar.nextIdBlock()));
+            .build(new BlockSeat("stool",UtilIdRegistrar.nextIdBlock()) {
+                @Override
+                public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+                    return new ItemStack[] { new ItemStack(ModItems.stool) };
+                }
+            });
 
     static {
         Item.itemsList[layerPancake.id] = new ItemBlockLayer(layerPancake);
     }
 
     public static void register() {
-        Block.blocksList[Block.logBirch.id] = null; // Replace vanilla birch log with custom version
-        Block.blocksList[Block.logBirch.id] = new BlockBirchLog("log.birch", 282,false).withTexCoords(1, 24, 0, 24).withHardness(2.0f).withDisabledNeighborNotifyOnMetadataChange().withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+        // Replace vanilla birch log with custom version
+        Block.blocksList[Block.logBirch.id] = null;
+        Block.blocksList[Block.logBirch.id] = new BlockBuilder("minecraft")
+            .setBlockModel(b -> new BlockModelStandard(b)
+                .withTextures("minecraft:block/log_birch_top", "minecraft:block/log_birch_side")
+            )
+            .setHardness(2.0f)
+            .setVisualUpdateOnMetadata()
+            .setTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE)
+            .build(new BlockBirchLog("log.birch", 282, false));
         BlockSoundDispatcher.getInstance().addDispatch(Block.blocksList[Block.logBirch.id], BlockSounds.WOOD);
         Block.shouldTick[Block.logBirch.id] = true;
     }

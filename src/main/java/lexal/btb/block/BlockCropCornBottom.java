@@ -10,21 +10,12 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.season.*;
-import turniplabs.halplibe.helper.TextureHelper;
 
 
 import java.util.Random;
 
 
 public class BlockCropCornBottom extends BlockCropsWheat {
-    int[] stage0 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage0.png");
-    int[] stage1 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage1_bottom.png");
-    int[] stage2 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage2_bottom.png");
-    int[] stage3 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage3_bottom.png");
-    int[] stage4 = TextureHelper.getOrCreateBlockTexture(BTBTA.MOD_ID, "corn_stage4_bottom.png");
-
-    public final int[] growthStageTextures = new int[]{texCoordToIndex(stage0[0], stage0[1]), texCoordToIndex(stage1[0], stage1[1]), texCoordToIndex(stage2[0], stage2[1]), texCoordToIndex(stage3[0], stage3[1]),texCoordToIndex(stage4[0], stage4[1])};
-
     public BlockCropCornBottom(String key, int id) {
         super(key, id);
         this.setTicking(true);
@@ -119,13 +110,6 @@ public class BlockCropCornBottom extends BlockCropsWheat {
             world.setBlockMetadataWithNotify(x, y, z,4);
             world.setBlockAndMetadataWithNotify(x, y+1, z, ModBlocks.cornCropTop.id,4);
         }
-    }
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-        if (meta < 0 || meta > 4) {
-            meta = 4;
-        }
-        return this.growthStageTextures[meta];
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {

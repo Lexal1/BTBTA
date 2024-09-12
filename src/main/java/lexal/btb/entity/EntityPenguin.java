@@ -20,12 +20,12 @@ public class EntityPenguin extends EntityPet {
     public EntityPenguin(World world) {
         super(world);
         this.tameItemID = Item.foodFishRaw.id;
-        this.skinName = "penguin";
+        //this.skinName = "penguin";
         this.setSize(8f/16f, 14f/16f);
     }
-    public String getEntityTexture() {return "/assets/btb/entity/penguin/penguin2.png";}
+    public String getEntityTexture() {return "/assets/btb/textures/entity/penguin/penguin2.png";}
     public String getDefaultEntityTexture() {
-        return "/assets/btb/entity/penguin/penguin2.png";
+        return "/assets/btb/textures/entity/penguin/penguin2.png";
     }
     public String getLivingSound() {
         return "mob.chicken";
