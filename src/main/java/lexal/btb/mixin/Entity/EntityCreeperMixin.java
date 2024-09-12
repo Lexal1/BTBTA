@@ -51,7 +51,7 @@ public class EntityCreeperMixin extends EntityMonster {
         desertDrops.add(ModItems.recordSahara.id);
         desertDrops.add(ModItems.recordSahara.id);
         desertDrops.add(ModItems.recordSahara.id);
-        desertDrops.add(ModItems.recordSahara.id);
+        desertDrops.add(ModItems.recordSahara.id); // these repeat several times to simulate odds because we cant do that normally apparently
         desertDrops.add(ModItems.recordSahara.id);
         desertDrops.add(ModItems.recordSahara.id);
 

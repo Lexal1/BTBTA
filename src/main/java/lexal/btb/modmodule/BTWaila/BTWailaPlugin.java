@@ -1,4 +1,4 @@
-package lexal.btb.modmodule.BTWaila;
+/*8package lexal.btb.modmodule.BTWaila;
 
 import org.slf4j.Logger;
 import toufoumaster.btwaila.entryplugins.waila.BTWailaCustomTooltipPlugin;
@@ -10,4 +10,4 @@ public class BTWailaPlugin implements BTWailaCustomTooltipPlugin {
         logger.info("Loading BTBTA Tooltips");
         tooltipRegistry.register(new InscriberTooltip());
     }
-}
+}*/

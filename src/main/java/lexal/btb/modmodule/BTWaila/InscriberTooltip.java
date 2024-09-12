@@ -1,4 +1,4 @@
-package lexal.btb.modmodule.BTWaila;
+/*package lexal.btb.modmodule.BTWaila;
 
 import lexal.btb.block.tile_entity.TileEntityInscriber;
 import net.minecraft.core.item.ItemStack;
@@ -21,4 +21,4 @@ public class InscriberTooltip extends TileTooltip<TileEntityInscriber> {
         ItemStack[] stacks = new ItemStack[]{input, fuel, output};
         advancedInfoComponent.drawItemList(stacks, 0);
     }
-}
+}*/

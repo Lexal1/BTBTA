@@ -9,6 +9,7 @@ import net.minecraft.client.render.block.model.BlockModelTransparent;
 import net.minecraft.client.render.block.model.BlockModelTrapDoor;
 import net.minecraft.client.render.block.model.BlockModelStandard;
 
+import net.minecraft.client.render.item.model.ItemModelStandard;
 import net.minecraft.core.block.*;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -86,7 +87,7 @@ public class ModBlocks {
     public static final Block frameGlass = new BlockBuilder(BTBTA.MOD_ID)
             .setHardness(0.75f)
             .setResistance(0.0f)
-            .setBlockModel(b -> new BlockModelTransparent(b, false)
+            .setBlockModel(b -> new BlockModelTransparent(b, true)
                 .withTextures("btb:block/frame_glass")
             )
             .build(new BlockFramedGlass("glass_framed",UtilIdRegistrar.nextIdBlock(),Material.glass));
@@ -111,6 +112,8 @@ public class ModBlocks {
                 .withTextures("btb:block/tile_top")
             )
             .setTags(BlockTags.MINEABLE_BY_PICKAXE)
+            //.setItemModel(b -> new ItemModelStandard(b, "btb:block/tile_flint")
+            //)
             .build(new BlockSlab(flintTile,UtilIdRegistrar.nextIdBlock()));
 
     public static final Block inscriber = new BlockBuilder(BTBTA.MOD_ID)
