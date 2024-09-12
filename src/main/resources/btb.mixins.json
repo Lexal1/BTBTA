@@ -7,7 +7,6 @@
   "mixins": [
     "ChunkDecoratorOverworldMixin",
     "NetClientHandlerMixin",
-    "PlayerRendererMixin",
     "SlotFurnaceMixin",
     "WorldFeatureLabyrinthMixin",
     "Block.BlockGrassMixin",
@@ -16,12 +15,13 @@
     "Entity.EntityPlayerMixin",
     "Entity.EntityPlayerMPMixin",
     "Entity.EntityPlayerSPMixin",
-    "Entity/LivingRendererMixin",
     "Entity.TileEntityMixin",
     "Item.ItemDyeMixin",
     "Item.ItemJarMixin"
   ],
   "client": [
+    "PlayerRendererMixin",
+    "Entity.LivingRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
