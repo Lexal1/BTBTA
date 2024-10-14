@@ -1,6 +1,6 @@
 package lexal.btb.mixin.Entity;
 
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.monster.EntityCreeper;
 import net.minecraft.core.entity.monster.EntityMonster;
@@ -41,19 +41,19 @@ public class EntityCreeperMixin extends EntityMonster {
         baseDrops.add(Item.recordWard.id);
         baseDrops.add(Item.recordWait.id);
 
-        rainDrops.add(ModItems.recordRain.id);
-        rainDrops.add(ModItems.recordRain.id);
-        rainDrops.add(ModItems.recordRain.id);
-        rainDrops.add(ModItems.recordRain.id);
-        rainDrops.add(ModItems.recordRain.id);
-        rainDrops.add(ModItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
+        rainDrops.add(BTBItems.recordRain.id);
 
-        desertDrops.add(ModItems.recordSahara.id);
-        desertDrops.add(ModItems.recordSahara.id);
-        desertDrops.add(ModItems.recordSahara.id);
-        desertDrops.add(ModItems.recordSahara.id); // these repeat several times to simulate odds because we cant do that normally apparently
-        desertDrops.add(ModItems.recordSahara.id);
-        desertDrops.add(ModItems.recordSahara.id);
+        desertDrops.add(BTBItems.recordSahara.id);
+        desertDrops.add(BTBItems.recordSahara.id);
+        desertDrops.add(BTBItems.recordSahara.id);
+        desertDrops.add(BTBItems.recordSahara.id); // these repeat several times to simulate odds because we cant do that normally apparently
+        desertDrops.add(BTBItems.recordSahara.id);
+        desertDrops.add(BTBItems.recordSahara.id);
 
         desertBiomes.add(Biomes.OVERWORLD_DESERT);
         desertBiomes.add(Biomes.OVERWORLD_OUTBACK);

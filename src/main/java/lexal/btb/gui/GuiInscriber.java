@@ -1,7 +1,7 @@
 package lexal.btb.gui;
 
 import lexal.btb.block.tile_entity.TileEntityInscriber;
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.client.gui.GuiContainer;
 import net.minecraft.core.InventoryAction;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -104,7 +104,7 @@ public class GuiInscriber extends GuiContainer {
             action = InventoryAction.MOVE_SINGLE_ITEM;
         }
         if (this.inventorySlots instanceof ContainerInscriber) { // This is the only section that actually really matters
-            if (clickedItemId == ModItems.recordBlank.id){
+            if (clickedItemId == BTBItems.recordBlank.id){
                 target = 1;
             } else if (Item.itemsList[clickedItemId] instanceof ItemRecord) {
                 target = 2;

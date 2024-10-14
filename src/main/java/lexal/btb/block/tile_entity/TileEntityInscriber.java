@@ -2,7 +2,7 @@ package lexal.btb.block.tile_entity;
 
 import com.mojang.nbt.CompoundTag;
 import com.mojang.nbt.ListTag;
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemRecord;
@@ -22,10 +22,10 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
     }
     public boolean canInscribe() {
         if (inscriberItemStacks[0] == null) {return false;}
-        if (inscriberItemStacks[0].getItem() != ModItems.recordBlank) {return false;}
+        if (inscriberItemStacks[0].getItem() != BTBItems.recordBlank) {return false;}
         if (inscriberItemStacks[1] != null) { return false;}
         if (inscriberItemStacks[2] == null) { return false;}
-        if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord || inscriberItemStacks[2].getItem().id == ModItems.pancake.id)) { return false;}
+        if (!(inscriberItemStacks[2].getItem() instanceof ItemRecord || inscriberItemStacks[2].getItem().id == BTBItems.pancake.id)) { return false;}
         return true;
     }
     public void tick() {
@@ -44,8 +44,8 @@ public class TileEntityInscriber extends TileEntity implements IInventory {
         if (!canInscribe()) { return;}
         ItemStack itemstack = new ItemStack(inscriberItemStacks[2]);
         if (inscriberItemStacks[1] == null){
-            if (inscriberItemStacks[2].getItem().id == ModItems.pancake.id){
-                inscriberItemStacks[1] = new ItemStack(ModItems.recordPancake);
+            if (inscriberItemStacks[2].getItem().id == BTBItems.pancake.id){
+                inscriberItemStacks[1] = new ItemStack(BTBItems.recordPancake);
             } else {
                 inscriberItemStacks[1] = itemstack.copy();
             }

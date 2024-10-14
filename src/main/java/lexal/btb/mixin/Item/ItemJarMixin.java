@@ -2,8 +2,8 @@ package lexal.btb.mixin.Item;
 
 import lexal.btb.BTBClientContainer;
 import lexal.btb.ModAchievements;
-import lexal.btb.block.ModBlocks;
-import lexal.btb.item.ModItems;
+import lexal.btb.block.BTBBlocks;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.HitResult;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -24,10 +24,10 @@ public class ItemJarMixin {
             int blockX = objectMouseOver.x;
             int blockY = objectMouseOver.y;
             int blockZ = objectMouseOver.z;
-            if (world.getBlockId(blockX, blockY, blockZ) == ModBlocks.birchSyrupLog.id) {
+            if (world.getBlockId(blockX, blockY, blockZ) == BTBBlocks.birchSyrupLog.id) {
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, Block.logBirch.id, world.getBlockMetadata(blockX, blockY, blockZ));
                 itemstack.consumeItem(entityplayer);
-                entityplayer.inventory.insertItem(new ItemStack(ModItems.syrupJar), true);
+                entityplayer.inventory.insertItem(new ItemStack(BTBItems.syrupJar), true);
                 entityplayer.triggerAchievement(ModAchievements.SYRUP);
                 cir.setReturnValue(itemstack);
             }

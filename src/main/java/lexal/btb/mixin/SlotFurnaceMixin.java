@@ -1,7 +1,7 @@
 package lexal.btb.mixin;
 
 import lexal.btb.ModAchievements;
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.slot.SlotFurnace;
@@ -17,7 +17,7 @@ public class SlotFurnaceMixin {
     private EntityPlayer thePlayer;
     @Inject(method = "onPickupFromSlot(Lnet/minecraft/core/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/item/ItemStack;onCrafting(Lnet/minecraft/core/world/World;Lnet/minecraft/core/entity/player/EntityPlayer;)V", shift = At.Shift.AFTER))
     private void addFurnaceAchievements(ItemStack itemstack, CallbackInfo ci){
-        if (itemstack.itemID == ModItems.popcornBucket.id) {
+        if (itemstack.itemID == BTBItems.popcornBucket.id) {
             thePlayer.addStat(ModAchievements.POPCORN, 1);
         }
     }
