@@ -1,6 +1,6 @@
 package lexal.btb.gui;
 
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 import net.minecraft.core.player.inventory.slot.Slot;
@@ -12,7 +12,7 @@ public class SlotDiscBlank extends Slot {
 
     @Override
     public boolean canPutStackInSlot(ItemStack itemstack) {
-        return itemstack != null && itemstack.itemID == ModItems.recordBlank.id;
+        return itemstack != null && itemstack.itemID == BTBItems.recordBlank.id;
     }
     @Override
     public boolean allowItemInteraction() {

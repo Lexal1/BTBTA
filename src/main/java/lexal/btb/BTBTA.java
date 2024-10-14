@@ -1,16 +1,13 @@
 package lexal.btb;
 
-import lexal.btb.block.ModBlocks;
+import lexal.btb.block.BTBBlocks;
+import lexal.btb.crafting.ModRecipes;
 import lexal.btb.entity.EntityPenguin;
 import lexal.btb.entity.ModEntities;
-import lexal.btb.item.ModItems;
-import lexal.btb.crafting.ModRecipes;
-import lexal.btb.world.biomes.BiomeGlacier;
+import lexal.btb.item.BTBItems;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.SpawnListEntry;
 import net.minecraft.core.enums.EnumCreatureType;
-import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,8 +43,8 @@ public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
     public void beforeGameStart() {
         LOGGER.info("btbta loading! watch out for bugs");
 
-        ModBlocks.register();
-        ModItems.register();
+        new BTBBlocks().initializeBlocks();
+        new BTBItems().initilizeItems();
         ModEntities.register();
 
         List<SpawnListEntry> creatures = Biomes.OVERWORLD_GLACIER.getSpawnableList(EnumCreatureType.creature);
@@ -67,6 +64,7 @@ public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
 
     @Override
     public void afterGameStart() {
+        new BTBBlocks().initializeBlockDetails();
     }
 
     @Override

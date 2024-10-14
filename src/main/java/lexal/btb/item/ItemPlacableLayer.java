@@ -50,7 +50,7 @@ public class ItemPlacableLayer extends ItemPlaceable {
                 return false;
             }
             if (newMeta < 7) {
-                if (newMeta == 6 && this.id == ModItems.pancake.id){
+                if (newMeta == 6 && this.id == BTBItems.pancake.id){
                     entityplayer.triggerAchievement(ModAchievements.PANCAKES);
                 }
                 world.setBlockAndMetadataWithNotify(blockX, blockY, blockZ, this.blockID, newMeta);

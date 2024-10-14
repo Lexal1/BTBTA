@@ -1,7 +1,7 @@
 package lexal.btb.modmodule;
 
 import lexal.btb.BTBTA;
-import lexal.btb.block.ModBlocks;
+import lexal.btb.block.BTBBlocks;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
@@ -16,7 +16,7 @@ public class TerrainAPIPlugin implements TerrainAPI {
 
     @Override
     public void onInitialize() {
-        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(ModBlocks.blueRose.id), 6, -1, 1,
+        ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(BTBBlocks.blueRose.id), 6, -1, 1,
                 new Biome[]{Biomes.OVERWORLD_SWAMPLAND, Biomes.OVERWORLD_SWAMPLAND_MUDDY, Biomes.PARADISE_PARADISE, Biomes.OVERWORLD_RETRO, Biomes.OVERWORLD_MEADOW});
     }
 }

@@ -1,6 +1,6 @@
 package lexal.btb.block;
 
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.block.BlockLayerBase;
 import net.minecraft.core.block.entity.TileEntity;
@@ -17,9 +17,9 @@ public class BlockLayerPancakeSyrup extends BlockLayerBase {
     @Override
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         if (dropCause == EnumDropCause.PICK_BLOCK ) {
-            return new ItemStack[]{new ItemStack(ModItems.pancake)}; // Get singular pancake from pick block
+            return new ItemStack[]{new ItemStack(BTBItems.pancake)}; // Get singular pancake from pick block
         }
-        return new ItemStack[]{new ItemStack(ModItems.pancake, meta+1)}; // Return all stacked pancakes
+        return new ItemStack[]{new ItemStack(BTBItems.pancake, meta+1)}; // Return all stacked pancakes
     }
     @Override
     public boolean canPlaceBlockAt(World world, int x, int y, int z) {
@@ -37,7 +37,7 @@ public class BlockLayerPancakeSyrup extends BlockLayerBase {
         return true;
     }
 
-    private void eatPancakeLayer(World world, int i, int j, int k, EntityPlayer entityplayer) {
+    public void eatPancakeLayer(World world, int i, int j, int k, EntityPlayer entityplayer) {
         if (entityplayer.getHealth() < 20) { // Not max health
             entityplayer.heal(7); // heal 3 and 1/2 hearts
             int l = world.getBlockMetadata(i, j, k) - 1; // new layer meta data

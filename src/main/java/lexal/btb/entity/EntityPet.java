@@ -20,16 +20,16 @@ import net.minecraft.core.world.pathfinder.Path;
 import java.util.List;
 
 public class EntityPet extends EntityAnimal {
-    private boolean looksWithInterest = false;
-    private float field_25048_b;
-    private float field_25054_c;
-    protected int tameItemID;
+    public boolean looksWithInterest = false;
+    public float field_25048_b;
+    public float field_25054_c;
+    public int tameItemID;
 
     public EntityPet(World world) {
         super(world);
     }
 
-    protected void init() {
+    public void init() {
         super.init();
         this.entityData.define(16, (byte) 0); // Ai State
         this.entityData.define(17, ""); // Owner String
@@ -59,15 +59,15 @@ public class EntityPet extends EntityAnimal {
 
     }
 
-    protected boolean canDespawn() {
+    public boolean canDespawn() {
         return !this.isTamed();
     }
 
-    protected int getDropItemId() {
+    public int getDropItemId() {
         return -1;
     }
 
-    protected void updatePlayerActionState() {
+    public void updatePlayerActionState() {
         super.updatePlayerActionState();
 
         if (this.isInWater()) {

@@ -1,5 +1,5 @@
 package lexal.btb.mixin;
-import lexal.btb.block.ModBlocks;
+import lexal.btb.block.BTBBlocks;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -48,7 +48,7 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockX = x + rand.nextInt(16) + 8;
             blockZ = z + rand.nextInt(16) + 8;
             blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureFlowers(ModBlocks.blueRose.id).generate(this.world, rand, blockX, blockY, blockZ);
+            new WorldFeatureFlowers(BTBBlocks.blueRose.id).generate(this.world, rand, blockX, blockY, blockZ);
         }
     }
 }

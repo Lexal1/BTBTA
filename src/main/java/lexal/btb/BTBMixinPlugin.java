@@ -1,7 +1,6 @@
 package lexal.btb;
 
 import com.google.common.collect.ImmutableMap;
-import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -12,8 +11,8 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 public final class BTBMixinPlugin implements IMixinConfigPlugin {
-    private static final Supplier<Boolean> TRUE = () -> true;
-    private static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap.of(
+    public static final Supplier<Boolean> TRUE = () -> true;
+    public static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap.of(
             //"Modded.BTWaila.GuiBlockOverlayAccessor", () -> FabricLoader.getInstance().isModLoaded("btwaila")
     );
 

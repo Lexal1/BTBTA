@@ -5,6 +5,7 @@ import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.collection.NamespaceID;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 
@@ -15,32 +16,35 @@ public class EntityPenguin extends EntityPet {
     public float oldFlapAngle = 0.0F;
     public float flapRate = 1.0F;
 
-    private boolean sliding = false;
+    public boolean sliding = false;
 
     public EntityPenguin(World world) {
         super(world);
         this.tameItemID = Item.foodFishRaw.id;
-        //this.skinName = "penguin";
+        this.textureIdentifier = new NamespaceID("btb", "penguin");
         this.setSize(8f/16f, 14f/16f);
     }
-    public String getEntityTexture() {return "/assets/btb/textures/entity/penguin/penguin2.png";}
-    public String getDefaultEntityTexture() {
-        return "/assets/btb/textures/entity/penguin/penguin2.png";
+
+    @Override
+    public int getSkinVariant() {
+        int skinVariantCount = 3;
+        return this.entityData.getByte(1) % skinVariantCount;
     }
+
     public String getLivingSound() {
         return "mob.chicken";
     }
 
-    protected String getHurtSound() {
+    public String getHurtSound() {
         return "mob.chickenhurt";
     }
 
-    protected String getDeathSound() {
+    public String getDeathSound() {
         return "mob.chickenhurt";
     }
 
     @Override
-    protected int getDropItemId() {
+    public int getDropItemId() {
         return Item.featherChicken.id;
     }
     @Override
@@ -54,20 +58,20 @@ public class EntityPenguin extends EntityPet {
         }
         return false;
     }
-    private boolean baseCanSpawn(){
+    public boolean baseCanSpawn(){
         int i = MathHelper.floor_double(this.x);
         int j = MathHelper.floor_double(this.bb.minY);
         int k = MathHelper.floor_double(this.z);
         return baseierCanSpawn() && this.getBlockPathWeight(i, j, k) >= 0.0f;
     }
-    private boolean baseierCanSpawn(){
+    public boolean baseierCanSpawn(){
         int blockZ;
         int blockY;
         int blockX = MathHelper.floor_double(this.x);
         if (Block.hasTag(this.world.getBlockId(blockX, blockY = MathHelper.floor_double(this.bb.minY), blockZ = MathHelper.floor_double(this.z)), BlockTags.PREVENT_MOB_SPAWNS)) {
             return false;
         }
-        return this.world.checkIfAABBIsClear(this.bb) && this.world.getCubes(this, this.bb).size() == 0 && !this.world.getIsAnyLiquid(this.bb);
+        return this.world.checkIfAABBIsClear(this.bb) && this.world.getCubes(this, this.bb).isEmpty() && !this.world.getIsAnyLiquid(this.bb);
     }
 
     public void onLivingUpdate() {

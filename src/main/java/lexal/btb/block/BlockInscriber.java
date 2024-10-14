@@ -40,7 +40,7 @@ public class BlockInscriber extends BlockTileEntity {
             case PICK_BLOCK:
             case PROPER_TOOL:
             case SILK_TOUCH: {
-                return new ItemStack[]{new ItemStack(ModBlocks.inscriber)};
+                return new ItemStack[]{new ItemStack(BTBBlocks.inscriber)};
             }
         }
         return null;

@@ -1,16 +1,13 @@
 package lexal.btb.block;
 
-import lexal.btb.BTBTA;
-import lexal.btb.item.ModItems;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockCropsWheat;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.season.*;
-
 
 import java.util.Random;
 
@@ -76,7 +73,7 @@ public class BlockCropCornBottom extends BlockCropsWheat {
         if(world.getBlockMetadata(x, y, z) == 0){
             return super.canBlockStay(world, x ,y, z);
         }
-        if(world.getBlockId(x, y+1, z) == ModBlocks.cornCropTop.id && world.getBlockMetadata(x,y,z) >= 0){
+        if(world.getBlockId(x, y+1, z) == BTBBlocks.cropsCornTop.id && world.getBlockMetadata(x,y,z) >= 0){
             return super.canBlockStay(world, x ,y, z);
         }
         return false;
@@ -94,8 +91,8 @@ public class BlockCropCornBottom extends BlockCropsWheat {
             }
             float f = this.getGrowthRate(world, x, y, z);
             int blockAbove = world.getBlockId(x, y+1, z);
-            if ((blockAbove == 0 || blockAbove == ModBlocks.cornCropTop.id) && rand.nextInt((int) (100.0F / f)) == 0) {
-                world.setBlockAndMetadataWithNotify(x, y + 1, z, ModBlocks.cornCropTop.id, blockMetadata);
+            if ((blockAbove == 0 || blockAbove == BTBBlocks.cropsCornTop.id) && rand.nextInt((int) (100.0F / f)) == 0) {
+                world.setBlockAndMetadataWithNotify(x, y + 1, z, BTBBlocks.cropsCornTop.id, blockMetadata);
                 world.setBlockMetadataWithNotify(x, y, z, ++blockMetadata);
 
             }
@@ -106,18 +103,18 @@ public class BlockCropCornBottom extends BlockCropsWheat {
     public void fertilize(World world, int x, int y, int z) {
         world.setBlockMetadataWithNotify(x, y, z,4);
         int blockAbove = world.getBlockId(x, y+1, z);
-        if(blockAbove == 0 || blockAbove == ModBlocks.cornCropTop.id){
+        if(blockAbove == 0 || blockAbove == BTBBlocks.cropsCornTop.id){
             world.setBlockMetadataWithNotify(x, y, z,4);
-            world.setBlockAndMetadataWithNotify(x, y+1, z, ModBlocks.cornCropTop.id,4);
+            world.setBlockAndMetadataWithNotify(x, y+1, z, BTBBlocks.cropsCornTop.id,4);
         }
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         if (meta != 4){
-            return new ItemStack[]{new ItemStack(ModItems.cornSeeds)};
+            return new ItemStack[]{new ItemStack(BTBItems.cornSeeds)};
         } else {
             int seedAmount = 1 + (world.rand.nextInt(5)==0 ? 1 : 0);
-            return new ItemStack[]{new ItemStack(ModItems.cornSeeds, seedAmount), new ItemStack(ModItems.corn, world.rand.nextInt(2) + 1)};
+            return new ItemStack[]{new ItemStack(BTBItems.cornSeeds, seedAmount), new ItemStack(BTBItems.corn, world.rand.nextInt(2) + 1)};
         }
     }
 }

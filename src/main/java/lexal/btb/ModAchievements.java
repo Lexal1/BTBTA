@@ -1,7 +1,7 @@
 package lexal.btb;
 
-import lexal.btb.block.ModBlocks;
-import lexal.btb.item.ModItems;
+import lexal.btb.block.BTBBlocks;
+import lexal.btb.item.BTBItems;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.render.block.model.BlockModelDispatcher;
 import net.minecraft.client.render.stitcher.IconCoordinate;
@@ -23,22 +23,22 @@ import java.util.Random;
 public class ModAchievements extends AchievementPage {
     public static final List<Integer> flowersList = new ArrayList<>();
     public static final Achievement ROOT = new Achievement(AchievementList.achievementList.size()+1,"btb.root",0,0, Item.basket,null);
-    public static final Achievement SYRUP = new Achievement(AchievementList.achievementList.size()+1,"btb.syrup",2,1, ModItems.syrupJar,ROOT);
-    public static final Achievement PANCAKES = new Achievement(AchievementList.achievementList.size()+1,"btb.pancakes",4,1, ModItems.pancake,SYRUP);
+    public static final Achievement SYRUP = new Achievement(AchievementList.achievementList.size()+1,"btb.syrup",2,1, BTBItems.syrupJar,ROOT);
+    public static final Achievement PANCAKES = new Achievement(AchievementList.achievementList.size()+1,"btb.pancakes",4,1, BTBItems.pancake,SYRUP);
     public static final Achievement OVERKILL = new Achievement(AchievementList.achievementList.size()+1,"btb.damage",0,3, Item.toolSwordSteel,ROOT).setSpecial();
-    public static final Achievement FLOWERS = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",-2,0, ModBlocks.blueRose,ROOT);
+    public static final Achievement FLOWERS = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",-2,0, BTBBlocks.blueRose,ROOT);
     public static final Achievement DAYS = new Achievement(AchievementList.achievementList.size()+1,"btb.days",-2,2, Item.toolClock,ROOT).setSpecial();
     public static final Achievement PENGUIN = new Achievement(AchievementList.achievementList.size()+1,"btb.penguintame",3,-2, Item.featherChicken,ROOT);
-    public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, ModItems.popcornBucket,ROOT);
+    public static final Achievement POPCORN = new Achievement(AchievementList.achievementList.size()+1,"btb.popcorn",2,-1, BTBItems.popcornBucket,ROOT);
     public static final Achievement NETHERDIST = new Achievement(AchievementList.achievementList.size()+1,"btb.netherdist",-1,-3, Block.netherrack,ROOT).setSpecial();
-    //public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, ModItems.pumpkinPie,ROOT);
+    //public static final Achievement BAKED = new Achievement(AchievementList.achievementList.size()+1,"btb.flowers",1,2, BTBItems.pumpkinPie,ROOT);
 
     public static final boolean bonusBlocksModPresent = FabricLoader.getInstance().isModLoaded("bonusblocks");
     public static final boolean noNameDyesModPresent = FabricLoader.getInstance().isModLoaded("nonamedyes");
     static {
         flowersList.add(Block.flowerRed.id);
         flowersList.add(Block.flowerYellow.id);
-        flowersList.add(ModBlocks.blueRose.id);
+        flowersList.add(BTBBlocks.blueRose.id);
 //        if (bonusBlocksModPresent) {
 //            flowersList.add(BonusBlocks.flowerCyan.id);
 //            flowersList.add(BonusBlocks.flowerPurple.id);
@@ -48,7 +48,7 @@ public class ModAchievements extends AchievementPage {
 //            flowersList.add(BonusBlocks.flowerLime.id);
 //        }
 //        if (noNameDyesModPresent) {
-//            flowersList.add(goocraft4evr.nonamedyes.block.ModBlocks.flowerIndigo.id);
+//            flowersList.add(goocraft4evr.nonamedyes.block.BTBBlocks.flowerIndigo.id);
 //        }
     }
     public ModAchievements() {
@@ -74,7 +74,7 @@ public class ModAchievements extends AchievementPage {
             GL11.glColor4f(f5, f5, f5, 1.0f);
             int i8 = 0;
             while (i8 * 16 - blockX2 < 224) {
-                IconCoordinate texture = BlockModelDispatcher.getInstance().getDispatch(ModBlocks.flintTile)
+                IconCoordinate texture = BlockModelDispatcher.getInstance().getDispatch(BTBBlocks.flintTile)
                     .getBlockTextureFromSideAndMetadata(Side.BOTTOM, 0);
                 guiAchievements.drawTexturedIcon(iOffset + i8 * 16 - blockX2, jOffset + l7 * 16 - blockY2, texture.width, texture.height, texture);
                 ++i8;

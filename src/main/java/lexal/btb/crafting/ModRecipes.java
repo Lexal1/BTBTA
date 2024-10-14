@@ -1,7 +1,7 @@
 package lexal.btb.crafting;
 
-import lexal.btb.block.ModBlocks;
-import lexal.btb.item.ModItems;
+import lexal.btb.block.BTBBlocks;
+import lexal.btb.item.BTBItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
@@ -30,10 +30,10 @@ public class ModRecipes implements RecipeEntrypoint {
                 .addInput(Item.eggChicken)
                 .addInput(Item.wheat)
                 .addInput(Item.dustSugar)
-                .create("pancakeCraft", new ItemStack(ModItems.pancake, 3));
+                .create("pancakeCraft", new ItemStack(BTBItems.pancake, 3));
 
         RecipeBuilder.Shapeless(MOD_ID)
-                .addInput(ModBlocks.blueRose)
+                .addInput(BTBBlocks.blueRose)
                 .create("bRose2Dye", new ItemStack(Item.dye, 2, 6));
 
         RecipeBuilder.Shaped(MOD_ID)
@@ -42,8 +42,8 @@ public class ModRecipes implements RecipeEntrypoint {
                         "CBC",
                         " C ")
                 .addInput('B', Item.bucket)
-                .addInput('C', ModItems.corn)
-                .create("sadcorn", new ItemStack(ModItems.unPopcorn));
+                .addInput('C', BTBItems.corn)
+                .create("sadcorn", new ItemStack(BTBItems.unPopcorn));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -53,12 +53,12 @@ public class ModRecipes implements RecipeEntrypoint {
                 .addInput('Y', Item.sulphur)
                 .addInput('C', Item.ingotSteelCrude)
                 .addInput('B', Item.paper)
-                .create("emptyDisc", new ItemStack(ModItems.recordBlank));
+                .create("emptyDisc", new ItemStack(BTBItems.recordBlank));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape("CCC")
-                .addInput('C', ModItems.crackedCorn)
-                .create("cornrbead", new ItemStack(ModItems.cornBread));
+                .addInput('C', BTBItems.crackedCorn)
+                .create("cornbread", new ItemStack(BTBItems.cornBread));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -69,20 +69,7 @@ public class ModRecipes implements RecipeEntrypoint {
                 .addInput('E', Item.eggChicken)
                 .addInput('S', Item.dustSugar)
                 .addInput('W', Item.wheat)
-                .create("cherycake", new ItemStack(ModItems.cherryPie));
-
-        /*RecipeBuilder.Shaped(MOD_ID)
-                .setShape(
-                        "PP",
-                        "SE",
-                        "WW")
-                .addInput('P', Block.pumpkin)
-                .addInput('E', Item.eggChicken)
-                .addInput('S', Item.dustSugar)
-                .addInput('W', Item.wheat)
-                .create("pumpincake", new ItemStack(ModItems.pumpkinPie));*/
-
-        // blocks
+                .create("cherry_pie", new ItemStack(BTBItems.foodCherryPie));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -92,7 +79,7 @@ public class ModRecipes implements RecipeEntrypoint {
                 .addInput('P', Block.planksOak)
                 .addInput('I', Item.ingotIron)
                 .addInput('D', Item.diamond)
-                .create("inscribe", new ItemStack(ModBlocks.inscriber));
+                .create("inscribe", new ItemStack(BTBBlocks.inscriber));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -100,48 +87,48 @@ public class ModRecipes implements RecipeEntrypoint {
                         "SG")
                 .addInput('G', Block.glass)
                 .addInput('S', Item.ingotSteelCrude)
-                .create("frameglass", new ItemStack(ModBlocks.frameGlass, 4));
+                .create("frameglass", new ItemStack(BTBBlocks.frameGlass, 4));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "GGG",
                         "GGG")
-                .addInput('G', ModBlocks.frameGlass)
-                .create("frameglasstrapremix", new ItemStack(ModBlocks.trapdoorFrameGlass, 6));
+                .addInput('G', BTBBlocks.glassFramed)
+                .create("frameglasstrapremix", new ItemStack(BTBBlocks.trapdoorGlassFramed, 6));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "CC",
                         "CC")
                 .addInput('C', Item.flint)
-                .create("tiled", new ItemStack(ModBlocks.flintTile, 4));
+                .create("tiled", new ItemStack(BTBBlocks.flintTile, 4));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "CCC")
-                .addInput('C', ModBlocks.flintTile)
-                .create("tiledD", new ItemStack(ModBlocks.flintTileSlab, 6));
+                .addInput('C', BTBBlocks.flintTile)
+                .create("tiledD", new ItemStack(BTBBlocks.slabFlintTile, 6));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "C",
                         "C")
-                .addInput('C', ModBlocks.flintTileSlab)
-                .create("tiledR", new ItemStack(ModBlocks.flintTile));
+                .addInput('C', BTBBlocks.slabFlintTile)
+                .create("tiledR", new ItemStack(BTBBlocks.flintTile));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "CC",
                         "CC")
                 .addInput('C', Item.olivine)
-                .create("bricked", new ItemStack(ModBlocks.olivineBricks, 4));
+                .create("bricked", new ItemStack(BTBBlocks.brickOlivine, 4));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "CCC",
                         "C C")
                 .addInput('C', Item.cloth)
-                .create("cloth1", new ItemStack(ModItems.armorHelmetCloth));
+                .create("cloth1", new ItemStack(BTBItems.armorHelmetCloth));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -149,7 +136,7 @@ public class ModRecipes implements RecipeEntrypoint {
                         "CCC",
                         "CCC")
                 .addInput('C', Item.cloth)
-                .create("cloth2", new ItemStack(ModItems.armorChestplateCloth));
+                .create("cloth2", new ItemStack(BTBItems.armorChestplateCloth));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -157,28 +144,28 @@ public class ModRecipes implements RecipeEntrypoint {
                         "C C",
                         "C C")
                 .addInput('C', Item.cloth)
-                .create("cloth3", new ItemStack(ModItems.armorLeggingsCloth));
+                .create("cloth3", new ItemStack(BTBItems.armorLeggingsCloth));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
                         "C C",
                         "C C")
                 .addInput('C', Item.cloth)
-                .create("cloth4", new ItemStack(ModItems.armorBootsCloth));
+                .create("cloth4", new ItemStack(BTBItems.armorBootsCloth));
 
         RecipeBuilder.Furnace(MOD_ID)
-                .setInput(ModItems.unPopcorn)
-                .create("poppingoff", ModItems.popcornBucket.getDefaultStack());
+                .setInput(BTBItems.unPopcorn)
+                .create("poppingoff", BTBItems.popcornBucket.getDefaultStack());
         RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(ModItems.unPopcorn)
-                .create("poppingoff2", ModItems.popcornBucket.getDefaultStack());
+                .setInput(BTBItems.unPopcorn)
+                .create("poppingoff2", BTBItems.popcornBucket.getDefaultStack());
 
         RecipeBuilder.Furnace(MOD_ID)
-                .setInput(ModItems.corn)
-                .create("crackingoil", ModItems.crackedCorn.getDefaultStack());
+                .setInput(BTBItems.corn)
+                .create("crackingoil", BTBItems.crackedCorn.getDefaultStack());
         RecipeBuilder.BlastFurnace(MOD_ID)
-                .setInput(ModItems.corn)
-                .create("cracking2", ModItems.crackedCorn.getDefaultStack());
+                .setInput(BTBItems.corn)
+                .create("cracking2", BTBItems.crackedCorn.getDefaultStack());
 
         RecipeBuilder.BlastFurnace(MOD_ID)
                 .setInput(Block.netherrack)
@@ -190,7 +177,7 @@ public class ModRecipes implements RecipeEntrypoint {
                         "CC")
                 .addInput('C', Item.stick)
                 .addInput('T', Block.trapdoorPlanksOak)
-                .create("stooled", new ItemStack(ModItems.stool));
+                .create("stooled", new ItemStack(BTBItems.stool));
     }
 
     public static void postInit() {
