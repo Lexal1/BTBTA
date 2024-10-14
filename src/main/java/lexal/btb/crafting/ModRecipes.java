@@ -47,10 +47,11 @@ public class ModRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
-                        " C ",
+                        "YCY",
                         "CBC",
-                        " C ")
-                .addInput('C', Item.sulphur)
+                        "YCY")
+                .addInput('Y', Item.sulphur)
+                .addInput('C', Item.ingotSteelCrude)
                 .addInput('B', Item.paper)
                 .create("emptyDisc", new ItemStack(ModItems.recordBlank));
 
