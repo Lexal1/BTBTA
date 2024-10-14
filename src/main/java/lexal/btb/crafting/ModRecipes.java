@@ -96,11 +96,11 @@ public class ModRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
-                        "SGS",
-                        "GSG")
+                        "GS",
+                        "SG")
                 .addInput('G', Block.glass)
                 .addInput('S', Item.ingotSteelCrude)
-                .create("frameglass", new ItemStack(ModBlocks.frameGlass));
+                .create("frameglass", new ItemStack(ModBlocks.frameGlass, 4));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -164,7 +164,7 @@ public class ModRecipes implements RecipeEntrypoint {
                         "C C",
                         "C C")
                 .addInput('C', Item.cloth)
-                .create("cloth3", new ItemStack(ModItems.armorBootsCloth));
+                .create("cloth4", new ItemStack(ModItems.armorBootsCloth));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(ModItems.unPopcorn)
