@@ -44,7 +44,7 @@ public class BTBTA implements GameStartEntrypoint, ClientStartEntrypoint {
         LOGGER.info("btbta loading! watch out for bugs");
 
         new BTBBlocks().initializeBlocks();
-        BTBItems.register();
+        new BTBItems().initilizeItems();
         ModEntities.register();
 
         List<SpawnListEntry> creatures = Biomes.OVERWORLD_GLACIER.getSpawnableList(EnumCreatureType.creature);
