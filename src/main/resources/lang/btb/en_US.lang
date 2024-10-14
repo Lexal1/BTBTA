@@ -16,8 +16,6 @@ tile.btb.olivine_bricks.name=Olivine Bricks
 tile.btb.olivine_bricks.desc=Stacked bricks of olivine.
 tile.btb.pie_cherry.name=Cherry Pie
 tile.btb.pie_cherry.desc=A vivid red pie to brighten up your table!
-tile.btb.pie_pumpkin.name=Pumpkin Pie
-tile.btb.pie_pumpkin.desc=A mellow orange pie to complement your table.
 #unobtainables
 tile.btb.corncroptop.name=Corn Crop Top
 tile.btb.corncroptop.desc=The top of a corn plant, where the fluffy tassle is.
@@ -31,7 +29,10 @@ tile.btb.layer_pancake_syrup.name=Syrupy Pancake Stack
 tile.btb.layer_pancake_syrup.desc=I could write a song called "stack 'em to the heavens"!
 tile.btb.stool.name=Stool
 tile.btb.stool.desc=A slightly less comfortable place to sit.
-
+tile.btb.pie_pumpkin.name=Pumpkin Pie (defunct)
+tile.btb.pie_pumpkin.desc=keep your TIPPITY TOPPITY HANDS off my MYTHICAL MAGICAL MACHINE!
+item.btb.pie_pumpkin.name=Pumpkin Pie (defunct)
+item.btb.pie_pumpkin.desc=What a whiny critter!
 
 ###armor
 
@@ -42,7 +43,7 @@ item.btb.armor.chestplate.clothes.desc=A normal, boring, everyday shirt. Can be 
 item.btb.armor.leggings.clothes.name=Cloth Pants
 item.btb.armor.leggings.clothes.desc=Some normal, boring, everyday pants. Can be dyed.
 item.btb.armor.boots.clothes.name=Shoes
-item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes.
+item.btb.armor.boots.clothes.desc=Some normal, boring, everyday shoes. Can be dyed.
 
 ###items
 
@@ -72,8 +73,6 @@ item.btb.record_sahara.name=Music Disc
 item.btb.record_sahara.desc=§4sahara
 item.btb.pie_cherry.name=Cherry Pie
 item.btb.pie_cherry.desc=A delicious slice of spring!
-item.btb.pie_pumpkin.name=Pumpkin Pie
-item.btb.pie_pumpkin.desc=A luscious slice of fall.
 item.btb.stool.name=Stool
 item.btb.stool.desc=A simple sitting spot, crafted out of wood.
 

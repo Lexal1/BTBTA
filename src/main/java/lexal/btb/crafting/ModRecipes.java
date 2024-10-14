@@ -47,10 +47,11 @@ public class ModRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
-                        " C ",
+                        "YCY",
                         "CBC",
-                        " C ")
-                .addInput('C', Item.sulphur)
+                        "YCY")
+                .addInput('Y', Item.sulphur)
+                .addInput('C', Item.ingotSteelCrude)
                 .addInput('B', Item.paper)
                 .create("emptyDisc", new ItemStack(BTBItems.recordBlank));
 
@@ -82,11 +83,11 @@ public class ModRecipes implements RecipeEntrypoint {
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
-                        "SGS",
-                        "GSG")
+                        "GS",
+                        "SG")
                 .addInput('G', Block.glass)
                 .addInput('S', Item.ingotSteelCrude)
-                .create("framedglass", new ItemStack(BTBBlocks.glassFramed));
+                .create("frameglass", new ItemStack(BTBBlocks.frameGlass, 4));
 
         RecipeBuilder.Shaped(MOD_ID)
                 .setShape(
@@ -150,7 +151,7 @@ public class ModRecipes implements RecipeEntrypoint {
                         "C C",
                         "C C")
                 .addInput('C', Item.cloth)
-                .create("cloth3", new ItemStack(BTBItems.armorBootsCloth));
+                .create("cloth4", new ItemStack(BTBItems.armorBootsCloth));
 
         RecipeBuilder.Furnace(MOD_ID)
                 .setInput(BTBItems.unPopcorn)
